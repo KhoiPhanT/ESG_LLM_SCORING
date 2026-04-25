@@ -1,0 +1,37 @@
+{
+    "risk_keywords": [
+        "rủi ro",
+        "biến động",
+        "thách thức",
+        "khó khăn",
+        "bất ổn",
+        "suy giảm",
+        "gián đoạn",
+        "thiệt hại",
+        "nguy cơ",
+        "ảnh hưởng tiêu cực",
+        "kiện tụng",
+        "tranh chấp",
+        "khủng hoảng"
+    ],
+    "iso_standards": [
+        "ISO 14001",
+        "ISO 45001",
+        "ISO 9001",
+        "ISO 27001",
+        "ISO 50001"
+    ],
+    "green_keywords": [
+        "năng lượng tái tạo",
+        "giảm phát thải",
+        "trung hòa carbon",
+        "net zero",
+        "kinh tế tuần hoàn",
+        "phát triển bền vững",
+        "bảo vệ môi trường",
+        "cộng đồng",
+        "bình đẳng giới",
+        "tín dụng xanh",
+        "trái phiếu xanh"
+    ]
+}

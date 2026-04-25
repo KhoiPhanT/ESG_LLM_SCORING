@@ -1,0 +1,182 @@
+{
+  "factor_max_scores": {
+    "E1": {
+      "factor": "E1",
+      "pillar": "E",
+      "category": "Môi trường",
+      "content": "1. Chính sách",
+      "num_questions": 6,
+      "max_points": 12.0
+    },
+    "E2": {
+      "factor": "E2",
+      "pillar": "E",
+      "category": "Môi trường",
+      "content": "2. Quy trình quản lý",
+      "num_questions": 12,
+      "max_points": 24.0
+    },
+    "E3": {
+      "factor": "E3",
+      "pillar": "E",
+      "category": "Môi trường",
+      "content": "3. Hiệu quả hoạt động theo từng lĩnh vực & chỉ số",
+      "num_questions": 13,
+      "max_points": 26.0
+    },
+    "S1": {
+      "factor": "S1",
+      "pillar": "S",
+      "category": "Xã hội",
+      "content": "1. Chính sách",
+      "num_questions": 10,
+      "max_points": 20.0
+    },
+    "S2": {
+      "factor": "S2",
+      "pillar": "S",
+      "category": "Xã hội",
+      "content": "2. Quy trình quản lý",
+      "num_questions": 19,
+      "max_points": 38.0
+    },
+    "S3": {
+      "factor": "S3",
+      "pillar": "S",
+      "category": "Xã hội",
+      "content": "3. Hiệu quả hoạt động theo từng lĩnh vực & chỉ số",
+      "num_questions": 12,
+      "max_points": 24.0
+    },
+    "G1": {
+      "factor": "G1",
+      "pillar": "G",
+      "category": "Quản trị \nCông ty",
+      "content": "1. Quyền của cổ đông trong QTCT",
+      "num_questions": 8,
+      "max_points": 16.0
+    },
+    "G2": {
+      "factor": "G2",
+      "pillar": "G",
+      "category": "Quản trị \nCông ty",
+      "content": "2. Đảm bảo vai trò của các bên liên quan trong QTCT",
+      "num_questions": 3,
+      "max_points": 6.0
+    },
+    "G3": {
+      "factor": "G3",
+      "pillar": "G",
+      "category": "Quản trị \nCông ty",
+      "content": "3. Công bố thông tin và minh bạch trong QTCT",
+      "num_questions": 9,
+      "max_points": 18.0
+    },
+    "G4": {
+      "factor": "G4",
+      "pillar": "G",
+      "category": "Quản trị \nCông ty",
+      "content": "4. Trách nhiệm của HĐQT trong QTCT",
+      "num_questions": 11,
+      "max_points": 22.0
+    },
+    "G5": {
+      "factor": "G5",
+      "pillar": "G",
+      "category": "Quản trị \nCông ty",
+      "content": "5. Môi trường kiểm soát",
+      "num_questions": 4,
+      "max_points": 8.0
+    }
+  },
+  "factor_rows": [
+    {
+      "factor": "E1",
+      "pillar": "E",
+      "category": "Môi trường",
+      "content": "1. Chính sách",
+      "num_questions": 6,
+      "max_points": 12.0
+    },
+    {
+      "factor": "E2",
+      "pillar": "E",
+      "category": "Môi trường",
+      "content": "2. Quy trình quản lý",
+      "num_questions": 12,
+      "max_points": 24.0
+    },
+    {
+      "factor": "E3",
+      "pillar": "E",
+      "category": "Môi trường",
+      "content": "3. Hiệu quả hoạt động theo từng lĩnh vực & chỉ số",
+      "num_questions": 13,
+      "max_points": 26.0
+    },
+    {
+      "factor": "S1",
+      "pillar": "S",
+      "category": "Xã hội",
+      "content": "1. Chính sách",
+      "num_questions": 10,
+      "max_points": 20.0
+    },
+    {
+      "factor": "S2",
+      "pillar": "S",
+      "category": "Xã hội",
+      "content": "2. Quy trình quản lý",
+      "num_questions": 19,
+      "max_points": 38.0
+    },
+    {
+      "factor": "S3",
+      "pillar": "S",
+      "category": "Xã hội",
+      "content": "3. Hiệu quả hoạt động theo từng lĩnh vực & chỉ số",
+      "num_questions": 12,
+      "max_points": 24.0
+    },
+    {
+      "factor": "G1",
+      "pillar": "G",
+      "category": "Quản trị \nCông ty",
+      "content": "1. Quyền của cổ đông trong QTCT",
+      "num_questions": 8,
+      "max_points": 16.0
+    },
+    {
+      "factor": "G2",
+      "pillar": "G",
+      "category": "Quản trị \nCông ty",
+      "content": "2. Đảm bảo vai trò của các bên liên quan trong QTCT",
+      "num_questions": 3,
+      "max_points": 6.0
+    },
+    {
+      "factor": "G3",
+      "pillar": "G",
+      "category": "Quản trị \nCông ty",
+      "content": "3. Công bố thông tin và minh bạch trong QTCT",
+      "num_questions": 9,
+      "max_points": 18.0
+    },
+    {
+      "factor": "G4",
+      "pillar": "G",
+      "category": "Quản trị \nCông ty",
+      "content": "4. Trách nhiệm của HĐQT trong QTCT",
+      "num_questions": 11,
+      "max_points": 22.0
+    },
+    {
+      "factor": "G5",
+      "pillar": "G",
+      "category": "Quản trị \nCông ty",
+      "content": "5. Môi trường kiểm soát",
+      "num_questions": 4,
+      "max_points": 8.0
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "Energy": {
+    "G": 0.3,
+    "S": 0.2,
+    "E": 0.5
+  },
+  "Materials": {
+    "G": 0.3,
+    "S": 0.2,
+    "E": 0.5
+  },
+  "Financials": {
+    "G": 0.6,
+    "S": 0.3,
+    "E": 0.1
+  },
+  "Information Technology": {
+    "G": 0.45,
+    "S": 0.45,
+    "E": 0.1
+  },
+  "Telecommunication services": {
+    "G": 0.35,
+    "S": 0.45,
+    "E": 0.2
+  },
+  "Consumer Staples": {
+    "G": 0.3,
+    "S": 0.35,
+    "E": 0.35
+  },
+  "Consumer Discretionary": {
+    "G": 0.3,
+    "S": 0.35,
+    "E": 0.35
+  },
+  "Industrials": {
+    "G": 0.3,
+    "S": 0.3,
+    "E": 0.4
+  },
+  "Real Estate": {
+    "G": 0.3,
+    "S": 0.3,
+    "E": 0.4
+  },
+  "Health care": {
+    "G": 0.3,
+    "S": 0.4,
+    "E": 0.3
+  },
+  "Utilities": {
+    "G": 0.4,
+    "S": 0.3,
+    "E": 0.3
+  }
+}
