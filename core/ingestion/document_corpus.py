@@ -12,6 +12,7 @@ from core.ingestion.document_classifier import DocumentClassifier, DocumentMetad
 from core.ingestion.pdf_parser import PDFParser
 from core.retrieval.chunk_labeler import ChunkLabeler
 from core.structure_builder import SectionBuilder
+from core.structure_builder.semantic_chunker import SemanticChunker
 from core.table_extraction import TableExtractor
 
 
@@ -41,6 +42,7 @@ class DocumentCorpus:
         self._section_cache = {}
         self._table_cache = {}
         self.section_builder = SectionBuilder()
+        self.semantic_chunker = SemanticChunker()
         self.table_extractor = TableExtractor()
         self.chunk_labeler = ChunkLabeler()
         for path in unique_paths:
@@ -230,6 +232,8 @@ class DocumentCorpus:
                 pages=pages,
                 is_low_value_page=self._is_low_value_page,
             )
+            # Split oversized sections into smaller coherent chunks
+            sections = self.semantic_chunker.chunk_sections(sections)
             sections.extend(self._get_tables(doc))
             sections = [self.chunk_labeler.annotate(section, doc=doc) for section in sections]
             self._section_cache[doc.path] = sections
@@ -373,6 +377,10 @@ def discover_related_pdf_paths(primary_pdf_path: str, company_name: str = "", ye
     company = (company_name or "").lower().strip()
     year_text = str(year) if year else ""
 
+    # If the folder name matches the company, include ALL PDFs in it
+    folder_name = os.path.basename(directory).lower()
+    folder_is_company = company and company in folder_name
+
     candidates = []
     for entry in sorted(os.listdir(directory)):
         if not entry.lower().endswith(".pdf"):
@@ -380,11 +388,16 @@ def discover_related_pdf_paths(primary_pdf_path: str, company_name: str = "", ye
         full_path = os.path.abspath(os.path.join(directory, entry))
         lowered = entry.lower()
 
-        same_company = not company or company in lowered
-        same_year = not year_text or re.search(rf"(?<!\d){re.escape(year_text)}(?!\d)", lowered)
-        if (include_primary and full_path == primary_abs) or (same_company and same_year):
+        if folder_is_company:
+            # All PDFs in a company folder are relevant
             candidates.append(full_path)
+        else:
+            same_company = not company or company in lowered
+            same_year = not year_text or re.search(rf"(?<!\d){re.escape(year_text)}(?!\d)", lowered)
+            if (include_primary and full_path == primary_abs) or (same_company and same_year):
+                candidates.append(full_path)
 
     if include_primary and primary_abs not in candidates:
         candidates.insert(0, primary_abs)
     return candidates
+

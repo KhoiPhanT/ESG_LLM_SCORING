@@ -1,5 +1,6 @@
 """
-Lexical retrieval engine with document-aware ranking and provenance.
+Hybrid retrieval engine with lexical + semantic search, document-aware ranking,
+and provenance tracking. Uses real embeddings when available.
 """
 from __future__ import annotations
 
@@ -80,10 +81,13 @@ class RetrievalEngine:
         "nhan vien",
     }
 
-    def __init__(self, corpus):
+    def __init__(self, corpus, industry_sector: str = ""):
         self.corpus = corpus
-        self.normalizer = TextNormalizer()
+        self.normalizer = TextNormalizer(industry_sector=industry_sector)
         self.query_builder = QuestionQueryBuilder()
+        # Pass industry to query builder's normalizer too
+        if industry_sector:
+            self.query_builder.normalizer.set_industry(industry_sector)
         self.reranker = RetrievalReranker()
         self._normalized_term_cache: dict[str, str] = {}
         self._windows: list[IndexedWindow] = []
@@ -92,12 +96,15 @@ class RetrievalEngine:
         self._chunk_type_index: dict[str, set[int]] = {}
         self._table_family_index: dict[str, set[int]] = {}
         self._build_index()
+
+        # Build semantic index with embedding cache key based on corpus
+        cache_key = self._corpus_cache_key()
         semantic_documents = [
             f"{window.normalized_title}\n{window.normalized_content}" for window in self._windows
         ]
-        self.semantic_index = SemanticIndex(semantic_documents)
+        self.semantic_index = SemanticIndex(semantic_documents, cache_key=cache_key)
 
-    def retrieve_for_rule(self, rule: dict, top_k: int = 6) -> dict:
+    def retrieve_for_rule(self, rule: dict, top_k: int = 10) -> dict:
         query = self.query_builder.build(rule, corpus=self.corpus)
         candidates = self._score_candidates(query, rule=rule)
         selected = self._select_candidates(candidates, rule=rule, top_k=top_k)
@@ -105,6 +112,95 @@ class RetrievalEngine:
             "query": query.to_dict(),
             "candidates": [candidate.to_dict() for candidate in selected],
         }
+
+    def retrieve_multi_query(self, rule: dict, sub_queries: list[str], top_k: int = 10) -> dict:
+        """
+        Run retrieval for multiple sub-queries and merge results.
+        Each sub-query retrieves independently, then results are merged
+        with deduplication and score boosting for chunks hit by multiple queries.
+        """
+        all_candidates: dict[str, dict] = {}  # chunk_id -> candidate dict
+        hit_counts: dict[str, int] = {}  # chunk_id -> number of queries that found it
+
+        # Always run the primary rule-based retrieval
+        primary = self.retrieve_for_rule(rule, top_k=top_k)
+        for cand in primary["candidates"]:
+            cid = cand["chunk_id"]
+            all_candidates[cid] = cand
+            hit_counts[cid] = hit_counts.get(cid, 0) + 1
+
+        # Run additional retrievals for each sub-query
+        for sub_query in sub_queries:
+            if sub_query == rule.get("question", ""):
+                continue  # Skip if same as original question
+
+            sub_candidates = self._retrieve_by_text(sub_query, rule, top_k=max(5, top_k // 2))
+            for cand in sub_candidates:
+                cid = cand["chunk_id"]
+                if cid in all_candidates:
+                    # Boost score for chunks found by multiple queries
+                    hit_counts[cid] = hit_counts.get(cid, 0) + 1
+                    existing = all_candidates[cid]
+                    existing["score"] = max(float(existing.get("score", 0)), float(cand.get("score", 0)))
+                else:
+                    all_candidates[cid] = cand
+                    hit_counts[cid] = 1
+
+        # Apply multi-query boost: chunks found by multiple queries get bonus
+        for cid, count in hit_counts.items():
+            if count > 1 and cid in all_candidates:
+                bonus = min(2.0, 0.5 * (count - 1))
+                all_candidates[cid]["score"] = round(
+                    float(all_candidates[cid].get("score", 0)) + bonus, 4
+                )
+                reasons = all_candidates[cid].get("reasons", [])
+                reasons.append(f"multi_query_boost={count}hits")
+                all_candidates[cid]["reasons"] = reasons
+
+        # Sort and select top_k
+        merged = sorted(all_candidates.values(), key=lambda x: float(x.get("score", 0)), reverse=True)
+        selected = merged[:top_k]
+
+        return {
+            "query": primary["query"],
+            "sub_query_count": len(sub_queries) + 1,
+            "total_unique_candidates": len(all_candidates),
+            "candidates": selected,
+        }
+
+    def _retrieve_by_text(self, query_text: str, rule: dict, top_k: int = 5) -> list[dict]:
+        """
+        Retrieve candidates using free-form text as query.
+        Used for sub-queries and adaptive retry.
+        """
+        # Build a minimal query from the text
+        from core.query_builder.question_query_builder import RetrievalQuery
+
+        normalized = self.normalizer.normalize_for_search(query_text)
+        tokens = [t for t in normalized.split() if len(t) >= 3]
+        phrases = []
+        primary = tokens[:8]
+        secondary = tokens[8:15]
+
+        # Also try to match phrase_library items
+        for phrase in self.query_builder.phrase_library:
+            phrase_norm = self.normalizer.normalize_for_search(phrase)
+            if phrase_norm in normalized:
+                phrases.append(phrase_norm)
+
+        query = RetrievalQuery(
+            question_id=rule.get("id", ""),
+            question_text=query_text,
+            exact_phrases=phrases,
+            primary_terms=primary,
+            secondary_terms=secondary,
+            intent_terms=[],
+            preferred_document_types=rule.get("preferred_document_types", []),
+        )
+
+        candidates = self._score_candidates(query, rule=rule)
+        selected = self._select_candidates(candidates, rule=rule, top_k=top_k)
+        return [c.to_dict() for c in selected]
 
     def _score_candidates(self, query, rule: dict) -> list[RetrievalCandidate]:
         candidates = []
@@ -322,6 +418,12 @@ class RetrievalEngine:
             for token in self._extract_index_tokens(normalized_term):
                 candidate_indexes.update(self._token_index.get(token, set()))
 
+            # Also search industry-specific expansions
+            for expansion in self.normalizer.get_industry_expansions(term):
+                exp_normalized = self._normalize_term(expansion)
+                if exp_normalized and exp_normalized in self._token_index:
+                    candidate_indexes.update(self._token_index[exp_normalized])
+
         if str(rule.get("sub_category", "") or "") == "Hiệu quả":
             candidate_indexes.update(self._chunk_type_index.get("table_section", set()))
             factor = str(rule.get("factor", "") or "")
@@ -357,12 +459,19 @@ class RetrievalEngine:
 
         preferred_pool = self._fallback_candidate_indexes(query)
         semantic_query = self._build_semantic_query(query, rule)
-        top_k = 24 if str(rule.get("sub_category", "") or "") == "Hiệu quả" else 16
+        top_k = 30 if str(rule.get("sub_category", "") or "") == "Hiệu quả" else 20
+        min_score = 0.08 if str(rule.get("sub_category", "") or "") == "Hiệu quả" else 0.06
+
+        # Use lower thresholds with real embeddings since scores are more meaningful
+        if self.semantic_index.has_embeddings():
+            min_score = max(0.2, min_score)
+            top_k = min(top_k + 10, 40)
+
         matches = self.semantic_index.search(
             semantic_query,
             allowed_indexes=preferred_pool,
             top_k=top_k,
-            min_score=0.1 if str(rule.get("sub_category", "") or "") == "Hiệu quả" else 0.08,
+            min_score=min_score,
         )
         return {match.window_index: match.score for match in matches}
 
@@ -436,9 +545,16 @@ class RetrievalEngine:
         if intent_hits:
             score += 0.45 * min(4, len(intent_hits))
             reasons.append(f"intent_hits={len(intent_hits)}")
+
+        # Higher weight for semantic score when using real embeddings
         if semantic_score > 0:
-            score += min(1.6, semantic_score * 2.4)
+            if self.semantic_index.has_embeddings():
+                semantic_contribution = min(3.0, semantic_score * 5.0)
+            else:
+                semantic_contribution = min(1.6, semantic_score * 2.4)
+            score += semantic_contribution
             reasons.append(f"semantic_score={semantic_score:.2f}")
+
         if family_match_bonus > 0:
             score += family_match_bonus
             reasons.append(f"table_family_bonus={table_family}")
@@ -585,3 +701,12 @@ class RetrievalEngine:
             return candidate.table_family == "voting_results"
 
         return False
+
+    def _corpus_cache_key(self) -> str:
+        """Generate a cache key from corpus documents for embedding caching."""
+        import hashlib
+        parts = []
+        for doc in self.corpus.documents:
+            parts.append(f"{doc.path}:{doc.metadata.file_hash[:12]}")
+        combined = "|".join(sorted(parts))
+        return hashlib.sha256(combined.encode()).hexdigest()[:20]

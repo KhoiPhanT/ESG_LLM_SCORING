@@ -95,7 +95,7 @@ def run_pipeline(
     print(f"  Từ khóa rủi ro: {risk_count} ({risk_details})")
     print(f"  Chứng chỉ ISO : {detected_isos if detected_isos else 'Không phát hiện'}")
 
-    retrieval_audit = RetrievalAudit(corpus)
+    retrieval_audit = RetrievalAudit(corpus, industry_sector=industry_sector)
     audit_sample_rules = parser.parse_vnsi_rules().get("screening", []) + parser.parse_vnsi_rules().get("scoring", [])[:15]
     benchmark_path = "refactor/goldsets/performance_goldset_acb_2024.json"
     retrieval_audit_result = retrieval_audit.audit_rules(
@@ -127,7 +127,7 @@ def run_pipeline(
     llm = OllamaClient(model="qwen3:30b")
 
     # 3a. Screening
-    screener = ScreeningModule("outputs/vnsi_rules.json", llm_client=llm, corpus=corpus)
+    screener = ScreeningModule("outputs/vnsi_rules.json", llm_client=llm, corpus=corpus, industry_sector=industry_sector)
     screening_results = screener.evaluate(full_text)
 
     # 3b. VNSI Scoring (82 câu hỏi)
@@ -138,8 +138,9 @@ def run_pipeline(
         structure_path="outputs/scoring_structure.json",
         llm_client=llm,
         corpus=corpus,
+        industry_sector=industry_sector,
     )
-    scores = scorer.score_all_questions(full_text, industry_sector=industry_sector)
+    scores = scorer.score_all_questions(full_text, industry_sector=industry_sector, company_name=company_name)
     scoring_review_list = ReviewConsole().build_scoring_review_list(scores.get("details", []))
 
     # Áp dụng penalties
@@ -245,7 +246,7 @@ if __name__ == "__main__":
         sector = sys.argv[3] if len(sys.argv) > 3 else "Financials"
         yr = int(sys.argv[4]) if len(sys.argv) > 4 else 2024
     else:
-        pdf = "inputs/ACB/reports/ACB_Baocaothuongnien_2024.pdf"
+        pdf = "inputs/ACB/ACB_Baocaothuongnien_2024.pdf"
         company = "ACB"
         sector = "Financials"
         yr = 2024

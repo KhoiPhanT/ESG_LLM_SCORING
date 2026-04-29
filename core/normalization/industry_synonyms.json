@@ -1,0 +1,53 @@
+{
+  "Financials": {
+    "môi trường": ["tín dụng xanh", "cho vay xanh", "green credit", "green bond", "trái phiếu xanh", "tài chính xanh", "green finance", "rủi ro môi trường", "environmental risk", "rủi ro khí hậu", "climate risk"],
+    "phát thải": ["carbon footprint", "dấu chân carbon", "lượng khí thải", "carbon emission", "carbon offset", "bù đắp carbon", "net zero"],
+    "năng lượng": ["tiêu thụ điện năng", "điện năng tiêu thụ", "sử dụng năng lượng", "energy consumption", "renewable energy", "năng lượng tái tạo", "solar", "điện mặt trời"],
+    "chất thải": ["rác thải văn phòng", "rác thải điện tử", "e-waste", "giấy tái chế", "tái chế"],
+    "an toàn lao động": ["sức khỏe nghề nghiệp", "occupational health", "tai nạn nghề nghiệp", "bảo hiểm lao động", "phúc lợi nhân viên"],
+    "đào tạo": ["phát triển nguồn nhân lực", "nâng cao năng lực", "chương trình đào tạo", "training program", "e-learning", "capacity building"],
+    "quản trị": ["quản trị công ty", "corporate governance", "kiểm soát nội bộ", "internal control", "tuân thủ", "compliance"],
+    "cổ đông": ["nhà đầu tư", "investor", "cổ phiếu", "shares", "vốn điều lệ", "charter capital"],
+    "trách nhiệm xã hội": ["CSR", "corporate social responsibility", "hoạt động cộng đồng", "community engagement", "từ thiện", "charity", "tình nguyện", "volunteer"],
+    "người lao động": ["nhân sự", "human resources", "cán bộ nhân viên", "workforce", "lực lượng lao động", "nhân viên ngân hàng"]
+  },
+  "Energy": {
+    "môi trường": ["đánh giá tác động môi trường", "environmental impact assessment", "EIA", "ĐTM", "quản lý môi trường", "environmental management system", "ISO 14001"],
+    "phát thải": ["khí nhà kính", "GHG", "scope 1", "scope 2", "scope 3", "carbon capture", "thu giữ carbon", "methane", "metan", "NOx", "SOx", "bụi mịn", "PM2.5"],
+    "năng lượng": ["nhiên liệu hóa thạch", "fossil fuel", "than đá", "coal", "dầu khí", "petroleum", "gas", "LNG", "năng lượng tái tạo", "renewable", "wind power", "điện gió", "solar power"],
+    "nước": ["nước thải công nghiệp", "industrial wastewater", "xử lý nước thải", "water treatment", "nước ngầm", "groundwater"],
+    "chất thải": ["chất thải nguy hại", "hazardous waste", "chất thải công nghiệp", "industrial waste", "bùn thải", "sludge", "tro bay", "fly ash"],
+    "an toàn lao động": ["an toàn mỏ", "mine safety", "an toàn giàn khoan", "rig safety", "PCCC", "phòng cháy chữa cháy", "fire prevention"]
+  },
+  "Materials": {
+    "môi trường": ["quản lý tài nguyên", "resource management", "khai thác bền vững", "sustainable mining", "phục hồi mỏ", "mine rehabilitation"],
+    "phát thải": ["bụi", "dust", "tiếng ồn", "noise pollution", "ô nhiễm không khí", "air pollution"],
+    "nước": ["nước tuần hoàn", "recycled water", "tiêu thụ nước", "water consumption", "nước sản xuất", "process water"],
+    "chất thải": ["chất thải rắn", "solid waste", "phế liệu", "scrap", "tái chế kim loại", "metal recycling", "bãi thải", "tailings"],
+    "an toàn lao động": ["an toàn hóa chất", "chemical safety", "bảo hộ lao động", "PPE", "personal protective equipment"]
+  },
+  "Information Technology": {
+    "môi trường": ["data center xanh", "green data center", "PUE", "power usage effectiveness", "tiết kiệm điện", "energy efficiency"],
+    "phát thải": ["carbon offset", "bù trừ carbon", "renewable energy certificate", "REC"],
+    "chất thải": ["rác thải điện tử", "e-waste", "thiết bị cũ", "used equipment", "tái chế thiết bị"],
+    "an toàn lao động": ["ergonomics", "nhân trắc học", "sức khỏe tinh thần", "mental health", "work-life balance"],
+    "đào tạo": ["reskilling", "upskilling", "chuyển đổi số", "digital transformation", "AI training"]
+  },
+  "Consumer Staples": {
+    "môi trường": ["nông nghiệp bền vững", "sustainable agriculture", "organic", "hữu cơ", "nguồn gốc xuất xứ", "traceability"],
+    "chất thải": ["bao bì tái chế", "recyclable packaging", "giảm nhựa", "plastic reduction", "đóng gói xanh", "green packaging", "single-use plastic", "nhựa dùng một lần"],
+    "nước": ["tưới tiêu", "irrigation", "nước nông nghiệp", "agricultural water"],
+    "an toàn lao động": ["an toàn thực phẩm", "food safety", "HACCP", "GMP", "ISO 22000", "vệ sinh an toàn thực phẩm"]
+  },
+  "_default": {
+    "môi trường": ["environmental", "green", "xanh", "bền vững", "sustainable", "ESG"],
+    "phát thải": ["emission", "carbon", "GHG", "greenhouse gas"],
+    "năng lượng": ["energy", "power", "electricity", "điện"],
+    "nước": ["water", "wastewater"],
+    "chất thải": ["waste", "recycling", "tái chế"],
+    "đào tạo": ["training", "development", "capacity building"],
+    "an toàn lao động": ["occupational health and safety", "OHS", "workplace safety"],
+    "trách nhiệm xã hội": ["CSR", "social responsibility", "community"],
+    "quản trị": ["governance", "compliance", "tuân thủ"]
+  }
+}

@@ -10,9 +10,9 @@ from core.audit.retrieval_benchmark import RetrievalBenchmark
 
 
 class RetrievalAudit:
-    def __init__(self, corpus):
+    def __init__(self, corpus, industry_sector: str = ""):
         self.corpus = corpus
-        self.engine = RetrievalEngine(corpus)
+        self.engine = RetrievalEngine(corpus, industry_sector=industry_sector)
 
     def audit_rules(
         self,

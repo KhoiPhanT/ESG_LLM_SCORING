@@ -1,7 +1,2 @@
-"""
-Evidence extraction helpers.
-"""
-
-from .evidence_extractor import EvidenceExtractor
-
-__all__ = ["EvidenceExtractor"]
+from core.evidence.evidence_extractor import EvidenceExtractor
+from core.evidence.evidence_verifier import EvidenceVerifier

@@ -1,11 +1,13 @@
 """
 VNSI Scorer — Chấm điểm ESG bám sát workbook VNSI, ưu tiên bằng chứng.
+Adaptive RAG: multi-query retrieval + iterative retry for low-confidence answers.
 """
 import json
 import os
 import re
 
 from core.evidence import EvidenceExtractor
+from core.query_builder.query_decomposer import QueryDecomposer
 from core.retrieval.retrieval_engine import RetrievalEngine
 from core.resolution import AnswerResolver
 from core.scoring.scoring_engine import ScoringEngine
@@ -19,9 +21,11 @@ class VNSIScorer:
         structure_path="outputs/scoring_structure.json",
         llm_client=None,
         corpus=None,
+        industry_sector: str = "",
     ):
         self.llm_client = llm_client
         self.corpus = corpus
+        self.industry_sector = industry_sector
         self.scoring_rules = self._load_json(rules_path).get("scoring", [])
         self.industry_weights = self._load_json(weights_path)
         self.scoring_structure = self._load_json(structure_path)
@@ -29,8 +33,9 @@ class VNSIScorer:
             self.scoring_structure = {"factor_max_scores": {}}
         self.factor_max_scores = self.scoring_structure.get("factor_max_scores", {})
         self.derived_factor_max_scores = self._derive_factor_max_scores()
-        self.retrieval_engine = RetrievalEngine(corpus) if corpus else None
-        self.evidence_extractor = EvidenceExtractor(llm_client=llm_client)
+        self.retrieval_engine = RetrievalEngine(corpus, industry_sector=industry_sector) if corpus else None
+        self.query_decomposer = QueryDecomposer()
+        self.evidence_extractor = EvidenceExtractor(llm_client=llm_client, enable_self_consistency=True)
         self.answer_resolver = AnswerResolver()
         self.scoring_engine = ScoringEngine()
 
@@ -93,16 +98,125 @@ class VNSIScorer:
         return list(dict.fromkeys(keywords)) or ["phát triển bền vững"]
 
     def _build_context(self, rule, report_text):
+        """Phase 1 of Adaptive RAG: multi-query retrieval for broad coverage."""
         if not self.retrieval_engine:
-            return {"context": report_text[:12000], "sections": []}
+            return {"context": report_text[:25000], "sections": [], "retrieval_meta": {}}
 
-        retrieval = self.retrieval_engine.retrieve_for_rule(rule, top_k=6)
+        # Decompose question into sub-queries
+        decomposition = self.query_decomposer.decompose(rule)
+
+        if decomposition.is_compound and len(decomposition.sub_queries) > 1:
+            # Multi-query retrieval for compound questions
+            retrieval = self.retrieval_engine.retrieve_multi_query(
+                rule, decomposition.sub_queries, top_k=10
+            )
+        else:
+            # Standard single-query retrieval
+            retrieval = self.retrieval_engine.retrieve_for_rule(rule, top_k=10)
+
         sections = retrieval["candidates"]
         if sections:
-            context = "\n---\n".join(self._format_section(section) for section in sections)[:16000]
+            context = "\n---\n".join(self._format_section(section) for section in sections)[:30000]
         else:
-            context = report_text[:12000]
-        return {"context": context, "sections": sections}
+            context = report_text[:25000]
+
+        return {
+            "context": context,
+            "sections": sections,
+            "retrieval_meta": {
+                "sub_queries": decomposition.sub_queries,
+                "is_compound": decomposition.is_compound,
+                "total_candidates": retrieval.get("total_unique_candidates", len(sections)),
+            },
+        }
+
+    def _adaptive_retry(self, rule, report_text, first_extraction, first_context_bundle):
+        """
+        Phase 2 of Adaptive RAG: when first pass has low confidence or
+        ungrounded evidence, ask LLM what additional info is needed,
+        then retrieve again with expanded context.
+        """
+        if not self.retrieval_engine or not self.llm_client:
+            return None
+
+        # Ask LLM: what info are you missing?
+        question = rule.get("question", "")
+        first_answer = first_extraction.get("answer", "NULL")
+        first_evidence = first_extraction.get("raw_evidence", "")
+
+        hint_prompt = f"""
+You previously answered the following ESG question but your evidence was weak.
+Question: {question}
+Your answer: {first_answer}
+Your evidence: {first_evidence or "None"}
+
+What SPECIFIC information would help you answer more confidently?
+Think step-by-step concisely, then respond with 1-2 short search queries in Vietnamese (one per line). Be specific.
+Example: "chính sách quản lý nước thải" or "tỷ lệ phát thải CO2 năm 2024"
+
+Search queries:"""
+
+        messages = [{"role": "user", "content": hint_prompt}]
+        raw_hint = self.llm_client._call(messages, temperature=0.1, max_tokens=1536)
+        if not raw_hint:
+            return None
+
+        # Parse the hint into search queries
+        hint_queries = [
+            line.strip().strip('"').strip("'").strip("-").strip()
+            for line in raw_hint.strip().split("\n")
+            if line.strip() and len(line.strip()) > 5
+        ][:3]  # Max 3 retry queries
+
+        if not hint_queries:
+            return None
+
+        # Retrieve additional context using LLM's hints
+        additional_sections = []
+        for hint_query in hint_queries:
+            new_candidates = self.retrieval_engine._retrieve_by_text(
+                hint_query, rule, top_k=5
+            )
+            additional_sections.extend(new_candidates)
+
+        if not additional_sections:
+            return None
+
+        # Deduplicate against existing sections
+        existing_chunk_ids = {
+            s.get("chunk_id") for s in first_context_bundle.get("sections", [])
+        }
+        new_sections = [
+            s for s in additional_sections
+            if s.get("chunk_id") not in existing_chunk_ids
+        ]
+
+        if not new_sections:
+            return None
+
+        # Build expanded context: original + new sections
+        all_sections = first_context_bundle.get("sections", []) + new_sections
+        expanded_context = "\n---\n".join(
+            self._format_section(s) for s in all_sections
+        )[:30000]
+
+        expanded_bundle = {
+            "context": expanded_context,
+            "sections": all_sections,
+            "retrieval_meta": {
+                "is_retry": True,
+                "retry_queries": hint_queries,
+                "new_sections_added": len(new_sections),
+            },
+        }
+
+        # Re-extract with expanded context (full pipeline including self-consistency)
+        retry_extraction = self.evidence_extractor.extract(rule, expanded_bundle)
+        return {
+            "extraction": retry_extraction,
+            "context_bundle": expanded_bundle,
+            "hint_queries": hint_queries,
+        }
 
     def _prerequisite_satisfied(self, rule, answer_registry):
         prerequisite = rule.get("prerequisite")
@@ -147,7 +261,7 @@ class VNSIScorer:
             factor_max[factor] = round(factor_max.get(factor, 0.0) + float(rule.get("max_score", 0.0) or 0.0), 4)
         return factor_max
 
-    def score_all_questions(self, report_text, industry_sector="Financials"):
+    def score_all_questions(self, report_text, industry_sector="Financials", company_name="Company"):
         if not self.scoring_rules:
             print("  [WARN] Không có scoring rules")
             return self._empty_result(industry_sector)
@@ -163,9 +277,31 @@ class VNSIScorer:
         all_details = []
         answer_registry = {}
 
+        progress_file = f"outputs/cache/{company_name}_scoring_progress.json"
+        if os.path.exists(progress_file):
+            try:
+                with open(progress_file, 'r', encoding='utf-8') as f:
+                    progress = json.load(f)
+                    factor_scores = progress.get("factor_scores", {})
+                    all_details = progress.get("all_details", [])
+                    answer_registry = progress.get("answer_registry", {})
+                print(f"  [RESUME] Đã nạp lại kết quả của {len(all_details)} câu hỏi từ lần chạy trước.")
+            except Exception as e:
+                print(f"  [WARN] Không thể đọc file tiến độ: {e}")
+
+        questions_processed_in_this_run = 0
+
         for i, rule in enumerate(self.scoring_rules):
             q_id = rule["id"]
             factor = rule.get("factor", "")
+            
+            canonical_qid = self._canonical_question_id(q_id)
+            if canonical_qid in answer_registry:
+                # Tìm answer đã lưu để in ra cho đẹp
+                saved_ans = answer_registry[canonical_qid].get("answer", "SKIP")
+                print(f"    [{i+1}/{len(self.scoring_rules)}] {q_id}... → {saved_ans} (Đã chấm)")
+                continue
+
             print(f"    [{i+1}/{len(self.scoring_rules)}] {q_id}...", end=" ", flush=True)
 
             satisfied, prerequisite_note = self._prerequisite_satisfied(rule, answer_registry)
@@ -190,9 +326,23 @@ class VNSIScorer:
                 factor_scores.setdefault(factor, 0.0)
                 continue
 
+            # ═══ Phase 1: Multi-query retrieval + first LLM pass ═══
             context_bundle = self._build_context(rule, report_text)
             extraction = self.evidence_extractor.extract(rule, context_bundle)
             resolution = self.answer_resolver.resolve(rule, extraction)
+
+            # ═══ Phase 2: Adaptive retry if needed ═══
+            retry_used = False
+            needs_retry = self._should_retry(extraction, resolution)
+            if needs_retry:
+                print("↻", end=" ", flush=True)
+                retry_result = self._adaptive_retry(rule, report_text, extraction, context_bundle)
+                if retry_result:
+                    retry_used = True
+                    extraction = retry_result["extraction"]
+                    context_bundle = retry_result["context_bundle"]
+                    resolution = self.answer_resolver.resolve(rule, extraction)
+
             score_result = self.scoring_engine.score_rule(rule, resolution)
 
             answer_letter = score_result["answer"]
@@ -201,8 +351,19 @@ class VNSIScorer:
             final_score = score_result["score"]
             evidence_present = score_result["evidence_present"]
 
+            retry_tag = " [retry]" if retry_used else ""
             display_answer = ",".join(selected_options) if selected_options else answer_letter
-            print(f"→ {display_answer} ({final_score:+.2f})")
+            print(f"→ {display_answer} ({final_score:+.2f}){retry_tag}")
+            
+            # Print reason and evidence for better live feedback
+            reason = resolution.get("reason", "")
+            if reason:
+                print(f"      Lý do: {reason}")
+            
+            evidence = extraction.get("raw_evidence")
+            if evidence and evidence.upper() != "NULL":
+                clean_ev = str(evidence).replace('\n', ' ').strip()
+                print(f"      Bằng chứng: {clean_ev}")
 
             factor_scores[factor] = factor_scores.get(factor, 0.0) + final_score
             self._register_answer(answer_registry, q_id, answer_letter, selected_options)
@@ -223,6 +384,10 @@ class VNSIScorer:
                 "evidence": extraction.get("raw_evidence"),
                 "evidence_items": resolution["evidence_items"],
                 "evidence_present": evidence_present,
+                "evidence_verification": extraction.get("evidence_verification"),
+                "consistency_check": extraction.get("consistency_check"),
+                "retry_used": retry_used,
+                "retrieval_meta": context_bundle.get("retrieval_meta", {}),
                 "source_sections": [
                     {
                         "source_file": section["source_file"],
@@ -234,6 +399,25 @@ class VNSIScorer:
                     for section in context_bundle["sections"]
                 ],
             })
+
+            # Save progress after each question
+            try:
+                with open(progress_file, 'w', encoding='utf-8') as f:
+                    json.dump({
+                        "factor_scores": factor_scores,
+                        "all_details": all_details,
+                        "answer_registry": answer_registry
+                    }, f, ensure_ascii=False, indent=2)
+            except Exception:
+                pass
+            
+            questions_processed_in_this_run += 1
+            if questions_processed_in_this_run % 8 == 0:
+                print(f"\n  [TẢN NHIỆT] Đã chạy xong {questions_processed_in_this_run} câu. Máy sẽ nghỉ 8 phút để hạ nhiệt...")
+                print(f"  (Bạn có thể nhấn Ctrl+C để dừng hẳn, tiến trình đã được tự động lưu)")
+                import time
+                time.sleep(8 * 60)
+                print("  [TẢN NHIỆT] Đã nghỉ xong, tiếp tục phân tích!\n")
 
         factor_percentages = {}
         pillar_groups = {"E": [], "S": [], "G": []}
@@ -306,3 +490,36 @@ class VNSIScorer:
             f"PAGES: {section['page_start']}-{section['page_end']} | SCORE: {section.get('score', 0):.2f}]\n"
             f"{section['content']}"
         )
+
+    def _should_retry(self, extraction: dict, resolution: dict) -> bool:
+        """
+        Determine if adaptive retry is needed.
+        Only retry when there's signal that the answer might improve with more context.
+        """
+        answer = extraction.get("answer", "NULL")
+        status = extraction.get("status", "")
+        confidence = resolution.get("confidence", 0.0)
+
+        # Don't retry NULL/SKIP — these likely mean the question is genuinely unanswerable
+        if answer in {"", "NULL", "SKIP"}:
+            return False
+
+        # Retry if evidence was hallucinated (ungrounded)
+        verification = extraction.get("evidence_verification")
+        if verification and not verification.get("grounded", True):
+            return True
+
+        # Retry if self-consistency check found conflict
+        consistency = extraction.get("consistency_check")
+        if consistency and consistency.get("conflict", False):
+            return True
+
+        # Retry if confidence is very low despite having an answer
+        if confidence < 0.35 and answer not in {"", "NULL", "SKIP"}:
+            return True
+
+        # Retry if weakly_supported
+        if status == "weakly_supported":
+            return True
+
+        return False

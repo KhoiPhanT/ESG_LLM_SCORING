@@ -9,11 +9,11 @@ from core.retrieval.retrieval_engine import RetrievalEngine
 
 
 class ScreeningModule:
-    def __init__(self, rules_path="outputs/vnsi_rules.json", llm_client=None, corpus=None):
+    def __init__(self, rules_path="outputs/vnsi_rules.json", llm_client=None, corpus=None, industry_sector: str = ""):
         self.llm_client = llm_client
         self.corpus = corpus
         self.screening_rules = self._load_rules(rules_path)
-        self.retrieval_engine = RetrievalEngine(corpus) if corpus else None
+        self.retrieval_engine = RetrievalEngine(corpus, industry_sector=industry_sector) if corpus else None
 
     def _load_rules(self, path):
         if not os.path.exists(path):

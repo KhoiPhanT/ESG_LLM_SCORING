@@ -17,6 +17,11 @@ class PLS_SEM_Model:
 
     def load_data(self, companies=None, min_year=2015):
         """Load dữ liệu từ Excel, filter theo companies và năm."""
+        import os
+        if not os.path.exists(self.data_path):
+            print(f"  [PLS-SEM] Bỏ qua phân tích nhân quả vì không tìm thấy file dữ liệu: {self.data_path}")
+            return None
+            
         df = pd.read_excel(self.data_path, sheet_name="Final - stata")
 
         # Filter
