@@ -10,6 +10,8 @@ from dataclasses import dataclass
 
 import numpy as np
 
+from core.cache import CacheManager
+
 
 @dataclass
 class SemanticMatch:
@@ -34,6 +36,7 @@ class EmbeddingIndex:
         self.enabled = bool(self.documents)
         self.model_name = model_name or self.DEFAULT_MODEL
         self.cache_key = cache_key
+        self.cache_manager = CacheManager(run_key="embedding_index")
         self.model = None
         self.index = None
         self.document_embeddings: np.ndarray | None = None
@@ -82,6 +85,13 @@ class EmbeddingIndex:
             self._dimension = cached.shape[1]
             self._build_faiss_index(cached)
             print(f"  [EMBEDDING] Loaded cached embeddings: {cached.shape}")
+            self.cache_manager.record(
+                "embedding_index",
+                "hit",
+                "embedding_index_v2",
+                self._cache_fingerprint(),
+                path=self._cache_path(),
+            )
             return
 
         self._load_model()
@@ -125,25 +135,46 @@ class EmbeddingIndex:
         from sentence_transformers import SentenceTransformer
 
         print(f"  [EMBEDDING] Loading model {self.model_name}...")
-        self.model = SentenceTransformer(self.model_name)
+        local_only = os.environ.get("ESG_EMBEDDING_LOCAL_ONLY", "1") != "0"
+        if local_only:
+            print("  [EMBEDDING] Offline local cache mode enabled")
+        self.model = SentenceTransformer(
+            self.model_name,
+            local_files_only=local_only,
+        )
 
     def _cache_path(self) -> str:
-        import hashlib
-
-        content_hash = hashlib.sha256(
-            f"{self.cache_key}:{len(self.documents)}:{self.model_name}".encode()
-        ).hexdigest()[:16]
+        content_hash = self._cache_fingerprint()[:16]
         return os.path.join(self.CACHE_DIR, f"emb_{content_hash}.npy")
+
+    def _cache_fingerprint(self) -> str:
+        return CacheManager.hash_json({
+            "schema_version": "embedding_index_v2",
+            "cache_key": self.cache_key,
+            "document_count": len(self.documents),
+            "model_name": self.model_name,
+        })
 
     def _save_cache(self, embeddings: np.ndarray) -> None:
         if not self.cache_key:
             return
         cache_path = self._cache_path()
         np.save(cache_path, embeddings)
+        self.cache_manager.record(
+            "embedding_index",
+            "rebuilt",
+            "embedding_index_v2",
+            self._cache_fingerprint(),
+            path=cache_path,
+            reason="forced_rebuild" if CacheManager.is_forced("embeddings") else "missing_or_stale_cache",
+        )
         print(f"  [EMBEDDING] Cached embeddings to {cache_path}")
 
     def _load_cache(self) -> np.ndarray | None:
         if not self.cache_key:
+            return None
+        if CacheManager.is_forced("embeddings"):
+            print("  [EMBEDDING] Cache forced rebuild")
             return None
         cache_path = self._cache_path()
         if not os.path.exists(cache_path):

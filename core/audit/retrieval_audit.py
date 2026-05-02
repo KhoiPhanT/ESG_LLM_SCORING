@@ -10,9 +10,19 @@ from core.audit.retrieval_benchmark import RetrievalBenchmark
 
 
 class RetrievalAudit:
-    def __init__(self, corpus, industry_sector: str = ""):
+    def __init__(
+        self,
+        corpus,
+        industry_sector: str = "",
+        target_year: int | None = None,
+        retrieval_engine=None,
+    ):
         self.corpus = corpus
-        self.engine = RetrievalEngine(corpus, industry_sector=industry_sector)
+        self.engine = retrieval_engine or RetrievalEngine(
+            corpus,
+            industry_sector=industry_sector,
+            target_year=target_year,
+        )
 
     def audit_rules(
         self,
@@ -23,7 +33,11 @@ class RetrievalAudit:
     ) -> dict:
         selected_rules = rules[:sample_size] if sample_size else rules
         entries = []
-        for rule in selected_rules:
+        for index, rule in enumerate(selected_rules, start=1):
+            print(
+                f"  [RETRIEVAL AUDIT] {index}/{len(selected_rules)} {rule.get('id')}",
+                flush=True,
+            )
             retrieval = self.engine.retrieve_for_rule(rule, top_k=top_k)
             candidates = retrieval["candidates"]
             low_value_ratio = (

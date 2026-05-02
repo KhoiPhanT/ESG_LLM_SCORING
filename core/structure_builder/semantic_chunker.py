@@ -13,9 +13,9 @@ class SemanticChunker:
 
     # Target chunk size in characters (roughly 400-600 tokens for Vietnamese)
     TARGET_CHUNK_SIZE = 2000
-    MAX_CHUNK_SIZE = 4000
+    MAX_CHUNK_SIZE = 5000
     MIN_CHUNK_SIZE = 300
-    OVERLAP_SIZE = 200
+    OVERLAP_SIZE = 300
 
     def chunk_sections(self, sections: list[dict], embedding_model=None) -> list[dict]:
         """

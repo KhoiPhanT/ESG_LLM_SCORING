@@ -7,6 +7,8 @@ import re
 
 import pandas as pd
 
+from core.scoring.score_utils import parse_score_value
+
 
 class VNSIExcelParser:
     def __init__(self, file_path):
@@ -77,12 +79,14 @@ class VNSIExcelParser:
                 entry["sub_category"] = self._infer_sub_category(entry["pillar"], factor)
                 entry["is_multi_select"] = (
                     "có thể chọn nhiều đáp án" in options.lower()
-                    or self._is_implicit_cumulative(logic)
+                    or self._is_fractional_cumulative(logic)
                 )
                 entry["requires_evidence"] = "dẫn chứng" in options.lower()
                 entry["prerequisite"] = self._extract_prerequisite(question)
                 entry["base_max_score"] = self._infer_base_max_score(logic, options)
                 entry["max_score"] = self._compute_max_score(logic, options)
+                entry["question_type"] = self._infer_question_type(question, options, logic)
+                entry["time_policy"] = self._infer_time_policy(question, options, logic)
                 if factor in factor_max_scores:
                     entry["factor_max_score"] = factor_max_scores[factor]["max_points"]
 
@@ -218,9 +222,9 @@ class VNSIExcelParser:
         if not logic_text or logic_text == "nan":
             return 0.0
 
-        frac_match = re.search(r"([+-]?\d+(?:[.,]\d+)?)\s*trên\s*1\s*yêu cầu", logic_text, re.IGNORECASE)
+        frac_match = re.search(r"([+-]?\d+(?:[.,]\d+)?)\s*trên\s*1\s*(?:yêu cầu|điều kiện)", logic_text, re.IGNORECASE)
         if frac_match:
-            per_item = float(frac_match.group(1).replace(",", "."))
+            per_item = parse_score_value(frac_match.group(1))
             option_count = len(re.findall(r"(^|\n)([A-Z])[\.\)]", options_text))
             return round(per_item * option_count, 4)
 
@@ -228,9 +232,13 @@ class VNSIExcelParser:
         for line in logic_text.splitlines():
             match = re.match(r"\s*[A-Z][\.\)]\s*([+-]?\d+(?:[.,]\d+)?)", line.strip())
             if match:
-                score = float(match.group(1).replace(",", "."))
+                score = parse_score_value(match.group(1))
                 if score > 0:
                     letter_scores.append(score)
+        
+        if "đề cập số liệu" in logic_text.lower():
+            letter_scores.append(1.0)
+            
         return max(letter_scores, default=0.0)
 
     def _is_implicit_cumulative(self, logic):
@@ -238,22 +246,28 @@ class VNSIExcelParser:
         positive_count = 0
         for line in str(logic or "").splitlines():
             m = re.match(r"\s*[A-Z][.\)]\s*([+-]?\d+(?:[.,]\d+)?)", line.strip())
-            if m and float(m.group(1).replace(",", ".")) > 0:
+            if m and parse_score_value(m.group(1)) > 0:
                 positive_count += 1
         return positive_count >= 2
 
+    def _is_fractional_cumulative(self, logic):
+        return bool(re.search(r"[+-]?\d+(?:[.,]\d+)?\s*trên\s*1\s*(?:yêu cầu|điều kiện)", str(logic or ""), re.IGNORECASE))
+
     def _compute_max_score(self, logic, options):
-        """Tính max_score: single-select = max dương, cumulative = tổng dương."""
+        """Tính max_score bám workbook.
+
+        Chỉ cộng dồn khi workbook ghi rõ dạng fractional/multi-select.
+        Không tự suy đoán nhiều option dương là được chọn đồng thời.
+        """
         logic_text = str(logic or "")
+        options_text = str(options or "")
         if not logic_text or logic_text == "nan":
             return 0.0
 
         # Multi-select kiểu "+X trên 1 yêu cầu"
-        frac_match = re.search(
-            r"([+-]?\d+(?:[.,]\d+?))\s*trên\s*1", logic_text, re.IGNORECASE
-        )
+        frac_match = re.search(r"([+-]?\d+(?:[.,]\d+)?)\s*trên\s*1", logic_text, re.IGNORECASE)
         if frac_match:
-            per_item = float(frac_match.group(1).replace(",", "."))
+            per_item = parse_score_value(frac_match.group(1))
             option_count = len(re.findall(r"(^|\n)([A-Z])[.\)]", str(options or "")))
             return round(per_item * max(option_count, 1), 4)
 
@@ -262,13 +276,46 @@ class VNSIExcelParser:
         for line in logic_text.splitlines():
             m = re.match(r"\s*[A-Z][.\)]\s*([+-]?\d+(?:[.,]\d+)?)", line.strip())
             if m:
-                val = float(m.group(1).replace(",", "."))
+                val = parse_score_value(m.group(1))
                 if val > 0:
                     positive_scores.append(val)
 
-        if len(positive_scores) >= 2:
+        if "đề cập số liệu" in logic_text.lower():
+            positive_scores.append(1.0)
+
+        explicit_multi = "có thể chọn nhiều" in options_text.lower()
+        numeric_logic = "đề cập số liệu" in logic_text.lower() or "đề cập đến số liệu" in logic_text.lower()
+        if explicit_multi and len(positive_scores) >= 2 and not numeric_logic:
             return round(sum(positive_scores), 4)  # Cộng dồn
         return max(positive_scores, default=0.0)    # Single-select
+
+
+
+    def _infer_question_type(self, question, options, logic):
+        text = " ".join([str(question or ""), str(options or ""), str(logic or "")]).lower()
+        if self._is_fractional_cumulative(logic) or "có thể chọn nhiều" in text:
+            return "multi_select"
+        if "trên một đơn vị doanh thu" in text or "chia cho" in text or "business activities revenues" in text:
+            return "ratio_calculation"
+        if any(token in text for token in ["đề cập số liệu", "tỷ lệ", "tổng lượng", "tổng số tiền", "scope 1", "scope 2", "scope 3", "m3", "joules"]):
+            return "numeric_disclosure"
+        if str(question or "").strip().upper().startswith("G."):
+            return "governance"
+        if any(token in text for token in ["chính sách", "hệ thống", "chứng nhận", "quy trình", "duy trì"]):
+            return "policy"
+        return "default"
+
+    def _infer_time_policy(self, question, options, logic):
+        text = " ".join([str(question or ""), str(options or ""), str(logic or "")]).lower()
+        if any(token in text for token in ["trong năm", "năm tài chính", "năm qua", "kể từ đầu năm"]):
+            return "current_year_required"
+        if any(token in text for token in ["còn hiệu lực", "duy trì", "chứng nhận", "giấy phép"]):
+            return "latest_valid_allowed"
+        if any(token in text for token in ["trên một đơn vị doanh thu", "chia cho", "business activities revenues"]):
+            return "cross_year_reference"
+        if any(token in text for token in ["đã xây dựng", "có chính sách", "hệ thống", "đã triển khai", "đã hoàn thành"]):
+            return "historical_allowed"
+        return "unspecified"
 
 
 if __name__ == "__main__":

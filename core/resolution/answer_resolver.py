@@ -1,6 +1,6 @@
 """
 Resolve extracted evidence into a question-level answer state.
-Enhanced with evidence verification and self-consistency awareness.
+Enhanced with evidence verification awareness.
 """
 from __future__ import annotations
 
@@ -11,15 +11,11 @@ class AnswerResolver:
         selected_options = extraction_result.get("selected_options", [])
         evidence_items = extraction_result.get("evidence_items", [])
         source_sections = extraction_result.get("source_sections", [])
-        conflict_detected = self._detect_conflict(selected_options, source_sections)
+        conflict_detected = False if rule.get("is_multi_select") else self._detect_conflict(selected_options, source_sections)
 
         # Check evidence verification status
         verification = extraction_result.get("evidence_verification")
         evidence_ungrounded = verification and not verification.get("grounded", True)
-
-        # Check self-consistency
-        consistency = extraction_result.get("consistency_check")
-        consistency_conflict = consistency and consistency.get("conflict", False)
 
         if answer in {"", "NULL", "SKIP"} or not evidence_items:
             resolution_status = "insufficient"
@@ -29,22 +25,20 @@ class AnswerResolver:
             # Evidence not found in source documents — likely hallucinated
             resolution_status = "weakly_supported"
             confidence = max(0.15, self._confidence_from_evidence(evidence_items) * 0.4)
-            resolved_answer = selected_options[0] if selected_options else answer
-        elif consistency_conflict:
-            # Self-consistency check found a different answer
-            verified_answer = consistency.get("verified_answer", answer)
-            # Use the more conservative (lower-scoring) answer
-            resolved_answer = self._pick_conservative_answer(
-                rule, answer, verified_answer, selected_options
-            )
-            selected_options = [resolved_answer] if resolved_answer != answer else selected_options
-            resolution_status = "contested"
-            confidence = max(0.25, self._confidence_from_evidence(evidence_items) * 0.6)
-            conflict_detected = True
+            resolved_answer = ",".join(selected_options) if rule.get("is_multi_select") and selected_options else (selected_options[0] if selected_options else answer)
         else:
             resolution_status = "supported"
             confidence = self._confidence_from_evidence(evidence_items)
-            resolved_answer = selected_options[0] if selected_options else answer
+            resolved_answer = ",".join(selected_options) if rule.get("is_multi_select") and selected_options else (selected_options[0] if selected_options else answer)
+
+        if (
+            self._score_for_answer(rule, resolved_answer) < 0
+            and confidence < 0.65
+        ):
+            resolved_answer = "NULL"
+            selected_options = []
+            resolution_status = "insufficient"
+            confidence = min(confidence, 0.3)
 
         return {
             "question_id": rule.get("id", ""),
@@ -56,38 +50,25 @@ class AnswerResolver:
             "reason": extraction_result.get("reason", ""),
             "evidence_items": evidence_items,
             "source_sections": source_sections,
+            "numeric_extraction": extraction_result.get("numeric_extraction"),
+            "numeric_override": extraction_result.get("numeric_override", False),
         }
 
-    def _pick_conservative_answer(
-        self, rule: dict, first_answer: str, verified_answer: str, selected_options: list[str]
-    ) -> str:
-        """
-        When first and verified answers conflict, pick the more conservative one.
-        Conservative = lower score or more negative.
-        """
+    def _score_for_answer(self, rule: dict, answer: str) -> float:
         import re
 
         logic = str(rule.get("logic", "") or "")
-        if not logic:
-            return verified_answer  # Default to the stricter review answer
-
-        def score_for_letter(letter: str) -> float:
-            for line in logic.splitlines():
-                match = re.match(
-                    rf"\s*{re.escape(letter.upper())}[.\)]\s*([+-]?\d+(?:[.,]\d+)?)",
-                    line.strip(),
-                )
-                if match:
-                    return float(match.group(1).replace(",", "."))
+        if not logic or not answer:
             return 0.0
-
-        first_score = score_for_letter(first_answer)
-        verified_score = score_for_letter(verified_answer)
-
-        # Pick the lower-scoring (more conservative) answer
-        if verified_score <= first_score:
-            return verified_answer
-        return first_answer
+        first_letter = str(answer).split(",")[0].strip().upper()
+        for line in logic.splitlines():
+            match = re.match(
+                rf"\s*{re.escape(first_letter)}[\.\)]\s*([+-]?\d+(?:[.,]\d+)?)",
+                line.strip(),
+            )
+            if match:
+                return float(match.group(1).replace(",", "."))
+        return 0.0
 
     def _detect_conflict(self, selected_options: list[str], source_sections: list[dict]) -> bool:
         if len(set(selected_options)) > 1:

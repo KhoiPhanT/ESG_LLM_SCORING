@@ -7,6 +7,8 @@ from __future__ import annotations
 
 import re
 
+from core.scoring.score_utils import parse_score_value
+
 
 class ScoringEngine:
     def score_rule(self, rule: dict, resolution: dict) -> dict:
@@ -16,9 +18,22 @@ class ScoringEngine:
         evidence_present = bool(evidence_items)
         logic = rule.get("logic", "")
         resolution_status = resolution.get("resolution_status", "")
+        numeric_data = resolution.get("numeric_extraction")
+
+        numeric_disclosure = self._is_numeric_disclosure_logic(logic)
+        numeric_question = rule.get("question_type") in {"numeric_disclosure", "ratio_calculation"}
+
+        # If NumericExtractor found valid data, treat as strong evidence
+        has_numeric_evidence = (
+            numeric_data is not None
+            and numeric_data.get("value") is not None
+            and numeric_data.get("confidence", 0) >= 0.5
+        )
 
         # Tính base_score theo loại câu
-        if rule.get("is_multi_select"):
+        if numeric_disclosure and (evidence_present or has_numeric_evidence) and resolution_status != "weakly_supported":
+            base_score = 1.0
+        elif rule.get("is_multi_select"):
             base_score = self._score_multi_select(rule, selected_options)
         else:
             base_score = self._single_answer_score(logic, answer_letter)
@@ -26,14 +41,18 @@ class ScoringEngine:
         # Nguyên tắc bám sát VNSI:
         # - Điểm dương cần evidence để công nhận
         # - Điểm âm/0 tính thẳng theo logic
-        if base_score > 0 and not evidence_present:
+        # - Numeric extraction counts as evidence for numeric questions once
+        #   the metric family/unit has passed NumericExtractor guardrails.
+        effective_evidence = evidence_present or (has_numeric_evidence and numeric_question)
+        if base_score > 0 and not effective_evidence:
             final_score = 0.0
-        elif base_score > 0 and resolution_status == "weakly_supported":
+        elif base_score > 0 and resolution_status == "weakly_supported" and not has_numeric_evidence:
             # Evidence exists but is ungrounded (likely hallucinated)
             # → Don't award positive points for hallucinated evidence
+            # → But if NumericExtractor found data, trust structured extraction
             final_score = 0.0
         elif base_score > 0 and resolution_status == "contested":
-            # Self-consistency check disagreed — use the resolved (conservative) answer
+            # Backward-compatible path for old cached contested answers.
             # Recalculate with the resolved answer
             if rule.get("is_multi_select"):
                 final_score = self._score_multi_select(rule, selected_options)
@@ -48,7 +67,12 @@ class ScoringEngine:
             "base_score": round(base_score, 4),
             "score": round(final_score, 4),
             "evidence_present": evidence_present,
-            "resolution_status": self._resolve_status(answer_letter, evidence_present, final_score, resolution_status),
+            "resolution_status": self._resolve_status(
+                answer_letter,
+                effective_evidence,
+                final_score,
+                resolution_status,
+            ),
         }
 
     def _single_answer_score(self, logic, answer_letter):
@@ -62,11 +86,20 @@ class ScoringEngine:
                 line.strip(),
             )
             if match:
-                return float(match.group(1).replace(",", "."))
+                return parse_score_value(match.group(1))
 
-        if "nếu có đề cập số liệu" in str(logic).lower():
+        if self._is_numeric_disclosure_logic(logic):
             return 1.0 if answer_letter == "A" else 0.0
         return 0.0
+
+    def _is_numeric_disclosure_logic(self, logic) -> bool:
+        text = str(logic or "").lower()
+        return (
+            "đề cập số liệu" in text
+            or "đề cập đến số liệu" in text
+            or "có đề cập số liệu" in text
+            or "có đề cập đến số liệu" in text
+        )
 
     def _score_multi_select(self, rule, selected_options):
         logic = str(rule.get("logic", ""))
@@ -77,7 +110,7 @@ class ScoringEngine:
         frac_match = re.search(r"([+-]?\d+(?:[.,]\d+)?)\s*trên\s*1\s*(?:yêu cầu|điều kiện)", logic, re.IGNORECASE)
         if frac_match:
             raw_value = frac_match.group(1).replace(",", ".")
-            per_item = float(raw_value)
+            per_item = parse_score_value(raw_value)
 
             # Sanity check: VNSI per-item scores are always ≤ 1.0
             # Values like "0125" (missing decimal) should be "0.125"
@@ -95,6 +128,8 @@ class ScoringEngine:
 
         # Cộng dồn ẩn: sum score of each selected option
         return round(sum(self._single_answer_score(logic, opt) for opt in selected_options), 4)
+
+
 
     def _resolve_status(self, answer_letter, evidence_present, final_score, resolution_status=""):
         if resolution_status in {"weakly_supported", "contested"}:

@@ -4,6 +4,7 @@ Heuristic table extraction from OCR/native page text.
 from __future__ import annotations
 
 import re
+import os
 
 
 class TableExtractor:
@@ -14,10 +15,86 @@ class TableExtractor:
 
     def extract(self, doc, pages: list[dict]) -> list[dict]:
         tables = []
+        tables.extend(self._extract_with_pdfplumber(doc))
         for page in pages:
             page_tables = self._extract_page_tables(doc, page)
             tables.extend(page_tables)
+            tables.extend(self._extract_metric_key_values(doc, page))
         return self._merge_adjacent_tables(doc, tables)
+
+    def _extract_with_pdfplumber(self, doc) -> list[dict]:
+        try:
+            import pdfplumber
+        except Exception:
+            return []
+
+        if not str(doc.path).lower().endswith(".pdf") or not os.path.exists(doc.path):
+            return []
+
+        tables = []
+        try:
+            with pdfplumber.open(doc.path) as pdf:
+                for page_index, page in enumerate(pdf.pages, start=1):
+                    for table_index, table in enumerate(page.extract_tables() or []):
+                        normalized = self._normalize_pdfplumber_table(table)
+                        if not normalized:
+                            continue
+                        title = self._nearby_table_title(page.extract_text() or "")
+                        content = self._table_to_text(normalized)
+                        family = self._infer_table_family(title, content)
+                        if not self._is_useful_table(content, family):
+                            continue
+                        tables.append({
+                            "chunk_id": f"{doc.label}:pdfplumber_table:{page_index}:{table_index}",
+                            "document_id": doc.metadata.file_hash[:16],
+                            "source_file": doc.label,
+                            "source_path": doc.path,
+                            "document_type": doc.doc_type,
+                            "year_guess": doc.metadata.year_guess,
+                            "section_title": title or self._fallback_title(doc, family, page_index),
+                            "page_start": page_index,
+                            "page_end": page_index,
+                            "chunk_type": "table_section",
+                            "table_family": family,
+                            "content": content[:12000],
+                            "coverage_source": "pdfplumber_table",
+                            "quality_score": min(1.0, self._quality_score(content, title=title) + 0.15),
+                            "table_columns": normalized[0] if normalized else [],
+                            "table_rows": normalized[1:] if len(normalized) > 1 else [],
+                            "extraction_method": "pdfplumber",
+                        })
+        except Exception:
+            return []
+        return tables
+
+    def _normalize_pdfplumber_table(self, table) -> list[list[str]]:
+        rows = []
+        for row in table or []:
+            cells = [re.sub(r"\s+", " ", str(cell or "").strip()) for cell in row or []]
+            if any(cells):
+                rows.append(cells)
+        if len(rows) < 2:
+            return []
+        return rows
+
+    def _table_to_text(self, rows: list[list[str]]) -> str:
+        widths = [max(len(row[i]) if i < len(row) else 0 for row in rows) for i in range(max(len(r) for r in rows))]
+        lines = []
+        for row in rows:
+            padded = [(row[i] if i < len(row) else "").ljust(widths[i]) for i in range(len(widths))]
+            lines.append(" | ".join(padded).strip())
+        return "\n".join(lines)
+
+    def _nearby_table_title(self, text: str) -> str | None:
+        lines = [line.strip() for line in (text or "").splitlines() if line.strip()]
+        for line in lines[:12]:
+            if self._is_table_title(line):
+                return line
+        for line in lines[:8]:
+            lowered = line.lower()
+            if any(token in lowered for token in ["năng lượng", "nước", "phát thải", "chất thải", "nhân sự", "đào tạo", "doanh thu"]):
+                return line[:160]
+        return None
 
     def _extract_page_tables(self, doc, page: dict) -> list[dict]:
         text = (page.get("text") or "").strip()
@@ -85,14 +162,80 @@ class TableExtractor:
             "source_file": doc.label,
             "source_path": doc.path,
             "document_type": doc.doc_type,
+            "year_guess": doc.metadata.year_guess,
             "section_title": section_title,
             "page_start": page["page"],
             "page_end": page["page"],
             "chunk_type": "table_section",
             "table_family": family,
             "content": content[:9000],
+            "coverage_source": "text_table",
             "quality_score": self._quality_score(content, title=section_title),
+            "extraction_method": "text_heuristic",
         }
+
+    def _extract_metric_key_values(self, doc, page: dict) -> list[dict]:
+        text = (page.get("text") or "").strip()
+        if not text:
+            return []
+
+        lowered = text.lower()
+        metric_tokens = [
+            "tỷ đồng", "ty dong", "triệu đồng", "trieu dong", "sản phẩm", "san pham",
+            "hộp sữa", "hop sua", "người", "nguoi", "tấn", "tan", "m3", "kwh",
+            "mj", "co2", "nước", "nuoc", "phát thải", "phat thai", "chất thải",
+            "chat thai", "cộng đồng", "cong dong", "thiện nguyện", "thien nguyen",
+            "quỹ sữa", "quy sua", "bão yagi", "hộp sữa",
+        ]
+        if not any(token in lowered for token in metric_tokens):
+            return []
+
+        lines = [line.strip() for line in text.splitlines() if line.strip()]
+        metric_lines = []
+        for index, line in enumerate(lines):
+            line_lower = line.lower()
+            has_number = bool(re.search(r"\d[\d\.,]*", line))
+            has_unit = any(token in line_lower for token in metric_tokens)
+            if has_number or has_unit:
+                start = max(0, index - 2)
+                end = min(len(lines), index + 3)
+                metric_lines.extend(lines[start:end])
+
+        deduped = list(dict.fromkeys(metric_lines))
+        if len(deduped) < 4:
+            return []
+
+        content = "\n".join(deduped).strip()
+        if len(re.findall(r"\d[\d\.,]*", content)) < 2:
+            return []
+
+        family = self._infer_table_family(None, content)
+        csr_context = any(token in lowered for token in [
+            "cộng đồng", "cong dong", "thiện nguyện", "thien nguyen", "quỹ sữa",
+            "quy sua", "bão yagi", "trẻ em", "tre em", "lan tỏa", "lan toa",
+        ])
+        if any(token in lowered for token in ["thù lao", "thu lao", "lương thưởng", "luong thuong", "hội đồng quản trị", "hoi dong quan tri"]):
+            family = "governance_compensation_metrics"
+        elif csr_context:
+            family = "csr_impact_metrics"
+
+        return [{
+            "chunk_id": f"{doc.label}:metric_kv:{page['page']}",
+            "document_id": doc.metadata.file_hash[:16],
+            "source_file": doc.label,
+            "source_path": doc.path,
+            "document_type": doc.doc_type,
+            "year_guess": doc.metadata.year_guess,
+            "section_title": f"{doc.doc_type} metric highlights page {page['page']}",
+            "page_start": page["page"],
+            "page_end": page["page"],
+            "chunk_type": "metric_kv_section",
+            "table_family": family,
+            "content": content[:9000],
+            "coverage_source": "metric_key_value",
+            "quality_score": min(1.0, self._quality_score(content, title="metric highlights") + 0.1),
+            "extraction_method": "metric_key_value",
+        }]
 
     def _is_table_title(self, line: str) -> bool:
         return any(pattern.match(line) for pattern in self.TABLE_TITLE_PATTERNS)
@@ -121,6 +264,10 @@ class TableExtractor:
             return "environmental_metrics"
         if any(token in haystack for token in ["nhân viên", "nhan vien", "lao động", "lao dong", "đào tạo", "dao tao"]):
             return "workforce_metrics"
+        if any(token in haystack for token in ["thù lao", "thu lao", "lương thưởng", "luong thuong", "hội đồng quản trị", "hoi dong quan tri"]):
+            return "governance_compensation_metrics"
+        if any(token in haystack for token in ["cộng đồng", "cong dong", "thiện nguyện", "thien nguyen", "quỹ sữa", "quy sua", "bão yagi", "trẻ em", "tre em", "lan tỏa", "lan toa"]):
+            return "csr_impact_metrics"
         if any(token in haystack for token in ["lợi nhuận", "loi nhuan", "tài sản", "tai san", "doanh thu"]):
             return "financial_metrics"
         if any(token in haystack for token in ["biểu quyết", "bieu quyet", "tán thành", "tan thanh", "cổ phần", "co phan"]):

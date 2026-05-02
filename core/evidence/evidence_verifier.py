@@ -12,9 +12,9 @@ class EvidenceVerifier:
     """Verify that LLM-claimed evidence actually exists in the source documents."""
 
     # Minimum similarity score to consider a quote as grounded
-    GROUNDING_THRESHOLD = 0.45
+    GROUNDING_THRESHOLD = 0.35
     # Minimum length for a meaningful evidence quote
-    MIN_EVIDENCE_LENGTH = 15
+    MIN_EVIDENCE_LENGTH = 8
 
     def verify(self, claimed_evidence: str, source_sections: list[dict]) -> dict:
         """

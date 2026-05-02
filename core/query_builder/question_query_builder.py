@@ -43,6 +43,67 @@ class QuestionQueryBuilder:
         "hinh",
         "thuc",
         "khac",
+        "sach",
+        "quan",
+        "cac",
+        "tac",
+        "toi",
+        "den",
+        "hieu",
+        "luc",
+    }
+    QUERY_STOPWORDS = {
+        "cong",
+        "ty",
+        "hoac",
+        "khong",
+        "nhung",
+        "vui",
+        "long",
+        "cung",
+        "cap",
+        "phan",
+        "tra",
+        "loi",
+        "muc",
+        "do",
+        "thuc",
+        "te",
+        "rieng",
+        "biet",
+        "co",
+        "duoc",
+        "lien",
+        "quan",
+        "hieu",
+        "luc",
+        "bao",
+        "gom",
+        "thong",
+        "hien",
+        "khac",
+        "dung",
+        "cac",
+        "voi",
+        "theo",
+        "nam",
+        "cau",
+        "hoi",
+        "nguyen",
+        "truong",
+        "tac",
+        "toi",
+        "den",
+    }
+    OPTION_STOPWORDS = QUERY_STOPWORDS | {
+        "bat",
+        "ky",
+        "rong",
+        "rai",
+        "mot",
+        "nhieu",
+        "noi",
+        "dung",
     }
 
     def __init__(self):
@@ -104,16 +165,29 @@ class QuestionQueryBuilder:
             "học tập liên tục",
             "trách nhiệm xã hội",
             "cộng đồng địa phương",
+            "hoạt động cộng đồng",
             "thiện nguyện",
+            "đóng góp cộng đồng",
             "tài trợ cộng đồng",
             "tài trợ",
+            "quỹ sữa",
+            "vươn cao việt nam",
+            "cứu trợ thiên tai",
+            "bão yagi",
+            "gắn kết yêu thương",
+            "lan tỏa giá trị",
             "xử lý chất thải",
             "chất thải nguy hại",
             "chất thải không nguy hại",
+            "doanh thu",
+            "tổng doanh thu",
+            "doanh thu thuần",
+            "lợi nhuận",
+            "tài sản",
         ]
         self.specialized_terms = {
             "đhđcđ": ["tham dự trực tuyến", "bỏ phiếu điện tử", "biểu quyết điện tử", "tham dự và phát biểu"],
-            "hđqt": ["thành viên độc lập", "thù lao", "cơ cấu hội đồng quản trị", "cân bằng giới"],
+            "hđqt": ["thành viên độc lập", "thù lao", "cơ cấu hội đồng quản trị", "cân bằng giới", "trình độ chuyên môn", "kinh nghiệm"],
             "kiểm toán": ["ý kiến kiểm toán", "ngoại trừ", "báo cáo tài chính", "kiểm toán độc lập"],
             "môi trường": ["chính sách môi trường", "quản lý môi trường", "phát thải", "năng lượng", "nước", "chất thải"],
             "người lao động": ["phúc lợi", "đãi ngộ", "đào tạo", "an toàn lao động", "sức khỏe nghề nghiệp"],
@@ -131,9 +205,13 @@ class QuestionQueryBuilder:
             "tai nạn lao động": ["tai nạn lao động", "an toàn lao động", "thương tích"],
             "nhân sự": ["cơ cấu nhân sự", "nhân sự", "giới tính", "độ tuổi"],
             "thu nhập": ["thu nhập bình quân", "thu nhập", "lương bình quân"],
+            "doanh thu": ["doanh thu", "tổng doanh thu", "doanh thu thuần", "doanh thu hợp nhất"],
             "quản lý": ["cấp quản lý", "quản lý", "phó phòng"],
             "nhân viên": ["cấp nhân viên", "nhân viên"],
-            "trách nhiệm xã hội": ["trách nhiệm xã hội", "thiện nguyện", "cộng đồng địa phương", "tài trợ cộng đồng"],
+            "trách nhiệm xã hội": ["trách nhiệm xã hội", "hoạt động cộng đồng", "thiện nguyện", "cộng đồng địa phương", "tài trợ cộng đồng", "đóng góp cộng đồng", "quỹ sữa", "vươn cao", "cứu trợ thiên tai"],
+            "cộng đồng": ["hoạt động cộng đồng", "thiện nguyện", "đóng góp cộng đồng", "quỹ sữa", "vươn cao", "bão yagi", "hỗ trợ cộng đồng"],
+            "thù lao": ["thù lao từng thành viên", "chi phí thù lao", "mức thù lao", "lương thưởng hđqt"],
+            "đa dạng hđqt": ["trình độ chuyên môn", "kinh nghiệm", "học vấn", "chuyên ngành", "profile hđqt"],
             "chất thải": ["xử lý chất thải", "chất thải nguy hại", "chất thải không nguy hại", "rác thải nhựa"],
         }
         self.subcategory_terms = {
@@ -254,10 +332,20 @@ class QuestionQueryBuilder:
             phrases.append("cấp nhân viên")
         if "chuong trinh phat trien ky nang" in haystack:
             phrases.extend(["chương trình phát triển kỹ năng", "học tập liên tục"])
-        if "trach nhiem xa hoi" in haystack or "cong dong dia phuong" in haystack or "thien nguyen" in haystack:
-            phrases.extend(["trách nhiệm xã hội", "cộng đồng địa phương", "thiện nguyện", "tài trợ cộng đồng", "tài trợ"])
+        if "trach nhiem xa hoi" in haystack or "cong dong" in haystack or "thien nguyen" in haystack:
+            phrases.extend([
+                "trách nhiệm xã hội", "cộng đồng địa phương", "hoạt động cộng đồng",
+                "thiện nguyện", "tài trợ cộng đồng", "đóng góp cộng đồng",
+                "quỹ sữa", "vươn cao việt nam", "cứu trợ thiên tai", "bão yagi",
+            ])
+        if "thu lao" in haystack or "luong thuong" in haystack:
+            phrases.extend(["thù lao", "thù lao từng thành viên", "lương thưởng hđqt"])
+        if "da dang" in haystack and ("hdqt" in haystack or "hoi dong quan tri" in haystack):
+            phrases.extend(["trình độ chuyên môn", "kinh nghiệm", "học vấn", "chuyên ngành"])
         if "xu ly chat thai" in haystack or "chat thai nguy hai" in haystack or "chat thai khong nguy hai" in haystack:
             phrases.extend(["xử lý chất thải", "chất thải nguy hại", "chất thải không nguy hại"])
+        if "doanh thu" in haystack:
+            phrases.extend(["doanh thu", "tổng doanh thu", "doanh thu thuần", "doanh thu hợp nhất"])
         phrases.extend(self.subcategory_terms.get(str(rule.get("sub_category", "")).strip(), [])[:4])
         return list(dict.fromkeys(self.normalizer.normalize_for_search(item) for item in phrases if item))
 
@@ -266,30 +354,21 @@ class QuestionQueryBuilder:
         candidates = list(exact_phrases)
 
         tokens = re.findall(r"[A-Za-zÀ-ỹà-ỹĐđ]{4,}", question_clean)
-        stopwords = {
-            "công", "ty", "hoặc", "không", "những", "vui", "lòng", "cung", "cấp",
-            "phần", "trả", "lời", "mức", "độ", "thực", "tế", "riêng", "biệt",
-            "có", "được", "liên", "quan", "hiệu", "lực", "bao", "gồm", "thông",
-            "hiện", "khác", "dụng", "hiện", "các", "với", "theo", "năm", "câu", "hỏi",
-            "nguyên", "trường",
-        }
         for token in tokens:
-            lowered = token.lower()
-            if lowered not in stopwords and len(lowered) >= 6:
+            lowered = self.normalizer.normalize_for_search(token)
+            if lowered not in self.QUERY_STOPWORDS and len(lowered) >= 6:
                 candidates.append(lowered)
 
         filtered_tokens = [
             self.normalizer.normalize_for_search(token)
             for token in tokens
-            if token.lower() not in stopwords and len(token) >= 4
+            if self.normalizer.normalize_for_search(token) not in self.QUERY_STOPWORDS and len(token) >= 4
         ]
         for idx in range(len(filtered_tokens) - 1):
-            if (
-                filtered_tokens[idx] in self.BIGRAM_STOPWORDS
-                or filtered_tokens[idx + 1] in self.BIGRAM_STOPWORDS
-            ):
+            bigram = f"{filtered_tokens[idx]} {filtered_tokens[idx + 1]}"
+            if not self._valid_bigram(filtered_tokens[idx], filtered_tokens[idx + 1], bigram):
                 continue
-            candidates.append(f"{filtered_tokens[idx]} {filtered_tokens[idx + 1]}")
+            candidates.append(bigram)
 
         expanded = []
         for candidate in candidates[:18]:
@@ -308,7 +387,7 @@ class QuestionQueryBuilder:
         for phrase in re.findall(r"[A-Z][\.\)]\s*([^\n]+)", options):
             cleaned = phrase.strip()
             if len(cleaned) <= 120:
-                secondary.append(cleaned)
+                secondary.extend(self._option_terms(cleaned))
 
         expanded = []
         for candidate in secondary[:15]:
@@ -351,22 +430,63 @@ class QuestionQueryBuilder:
 
         terms = []
         terms.extend(intent_library.get(sub_category, []))
-        terms.extend(factor_terms.get(factor, []))
+        question_text = self.normalizer.normalize_for_search(str(rule.get("question", "")))
+        is_s3_csr = factor == "S3" and any(token in question_text for token in [
+            "cong dong", "thien nguyen", "trach nhiem xa hoi", "tai tro", "ho tro", "truyen thong"
+        ])
+        if is_s3_csr:
+            terms.extend(["hoạt động cộng đồng", "thiện nguyện", "trách nhiệm xã hội", "đóng góp cộng đồng", "quỹ sữa", "vươn cao", "cứu trợ thiên tai"])
+        else:
+            terms.extend(factor_terms.get(factor, []))
         terms.extend(pillar_terms.get(pillar, []))
         if factor == "S3":
-            question_text = self.normalizer.normalize_for_search(str(rule.get("question", "")))
             if "dao tao" in question_text:
                 terms.extend(["thời gian đào tạo trung bình", "số giờ đào tạo trung bình", "chương trình phát triển kỹ năng"])
-            if "cong dong" in question_text or "thien nguyen" in question_text:
-                terms.extend(["trách nhiệm xã hội", "cộng đồng địa phương", "thiện nguyện", "tài trợ cộng đồng"])
+            if is_s3_csr:
+                terms.extend(["trách nhiệm xã hội", "cộng đồng địa phương", "hoạt động cộng đồng", "thiện nguyện", "tài trợ cộng đồng", "đóng góp cộng đồng", "quỹ sữa", "vươn cao việt nam", "bão yagi"])
         if factor == "E3":
             question_text = self.normalizer.normalize_for_search(str(rule.get("question", "")))
             if "tiet kiem" in question_text and "nang luong" in question_text:
                 terms.extend(["tiết kiệm năng lượng", "sáng kiến tiết kiệm điện"])
             if "chat thai" in question_text:
                 terms.extend(["xử lý chất thải", "chất thải nguy hại", "chất thải không nguy hại"])
+            if "doanh thu" in question_text:
+                terms.extend(["doanh thu", "tổng doanh thu", "doanh thu hợp nhất"])
 
         expanded = []
         for candidate in terms:
             expanded.extend(self.normalizer.expand_term(candidate))
         return list(dict.fromkeys(item for item in expanded if item))
+
+    def _valid_bigram(self, left: str, right: str, bigram: str) -> bool:
+        if left in self.BIGRAM_STOPWORDS or right in self.BIGRAM_STOPWORDS:
+            allowed = {
+                "chinh sach",
+                "moi truong",
+                "phat thai",
+                "nang luong",
+                "nuoc thai",
+                "chat thai",
+                "doanh thu",
+                "tong doanh",
+            }
+            return bigram in allowed
+        return True
+
+    def _option_terms(self, text: str) -> list[str]:
+        normalized = self.normalizer.normalize_for_search(text)
+        terms = []
+        for phrase in self.phrase_library:
+            phrase_norm = self.normalizer.normalize_for_search(phrase)
+            if phrase_norm in normalized:
+                terms.append(phrase_norm)
+        if "cong khai" in normalized:
+            terms.extend(["công khai", "minh bạch", "công bố thông tin"])
+        if "doanh thu" in normalized:
+            terms.extend(["doanh thu", "tổng doanh thu", "doanh thu hợp nhất"])
+        tokens = [
+            token for token in normalized.split()
+            if len(token) >= 5 and token not in self.OPTION_STOPWORDS
+        ]
+        terms.extend(tokens[:8])
+        return list(dict.fromkeys(terms))

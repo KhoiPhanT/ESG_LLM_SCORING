@@ -3,15 +3,6 @@ Text Cleaner — Làm sạch văn bản với NLTK (theo yêu cầu đề bài).
 """
 import re
 
-# Download NLTK data nếu chưa có
-try:
-    import nltk
-    nltk.download("punkt", quiet=True)
-    nltk.download("punkt_tab", quiet=True)
-    nltk.download("stopwords", quiet=True)
-except Exception:
-    pass
-
 # Stopwords tiếng Việt phổ biến
 VIETNAMESE_STOPWORDS = {
     "và", "của", "là", "các", "trong", "có", "được", "cho", "với", "này",

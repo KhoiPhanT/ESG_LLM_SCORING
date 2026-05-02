@@ -7,6 +7,7 @@ import hashlib
 import os
 import re
 from dataclasses import asdict, dataclass, field
+from datetime import datetime
 from typing import Iterable
 
 
@@ -32,6 +33,15 @@ class DocumentMetadata:
 
 class DocumentClassifier:
     DOC_TYPE_RULES = {
+        "policy_document": [
+            "chính sách",
+            "chinh sach",
+            "policy",
+            "cam kết",
+            "cam ket",
+            "quy định",
+            "quy dinh",
+        ],
         "resolution": [
             "nghị quyết",
             "nghi quyet",
@@ -116,8 +126,30 @@ class DocumentClassifier:
         return digest.hexdigest()
 
     def _extract_year(self, file_name: str, text: str) -> int | None:
-        candidates = re.findall(r"(?<!\d)(20\d{2})(?!\d)", f"{file_name}\n{text}")
-        return int(candidates[0]) if candidates else None
+        raw_candidates = [
+            int(value)
+            for value in re.findall(r"(?<!\d)(20\d{2})(?!\d)", f"{file_name}\n{text}")
+        ]
+        if not raw_candidates:
+            return None
+
+        current_year = datetime.now().year
+        plausible = [
+            year for year in raw_candidates
+            if 2010 <= year <= current_year + 1 and year not in {2050, 2060}
+        ]
+        if plausible:
+            filename_years = [
+                int(value)
+                for value in re.findall(r"(?<!\d)(20\d{2})(?!\d)", file_name)
+                if 2010 <= int(value) <= current_year + 1 and int(value) not in {2050, 2060}
+            ]
+            if filename_years:
+                return filename_years[-1]
+            return plausible[0]
+
+        near_term = [year for year in raw_candidates if year <= current_year + 1]
+        return near_term[0] if near_term else None
 
     def _extract_company(self, file_name: str, text: str) -> str:
         name_tokens = re.findall(r"\b[A-Z]{2,5}\b", file_name.upper())
@@ -150,6 +182,29 @@ class DocumentClassifier:
 
         if not scores:
             return "other", 0.3, ["No strong filename/content signal found"]
+
+        if "policy_document" in scores:
+            policy_in_filename = any(
+                keyword in lowered_name
+                for keyword in self.DOC_TYPE_RULES["policy_document"]
+            )
+            policy_context_tokens = [
+                "môi trường",
+                "moi truong",
+                "phát triển bền vững",
+                "phat trien ben vung",
+                "esg",
+                "bền vững",
+                "ben vung",
+                "phúc lợi",
+                "phuc loi",
+                "thu mua",
+                "nông nghiệp",
+                "nong nghiep",
+            ]
+            if policy_in_filename and any(token in combined_text for token in policy_context_tokens):
+                scores["policy_document"] += 0.8
+                reasons_by_type["policy_document"].append("policy context mentions ESG/sustainability/environment")
 
         best_type = max(scores, key=scores.get)
         confidence = min(0.98, 0.45 + scores[best_type] / 2)

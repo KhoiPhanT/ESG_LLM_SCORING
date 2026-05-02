@@ -105,11 +105,13 @@ class SectionBuilder:
             "source_file": doc.label,
             "source_path": doc.path,
             "document_type": doc.doc_type,
+            "year_guess": doc.metadata.year_guess,
             "section_title": current["section_title"],
             "page_start": current["page_start"],
             "page_end": current["page_end"],
             "chunk_type": current["chunk_type"],
-            "content": content[:9000],
+            "content": content,
+            "coverage_source": "section_builder",
             "quality_score": self._quality_score(content),
         }
 

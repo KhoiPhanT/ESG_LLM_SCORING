@@ -11,15 +11,19 @@ import os
 import fitz  # PyMuPDF
 from pdf2image import convert_from_path
 
+from core.cache import CacheManager
+
 
 class PDFParser:
     CACHE_DIR = "outputs/cache"
+    CACHE_SCHEMA = "pdf_parser_v2"
 
     def __init__(self, file_path, use_ocr=True):
         self.file_path = file_path
         self.use_ocr = use_ocr
         os.makedirs(self.CACHE_DIR, exist_ok=True)
         self._reader = None
+        self.cache_manager = CacheManager(run_key="document_cache")
 
     def _get_reader(self):
         if self._reader is None:
@@ -41,16 +45,61 @@ class PDFParser:
         mode = "ocr" if self.use_ocr else "native"
         return os.path.join(self.CACHE_DIR, f"{basename}_{h}_{mode}.json")
 
+    def _cache_fingerprint(self) -> str:
+        return CacheManager.file_fingerprint(
+            self.file_path,
+            extra={
+                "schema": self.CACHE_SCHEMA,
+                "mode": "ocr" if self.use_ocr else "native",
+            },
+        )
+
     def extract_text(self):
         """
         Trích xuất toàn bộ text từ PDF. Tự động dùng OCR nếu trang là ảnh scan.
         Kết quả được cache lại.
         """
         cache_path = self._cache_key()
-        if os.path.exists(cache_path):
-            print(f"  [CACHE HIT] Đọc từ cache: {cache_path}")
-            with open(cache_path, "r", encoding="utf-8") as f:
-                return json.load(f)
+        fingerprint = self._cache_fingerprint()
+        forced = CacheManager.is_forced("ocr")
+        if os.path.exists(cache_path) and not forced:
+            try:
+                with open(cache_path, "r", encoding="utf-8") as f:
+                    cached = json.load(f)
+                if isinstance(cached, dict):
+                    if (
+                        cached.get("schema_version") != self.CACHE_SCHEMA
+                        or cached.get("input_fingerprint") != fingerprint
+                    ):
+                        pages = None
+                    else:
+                        pages = cached.get("pages")
+                else:
+                    # Backward compatibility for old list-shaped caches.  The
+                    # file hash is still embedded in the cache filename.
+                    pages = cached
+                if isinstance(pages, list) and pages:
+                    print(f"  [CACHE HIT] Đọc từ cache: {cache_path}")
+                    self.cache_manager.record(
+                        "ocr",
+                        "hit",
+                        self.CACHE_SCHEMA,
+                        fingerprint,
+                        path=cache_path,
+                    )
+                    return pages
+            except Exception as e:
+                self.cache_manager.record(
+                    "ocr",
+                    "failed",
+                    self.CACHE_SCHEMA,
+                    fingerprint,
+                    path=cache_path,
+                    reason="cache_parse_error",
+                    error=str(e),
+                )
+        elif forced:
+            print(f"  [CACHE] OCR forced rebuild: {os.path.basename(self.file_path)}")
 
         if not os.path.exists(self.file_path):
             raise FileNotFoundError(f"Không tìm thấy file PDF: {self.file_path}")
@@ -103,8 +152,25 @@ class PDFParser:
                     ocr_map = {page["page"]: page for page in ocr_pages}
                     extracted_data = [ocr_map.get(page["page"], page) for page in native_pages]
 
-        with open(cache_path, "w", encoding="utf-8") as f:
-            json.dump(extracted_data, f, ensure_ascii=False, indent=2)
+        CacheManager.atomic_write_json(
+            cache_path,
+            {
+                "schema_version": self.CACHE_SCHEMA,
+                "input_fingerprint": fingerprint,
+                "file_path": os.path.abspath(self.file_path),
+                "mode": "ocr" if self.use_ocr else "native",
+                "pages": extracted_data,
+            },
+            indent=2,
+        )
+        self.cache_manager.record(
+            "ocr",
+            "rebuilt",
+            self.CACHE_SCHEMA,
+            fingerprint,
+            path=cache_path,
+            reason="forced_rebuild" if forced else "missing_or_invalid_cache",
+        )
         print(f"  [CACHE] Đã lưu cache: {cache_path}")
 
         return extracted_data
@@ -114,19 +180,26 @@ class PDFParser:
         results = []
         try:
             import numpy as np
+            from PIL import Image
             reader = self._get_reader()
+            is_image = self.file_path.lower().endswith(('.png', '.jpg', '.jpeg'))
+
             for page_num in page_numbers:
                 print(f"    OCR trang {page_num}/{total_pages}...")
-                images = convert_from_path(
-                    self.file_path,
-                    first_page=page_num,
-                    last_page=page_num,
-                    dpi=200,
-                )
-                if not images:
-                    continue
+                if is_image:
+                    img = Image.open(self.file_path)
+                    img_np = np.array(img)
+                else:
+                    images = convert_from_path(
+                        self.file_path,
+                        first_page=page_num,
+                        last_page=page_num,
+                        dpi=200,
+                    )
+                    if not images:
+                        continue
+                    img_np = np.array(images[0])
                 
-                img_np = np.array(images[0])
                 text_list = reader.readtext(img_np, detail=0, paragraph=True)
                 text = "\n".join(text_list)
                 

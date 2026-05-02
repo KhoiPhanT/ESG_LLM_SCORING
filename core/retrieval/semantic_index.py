@@ -6,6 +6,7 @@ Falls back gracefully if embedding libraries are not installed.
 from __future__ import annotations
 
 from dataclasses import dataclass
+import os
 
 import numpy as np
 from sklearn.decomposition import TruncatedSVD
@@ -105,6 +106,11 @@ class SemanticIndex:
 
     def _try_build_embedding_index(self, cache_key: str) -> None:
         """Try to initialize the dense embedding index."""
+        if os.environ.get("ESG_DISABLE_DENSE_EMBEDDINGS") == "1":
+            print("  [SEMANTIC] Dense embeddings disabled by ESG_DISABLE_DENSE_EMBEDDINGS=1")
+            self._embedding_index = None
+            return
+
         try:
             from core.retrieval.embedding_index import EmbeddingIndex
 
