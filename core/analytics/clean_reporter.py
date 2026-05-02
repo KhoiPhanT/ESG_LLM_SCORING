@@ -53,7 +53,6 @@ def generate_clean_markdown(json_report_path: str, output_md_path: str, rules_pa
         }
 
     scores = report.get("scores", {})
-    weights = scores.get("weights", {"E": 0.3, "S": 0.35, "G": 0.35})
     total_raw = float(scores.get("total", sum(factor_raw_scores.values())) or 0.0)
     raw_max = float(scores.get("raw_max", sum(derived_max.values())) or 0.0)
     total_score = float(scores.get("score_100", scores.get("percentage", (total_raw / raw_max * 100 if raw_max else 0.0))) or 0.0)
@@ -74,9 +73,9 @@ def generate_clean_markdown(json_report_path: str, output_md_path: str, rules_pa
     md_lines.append(f"**Điểm quy đổi thang 100:** {total_score:.2f}")
     md_lines.append("")
     md_lines.append("## Điểm thành phần")
-    md_lines.append(f"- **Môi trường (E)**: {e_score:.2f}/100 (Trọng số ngành tham chiếu: {weights.get('E', 0)*100:.0f}%)")
-    md_lines.append(f"- **Xã hội (S)**: {s_score:.2f}/100 (Trọng số ngành tham chiếu: {weights.get('S', 0)*100:.0f}%)")
-    md_lines.append(f"- **Quản trị (G)**: {g_score:.2f}/100 (Trọng số ngành tham chiếu: {weights.get('G', 0)*100:.0f}%)")
+    md_lines.append(f"- **Môi trường (E)**: {e_score:.2f}%")
+    md_lines.append(f"- **Xã hội (S)**: {s_score:.2f}%")
+    md_lines.append(f"- **Quản trị (G)**: {g_score:.2f}%")
     md_lines.append("")
     md_lines.append("### Chi tiết theo Factor")
     for factor, data in sorted(factor_percentages.items()):
