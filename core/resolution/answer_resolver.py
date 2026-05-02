@@ -52,6 +52,12 @@ class AnswerResolver:
             "source_sections": source_sections,
             "numeric_extraction": extraction_result.get("numeric_extraction"),
             "numeric_override": extraction_result.get("numeric_override", False),
+            "answer_origin": extraction_result.get("answer_origin", ""),
+            "parse_status": extraction_result.get("parse_status"),
+            "parse_error": extraction_result.get("parse_error"),
+            "retry_used": extraction_result.get("retry_used", False),
+            "retry_attempts": extraction_result.get("retry_attempts", 0),
+            "retry_profiles": extraction_result.get("retry_profiles", []),
         }
 
     def _score_for_answer(self, rule: dict, answer: str) -> float:

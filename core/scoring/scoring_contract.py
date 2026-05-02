@@ -26,7 +26,9 @@ class ScoringContract:
         self.raw_max = round(sum(self.max_by_question.values()), 4)
 
     def summarize(self, details: list[dict], weights: dict | None = None) -> dict:
-        weights = weights or {"E": 0.0, "S": 0.0, "G": 0.0}
+        # weights parameter kept for backward-compatibility but no longer used
+        # for score_100 calculation. The standardized question set means
+        # score_100 = raw_percentage directly.
         raw_by_factor = defaultdict(float)
         raw_by_pillar = defaultdict(float)
         for detail in details or []:
@@ -67,19 +69,17 @@ class ScoringContract:
             raw_percentage = round(max(0.0, raw_score) / max_points * 100, 2) if max_points > 0 else 0.0
             factor_percentages = pillar_factor_percentages.get(pillar, [])
             pillar_percentage = round(sum(factor_percentages) / len(factor_percentages), 2) if factor_percentages else 0.0
-            weight = float(weights.get(pillar, 0.0) or 0.0)
             pillar_scores[pillar] = {
                 "raw_score": round(raw_score, 4),
                 "max_points": round(max_points, 4),
                 "raw_percentage": raw_percentage,
                 "percentage": pillar_percentage,
-                "weight": weight,
-                "weighted_score": round(pillar_percentage * weight, 2),
             }
 
         raw_total = round(sum(float(d.get("score", 0.0) or 0.0) for d in details or []), 4)
         raw_percentage = round(max(0.0, raw_total) / self.raw_max * 100, 2) if self.raw_max > 0 else 0.0
-        score_100 = round(sum(data["weighted_score"] for data in pillar_scores.values()), 2)
+        # score_100 = raw_percentage (không nhân trọng số ngành)
+        score_100 = raw_percentage
         return {
             "raw_total": raw_total,
             "raw_max": self.raw_max,
@@ -88,7 +88,6 @@ class ScoringContract:
             "score_100": score_100,
             "pillar_scores": pillar_scores,
             "factor_scores": factor_scores,
-            "weights": weights,
             "factor_max_mismatches": [
                 {
                     "factor": factor,
@@ -113,6 +112,7 @@ class ScoringContract:
                 "pillar": detail.get("pillar") or rule.get("pillar"),
                 "question_type": rule.get("question_type", "default"),
                 "time_policy": rule.get("time_policy", "unspecified"),
+                "question_bucket": detail.get("question_bucket", ""),
                 "answer": detail.get("answer"),
                 "selected_options": ",".join(detail.get("selected_options", []) or []),
                 "score": round(score, 4),
@@ -120,6 +120,8 @@ class ScoringContract:
                 "lost_points": round(max(0.0, max_score - score), 4),
                 "logic": rule.get("logic", ""),
                 "resolution_status": detail.get("resolution_status", ""),
+                "answer_origin": detail.get("answer_origin", ""),
+                "parse_status": detail.get("parse_status", ""),
                 "evidence_present": bool(detail.get("evidence_present")),
                 "evidence_source_ref": detail.get("evidence_source_ref", ""),
                 "top_source_refs": "; ".join(detail.get("top_source_refs", []) or []),

@@ -21,7 +21,6 @@ class VNSIScorer:
     def __init__(
         self,
         rules_path="outputs/vnsi_rules.json",
-        weights_path="outputs/industry_weights.json",
         structure_path="outputs/scoring_structure.json",
         llm_client=None,
         corpus=None,
@@ -32,13 +31,11 @@ class VNSIScorer:
     ):
         self.llm_client = llm_client
         self.rules_path = rules_path
-        self.weights_path = weights_path
         self.structure_path = structure_path
         self.corpus = corpus
         self.industry_sector = industry_sector
         self.target_year = target_year or getattr(corpus, "target_year", None) or 2024
         self.scoring_rules = self._load_json(rules_path).get("scoring", [])
-        self.industry_weights = self._load_json(weights_path)
         self.scoring_structure = self._load_json(structure_path)
         if isinstance(self.scoring_structure, list):
             self.scoring_structure = {"factor_max_scores": {}}
@@ -78,15 +75,6 @@ class VNSIScorer:
             return data.get("metadata", data if isinstance(data, dict) else {})
         except Exception:
             return {}
-
-    def _fallback_weights(self, industry_sector):
-        defaults = {
-            "Financials": {"G": 0.6, "S": 0.3, "E": 0.1},
-            "Information Technology": {"G": 0.45, "S": 0.45, "E": 0.1},
-            "Energy": {"G": 0.3, "S": 0.2, "E": 0.5},
-            "Materials": {"G": 0.3, "S": 0.2, "E": 0.5},
-        }
-        return defaults.get(industry_sector, {"G": 0.35, "S": 0.35, "E": 0.30})
 
     def _get_relevant_keywords(self, rule):
         question = rule.get("question", "")
@@ -161,6 +149,7 @@ class VNSIScorer:
             sections,
             char_limit=context_limit,
             group_by_option=bool(rule.get("is_multi_select")),
+            query_plan=query_plan,
         ) if sections else report_text[:context_limit]
 
         return {
@@ -212,6 +201,7 @@ class VNSIScorer:
             sections,
             char_limit=context_limit,
             group_by_option=bool(rule.get("is_multi_select")),
+            query_plan=cached_plan,
         ) if sections else report_text[:context_limit]
 
         return {
@@ -481,7 +471,18 @@ class VNSIScorer:
             enriched.append(item)
         return enriched
 
-    def _pack_context(self, sections: list[dict], char_limit: int = 22000, group_by_option: bool = False) -> str:
+    def _pack_context(
+        self,
+        sections: list[dict],
+        char_limit: int = 22000,
+        group_by_option: bool = False,
+        query_plan: dict | None = None,
+    ) -> str:
+        if group_by_option:
+            option_focus = query_plan.get("option_focus") if isinstance(query_plan, dict) else {}
+            if isinstance(option_focus, dict) and option_focus:
+                return self._pack_option_context(sections, option_focus, char_limit)
+
         blocks = []
         total = 0
         current_group = None
@@ -508,6 +509,77 @@ class VNSIScorer:
             blocks.append(block)
             total += len(block) + 5
         return "\n---\n".join(blocks)
+
+    def _pack_option_context(self, sections: list[dict], option_focus: dict, char_limit: int) -> str:
+        blocks = []
+        total = 0
+        used_general = set()
+
+        def add_block(block: str) -> bool:
+            nonlocal total
+            remaining = char_limit - total
+            if remaining <= 0:
+                return False
+            if len(block) > remaining:
+                return False
+            blocks.append(block)
+            total += len(block) + 5
+            return True
+
+        for option in sorted(str(key).strip().upper() for key in option_focus if str(key).strip()):
+            option_sections = [
+                section for section in sections
+                if option in (section.get("matched_options") or [])
+            ][:2]
+            if not option_sections:
+                continue
+            if not add_block(f"[OPTION_CANDIDATES: {option}]"):
+                break
+            for section in option_sections:
+                item = dict(section)
+                item["matched_options"] = [option]
+                item["option_hit_terms"] = self._context_option_terms(item, option_focus.get(option, []))
+                source_key = item.get("chunk_id") or (
+                    item.get("source_file"),
+                    item.get("page_start"),
+                    item.get("page_end"),
+                )
+                used_general.add(source_key)
+                if not add_block(self._format_section(item)):
+                    return "\n---\n".join(blocks)
+
+        general_count = 0
+        for section in sections:
+            source_key = section.get("chunk_id") or (
+                section.get("source_file"),
+                section.get("page_start"),
+                section.get("page_end"),
+            )
+            if source_key in used_general:
+                continue
+            if general_count == 0:
+                if not add_block("[OPTION_CANDIDATES: GENERAL]"):
+                    break
+            if not add_block(self._format_section(section)):
+                break
+            general_count += 1
+            if general_count >= 5:
+                break
+
+        return "\n---\n".join(blocks)
+
+    def _context_option_terms(self, section: dict, focus_terms) -> list[str]:
+        content = self.query_builder.normalizer.normalize_for_search(section.get("content", ""))
+        terms = []
+        raw_terms = focus_terms if isinstance(focus_terms, (list, tuple, set)) else [focus_terms]
+        for term in raw_terms:
+            text = str(term or "").strip()
+            normalized = self.query_builder.normalizer.normalize_for_search(text)
+            if normalized in {"chinh sach", "moi truong", "cong ty", "bang chung"}:
+                continue
+            if normalized and normalized in content:
+                terms.append(text)
+        return list(dict.fromkeys(terms))
 
     def _top_values(self, sections: list[dict], field: str) -> list:
         values = []
@@ -565,12 +637,11 @@ class VNSIScorer:
             print("  [WARN] Không có scoring rules")
             return self._empty_result(industry_sector)
 
-        weights = self.industry_weights.get(industry_sector, self._fallback_weights(industry_sector))
         print(
-            f"\n  [SCORING] Ngành: {industry_sector} → "
-            f"Trọng số: E={weights['E']:.0%}, S={weights['S']:.0%}, G={weights['G']:.0%}"
+            f"\n  [SCORING] Ngành: {industry_sector} | "
+            f"Tổng số câu hỏi: {len(self.scoring_rules)} | "
+            f"Điểm tổng = raw_percentage (không nhân trọng số ngành)"
         )
-        print(f"  [SCORING] Tổng số câu hỏi: {len(self.scoring_rules)}")
 
         factor_scores = {}
         all_details = []
@@ -582,7 +653,7 @@ class VNSIScorer:
         thermal_interval = int(os.environ.get("ESG_THERMAL_INTERVAL", "8"))
 
         progress_file = f"outputs/cache/{company_name}_{self.target_year}_scoring_progress.json"
-        progress_schema_version = 15
+        progress_schema_version = 18
         progress_fingerprint = self._scoring_progress_fingerprint(company_name, industry_sector)
         progress_forced = CacheManager.is_forced("scoring") or os.environ.get("ESG_NO_RESUME_SCORING", "0") == "1"
         cache_manager = CacheManager(run_key=f"{company_name}:{self.target_year}:scoring")
@@ -726,6 +797,7 @@ class VNSIScorer:
                 "factor": factor,
                 "pillar": rule.get("pillar", ""),
                 "sub_category": rule.get("sub_category", ""),
+                "question_bucket": self._question_bucket(rule, retrieval_meta.get("query_plan") or {}),
                 "question_type": rule.get("question_type", "default"),
                 "time_policy": rule.get("time_policy", "unspecified"),
                 "question": rule["question"][:140],
@@ -738,6 +810,9 @@ class VNSIScorer:
                 "confidence": resolution["confidence"],
                 "conflict_detected": resolution["conflict_detected"],
                 "reason": resolution["reason"],
+                "answer_origin": resolution.get("answer_origin"),
+                "parse_status": resolution.get("parse_status"),
+                "parse_error": resolution.get("parse_error"),
                 "evidence": extraction.get("raw_evidence"),
                 "evidence_source_id": extraction.get("evidence_source_id"),
                 "llm_confidence": extraction.get("llm_confidence"),
@@ -750,7 +825,10 @@ class VNSIScorer:
                 "top_source_refs": top_source_refs,
                 "evidence_present": evidence_present,
                 "evidence_verification": extraction.get("evidence_verification"),
-                "retry_used": False,
+                "retry_used": resolution.get("retry_used", False),
+                "retry_attempts": resolution.get("retry_attempts", 0),
+                "retry_profiles": resolution.get("retry_profiles", []),
+                "llm_call_info": extraction.get("llm_call_info", {}),
                 "query_plan": retrieval_meta.get("query_plan"),
                 "query_plan_fallback": retrieval_meta.get("query_plan_fallback", False),
                 "query_plan_source": (retrieval_meta.get("query_plan") or {}).get("query_plan_source"),
@@ -809,7 +887,7 @@ class VNSIScorer:
                 time.sleep(thermal_cooldown)
                 print("  [TẢN NHIỆT] Đã nghỉ xong, tiếp tục phân tích!\n")
 
-        summary = self.scoring_contract.summarize(all_details, weights=weights)
+        summary = self.scoring_contract.summarize(all_details)
         e_score = summary["pillar_scores"]["E"]["percentage"]
         s_score = summary["pillar_scores"]["S"]["percentage"]
         g_score = summary["pillar_scores"]["G"]["percentage"]
@@ -819,7 +897,6 @@ class VNSIScorer:
             "E_score": e_score,
             "S_score": s_score,
             "G_score": g_score,
-            "weights": weights,
             "total_score": total,
             "raw_total": total,
             "raw_max": summary["raw_max"],
@@ -829,6 +906,7 @@ class VNSIScorer:
             "pillar_scores": summary["pillar_scores"],
             "factor_scores": summary["factor_scores"],
             "factor_max_mismatches": summary["factor_max_mismatches"],
+            "diagnostics": self._build_diagnostics(all_details),
             "details": all_details,
         }
 
@@ -847,13 +925,14 @@ class VNSIScorer:
         if self.retrieval_engine is not None and hasattr(self.retrieval_engine, "corpus_window_fingerprint"):
             retrieval_fp = self.retrieval_engine.corpus_window_fingerprint()
         return CacheManager.hash_json({
-            "schema_version": "scoring_progress_v15",
+            "schema_version": "scoring_progress_v18",
+            "score_formula": "raw_percentage_only",
+            "llm_resilience": "retry_ladder_with_retrieval_fallback",
             "company": company_name,
             "industry_sector": industry_sector,
             "target_year": self.target_year,
             "rules_path": os.path.abspath(self.rules_path),
             "rules_hash": CacheManager.hash_file(self.rules_path) if os.path.exists(self.rules_path) else "",
-            "weights_hash": CacheManager.hash_file(self.weights_path) if os.path.exists(self.weights_path) else "",
             "structure_hash": CacheManager.hash_file(self.structure_path) if os.path.exists(self.structure_path) else "",
             "metadata_hash": CacheManager.hash_json(metadata_payload),
             "source_documents": source_docs,
@@ -912,14 +991,8 @@ class VNSIScorer:
         scores["raw_total"] = scores["total_score"]
         raw_max = float(scores.get("raw_max", 0.0) or 0.0)
         scores["raw_percentage"] = round(scores["total_score"] / raw_max * 100, 2) if raw_max > 0 else 0.0
-        weights = scores.get("weights", {})
-        score_100 = sum(
-            float(pillar_scores.get(p, {}).get("percentage", 0.0) or 0.0)
-            * float(weights.get(p, 0.0) or 0.0)
-            for p in ["E", "S", "G"]
-        )
-        score_100 = max(0.0, score_100 - deductions)
-        scores["percentage"] = round(min(100.0, score_100), 2)
+        # score_100 = raw_percentage sau khi total_score đã áp dụng screening penalty.
+        scores["percentage"] = round(min(100.0, max(0.0, scores["raw_percentage"])), 2)
         scores["score_100"] = scores["percentage"]
         return scores
 
@@ -928,7 +1001,6 @@ class VNSIScorer:
         data["raw_score"] = 0.0
         data["raw_percentage"] = 0.0
         data["percentage"] = 0.0
-        data["weighted_score"] = 0.0
 
     def _empty_result(self, industry_sector):
         return {
@@ -942,9 +1014,97 @@ class VNSIScorer:
             "percentage": 0,
             "score_100": 0,
             "details": [],
-            "weights": self._fallback_weights(industry_sector),
+            "diagnostics": self._build_diagnostics([]),
             "factor_scores": {},
         }
+
+    def _question_bucket(self, rule: dict, query_plan: dict) -> str:
+        if rule.get("question_type") == "ratio_calculation":
+            return "ratio_calculation"
+        if rule.get("question_type") == "numeric_disclosure":
+            return "numeric_disclosure"
+        if rule.get("is_multi_select"):
+            return "multi_select"
+        negative_options = set((query_plan or {}).get("negative_options") or [])
+        if negative_options:
+            return "single_select_negative"
+        if str(rule.get("time_policy", "")) == "current_year_required":
+            return "current_year_required"
+        if str(rule.get("time_policy", "")) in {"historical_allowed", "latest_valid_allowed"}:
+            return "historical_allowed"
+        return "single_select_positive"
+
+    def _build_diagnostics(self, details: list[dict]) -> dict:
+        from collections import Counter
+
+        counters = {
+            "question_bucket": Counter(),
+            "answer_origin": Counter(),
+            "parse_status": Counter(),
+            "resolution_status": Counter(),
+            "failure_reason": Counter(),
+        }
+        zero_score_positive = 0
+        retrieval_weak = 0
+        risky_questions = []
+        for detail in details or []:
+            counters["question_bucket"][detail.get("question_bucket") or "unknown"] += 1
+            counters["answer_origin"][detail.get("answer_origin") or "unknown"] += 1
+            counters["parse_status"][detail.get("parse_status") or "unknown"] += 1
+            counters["resolution_status"][detail.get("resolution_status") or "unknown"] += 1
+            failure_reason = self._diagnostic_failure_reason(detail)
+            counters["failure_reason"][failure_reason] += 1
+            if (
+                detail.get("answer") not in {"NULL", "SKIP", "", None}
+                and float(detail.get("score", 0.0) or 0.0) <= 0.0
+            ):
+                zero_score_positive += 1
+            if self._is_retrieval_weak(detail):
+                retrieval_weak += 1
+            if failure_reason not in {"ok"}:
+                risky_questions.append({
+                    "id": detail.get("id"),
+                    "bucket": detail.get("question_bucket"),
+                    "answer_origin": detail.get("answer_origin"),
+                    "parse_status": detail.get("parse_status"),
+                    "failure_reason": failure_reason,
+                    "score": detail.get("score"),
+                    "reason": detail.get("reason", ""),
+                })
+        return {
+            "counts": {name: dict(counter) for name, counter in counters.items()},
+            "zero_score_positive_answers": zero_score_positive,
+            "retrieval_weak_count": retrieval_weak,
+            "risky_questions": risky_questions[:25],
+        }
+
+    def _diagnostic_failure_reason(self, detail: dict) -> str:
+        if detail.get("parse_status") in {"empty_raw_response", "empty_after_think_strip", "llm_transport_error"}:
+            return "llm_completion_failure"
+        if detail.get("parse_status") in {"answer_regex_only", "repaired_json", "json_malformed"}:
+            return "llm_json_failure"
+        if detail.get("answer_origin") in {"retrieval_fallback_multi", "retrieval_fallback_single"}:
+            return "retrieval_fallback_used"
+        if detail.get("resolution_status") == "weakly_supported":
+            return "weak_evidence"
+        if detail.get("answer") == "NULL":
+            return "null_or_insufficient"
+        if (
+            detail.get("answer") not in {"NULL", "SKIP", "", None}
+            and float(detail.get("score", 0.0) or 0.0) <= 0.0
+        ):
+            return "positive_answer_without_grounded_evidence"
+        return "ok"
+
+    def _is_retrieval_weak(self, detail: dict) -> bool:
+        sections = detail.get("source_sections") or []
+        if not sections:
+            return True
+        try:
+            best_score = max(float(section.get("rerank_score", section.get("score", 0.0)) or 0.0) for section in sections)
+        except (TypeError, ValueError):
+            best_score = 0.0
+        return best_score < 20.0 and not detail.get("evidence_present")
 
     def _format_section(self, section):
         try:
@@ -955,6 +1115,7 @@ class VNSIScorer:
             f"[SOURCE_ID: {section.get('source_id', 'S?')} | DOC: {section.get('source_file')} | "
             f"TYPE: {section.get('document_type')} | YEAR: {section.get('year_guess')} | "
             f"PAGES: {section.get('page_start')}-{section.get('page_end')} | "
-            f"SCORE: {score:.2f} | OPTIONS: {','.join(section.get('matched_options', []) or [])}]\n"
+            f"SCORE: {score:.2f} | OPTIONS: {','.join(section.get('matched_options', []) or [])} | "
+            f"OPTION_TERMS: {', '.join(section.get('option_hit_terms', []) or [])}]\n"
             f"{section.get('content', '')}"
         )

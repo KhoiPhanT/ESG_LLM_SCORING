@@ -277,7 +277,6 @@ def run_pipeline(
     print(f"\n[4/6] Chấm điểm VNSI ({industry_sector})...")
     scorer = VNSIScorer(
         rules_path="outputs/vnsi_rules.json",
-        weights_path="outputs/industry_weights.json",
         structure_path="outputs/scoring_structure.json",
         llm_client=llm,
         corpus=corpus,
@@ -318,14 +317,13 @@ def run_pipeline(
     print(f"  Thời gian xử lý  : {elapsed:.0f} giây")
     print("-" * 65)
 
-    w = scores["weights"]
     print(f"\n  ĐIỂM VNSI RAW THEO WORKBOOK: {scores['total_score']:.2f} / {scores.get('raw_max', 0):.2f}")
     print(f"  ĐIỂM QUY ĐỔI THANG 100   : {scores.get('score_100', scores.get('percentage', 0)):.2f}")
-    print(f"  ┌──────────────────────────────────────────────┐")
-    print(f"  │  E (Môi trường) : {scores['E_score']:6.2f}/100  (trọng số {w['E']:.0%}) │")
-    print(f"  │  S (Xã hội)     : {scores['S_score']:6.2f}/100  (trọng số {w['S']:.0%}) │")
-    print(f"  │  G (Quản trị)   : {scores['G_score']:6.2f}/100  (trọng số {w['G']:.0%}) │")
-    print(f"  └──────────────────────────────────────────────┘")
+    print(f"  ┌───────────────────────────────────────────┐")
+    print(f"  │  E (Môi trường) : {scores['E_score']:6.2f}%                  │")
+    print(f"  │  S (Xã hội)     : {scores['S_score']:6.2f}%                  │")
+    print(f"  │  G (Quản trị)   : {scores['G_score']:6.2f}%                  │")
+    print(f"  └───────────────────────────────────────────┘")
 
     print(f"\n  Screening        : {'✅ PASS' if screening_results['passed'] else '❌ FAIL'}")
     if not screening_results["passed"]:
@@ -365,10 +363,10 @@ def run_pipeline(
             "raw_percentage": scores.get("raw_percentage", 0.0),
             "percentage": scores.get("percentage", 0.0),
             "score_100": scores.get("score_100", scores.get("percentage", 0.0)),
-            "weights": scores["weights"],
             "pillar_scores": scores.get("pillar_scores", {}),
             "factor_scores": scores.get("factor_scores", {}),
             "factor_max_mismatches": scores.get("factor_max_mismatches", []),
+            "diagnostics": scores.get("diagnostics", {}),
         },
         "screening": screening_results,
         "esgui": esgui_result,
@@ -525,6 +523,11 @@ def run_pipeline(
 if __name__ == "__main__":
     # Mặc định: dùng bộ tài liệu ACB 2024 có sẵn trong repo để test
     # Có thể truyền argument: python main.py <pdf_path> <company> <sector> <year>
+    # Lưu ý: nếu <pdf_path> nằm trong một folder mang tên công ty (vd:
+    # "VNM - 2024 test"), pipeline sẽ nạp toàn bộ PDF/ảnh trong folder đó như
+    # một dossier bằng chứng của công ty. Điều này là chủ đích vì nhiều câu hỏi
+    # cho phép historical evidence; các câu current-year-only sẽ được lọc sau
+    # theo `time_policy`.
     if len(sys.argv) > 1:
         pdf = sys.argv[1]
         company = sys.argv[2] if len(sys.argv) > 2 else "ACB"

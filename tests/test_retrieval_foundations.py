@@ -4,13 +4,337 @@ import unittest
 from types import SimpleNamespace
 
 from core.evidence.numeric_extractor import NumericExtractor
+from core.evidence.evidence_extractor import EvidenceExtractor
 from core.ingestion.document_classifier import DocumentClassifier
 from core.ingestion.document_corpus import DocumentCorpus, DocumentRecord
+from core.llm_client import OllamaClient
 from core.query_builder.question_query_builder import QuestionQueryBuilder
 from core.query_builder.question_retrieval_metadata import QuestionRetrievalMetadataBuilder
+from core.scoring.vnsi_scorer import VNSIScorer
 
 
 class RetrievalFoundationTests(unittest.TestCase):
+    def test_strip_think_tags_handles_nested_and_unclosed_blocks(self):
+        text = '<think>inner <think>nested</think> still thinking</think>{"answer":"A"}'
+        self.assertEqual(OllamaClient._strip_think_tags(text), '{"answer":"A"}')
+        self.assertEqual(OllamaClient._strip_think_tags('preface <think>cut off'), "preface")
+
+    def test_parse_json_trims_prefix_and_repairs_trailing_comma(self):
+        client = OllamaClient()
+        parsed = client._parse_json('Narrative first {"answer":"A","selected_options":["A"],}')
+        self.assertIsNotNone(parsed)
+        self.assertEqual(parsed["answer"], "A")
+        self.assertEqual(parsed["selected_options"], ["A"])
+
+    def test_parse_json_repairs_truncated_nested_object(self):
+        client = OllamaClient()
+        parsed = client._parse_json(
+            '{"answer":"A","selected_options":["A"],"option_evidence":{"A":{"source_id":"S1","quote":"abc"}}'
+        )
+        self.assertIsNotNone(parsed)
+        self.assertEqual(parsed["answer"], "A")
+        self.assertEqual(parsed["option_evidence"]["A"]["source_id"], "S1")
+
+    def test_parse_json_classifies_empty_after_think_strip(self):
+        client = OllamaClient()
+        client._last_call_info = {
+            "status": "ok",
+            "raw_response_before_strip": "<think>internal</think>",
+            "response_after_strip": "",
+        }
+        parsed = client._parse_json("")
+        self.assertIsNone(parsed)
+        self.assertEqual(client._last_parse_info["parse_status"], "empty_after_think_strip")
+
+    def test_llm_regex_only_parse_is_not_enough_for_multi_select(self):
+        class BrokenJsonClient(OllamaClient):
+            def _call(self, *args, **kwargs):
+                return '{"answer":"A,B","selected_options":["A","B"],"confidence":0.8,"reason":"unterminated'
+
+        result = BrokenJsonClient().ask_vnsi_question(
+            context="[SOURCE_ID: S1] Chính sách năng lượng.",
+            question="Chọn các chính sách môi trường phù hợp",
+            options="A. Năng lượng\nB. Nước",
+            q_id="E.test",
+            is_multi_select=True,
+        )
+
+        self.assertEqual(result["answer"], "NULL")
+        self.assertEqual(result["selected_options"], [])
+        self.assertIn(result["parse_status"], {"answer_regex_only", "repaired_json"})
+
+    def test_retry_ladder_recovers_after_empty_response(self):
+        class RetryClient:
+            def __init__(self):
+                self.calls = []
+
+            def ask_vnsi_question(self, **kwargs):
+                self.calls.append((kwargs["response_mode"], kwargs["context_limit"]))
+                if len(self.calls) == 1:
+                    return {
+                        "answer": "NULL",
+                        "selected_options": [],
+                        "reason": "fallback",
+                        "parse_status": "empty_after_think_strip",
+                        "call_info": {},
+                    }
+                return {
+                    "answer": "A",
+                    "selected_options": ["A"],
+                    "reason": "ok",
+                    "confidence": 0.8,
+                    "evidence_source_id": "S1",
+                    "evidence_quote": "Cam kết bảo vệ môi trường",
+                    "parse_status": "valid_json",
+                    "call_info": {},
+                }
+
+        extractor = EvidenceExtractor(llm_client=RetryClient(), target_year=2024)
+        rule = {
+            "id": "E.1.1.1",
+            "question_type": "policy",
+            "question": "Có chính sách môi trường còn hiệu lực hay không?",
+            "options": "A. Không có\nB. Có nhưng không công khai\nC. Có và công khai",
+            "logic": "A. 0\nB. 0.5\nC. 1",
+        }
+        context_bundle = {
+            "context": "[SOURCE_ID: S1] Cam kết bảo vệ môi trường và công khai.",
+            "sections": [{
+                "source_id": "S1",
+                "source_file": "policy.pdf",
+                "source_path": "/tmp/policy.pdf",
+                "document_type": "policy_document",
+                "page_start": 1,
+                "page_end": 1,
+                "content": "Cam kết bảo vệ môi trường và công khai.",
+                "score": 30,
+                "quality_score": 1.0,
+            }],
+            "context_char_limit": 22000,
+            "retrieval_meta": {"query_plan": {}},
+        }
+        result = extractor.extract(rule, context_bundle)
+        self.assertEqual(result["answer"], "A")
+        self.assertTrue(result["retry_used"])
+        self.assertEqual(result["retry_attempts"], 2)
+
+    def test_single_select_fallback_uses_dominant_retrieval_option(self):
+        class EmptyClient:
+            def ask_vnsi_question(self, **kwargs):
+                return {
+                    "answer": "NULL",
+                    "selected_options": [],
+                    "reason": "fallback",
+                    "parse_status": "empty_raw_response",
+                    "call_info": {},
+                }
+
+        extractor = EvidenceExtractor(llm_client=EmptyClient(), target_year=2024)
+        rule = {
+            "id": "E.1.1.1",
+            "question_type": "policy",
+            "question": "Công ty có chính sách liên quan tới tác động môi trường còn hiệu lực hay không?",
+            "options": (
+                "A. Không có chính sách\n"
+                "B. Có chính sách nhưng không công khai rộng rãi\n"
+                "C. Có chính sách liên quan tới tác động môi trường và được công khai rộng rãi"
+            ),
+            "logic": "A. 0\nB. 0.5\nC. 1",
+            "time_policy": "current_year_required",
+        }
+        query_plan = {
+            "option_focus": {
+                "B": ["chính sách môi trường", "không công khai"],
+                "C": ["chính sách môi trường", "công khai rộng rãi"],
+            },
+            "negative_options": ["A"],
+            "option_evidence_requirements": {"B": "policy_topic", "C": "policy_topic"},
+        }
+        context_bundle = {
+            "context": "",
+            "sections": [{
+                "source_id": "S1",
+                "source_file": "annual.pdf",
+                "source_path": "/tmp/annual.pdf",
+                "document_type": "annual_report",
+                "year_guess": 2024,
+                "page_start": 10,
+                "page_end": 10,
+                "matched_options": ["C"],
+                "content": "Công ty có chính sách môi trường và được công khai rộng rãi trong báo cáo thường niên.",
+                "score": 35,
+                "quality_score": 1.0,
+            }],
+            "context_char_limit": 22000,
+            "retrieval_meta": {"query_plan": query_plan},
+        }
+        result = extractor.extract(rule, context_bundle)
+        self.assertEqual(result["answer"], "C")
+        self.assertEqual(result["answer_origin"], "retrieval_fallback_single")
+        self.assertTrue(result["evidence_items"])
+
+    def test_single_select_fallback_stays_null_when_ambiguous(self):
+        class EmptyClient:
+            def ask_vnsi_question(self, **kwargs):
+                return {
+                    "answer": "NULL",
+                    "selected_options": [],
+                    "reason": "fallback",
+                    "parse_status": "empty_raw_response",
+                    "call_info": {},
+                }
+
+        extractor = EvidenceExtractor(llm_client=EmptyClient(), target_year=2024)
+        rule = {
+            "id": "E.1.1.1",
+            "question_type": "policy",
+            "question": "Công ty có chính sách liên quan tới tác động môi trường còn hiệu lực hay không?",
+            "options": "A. Không có\nB. Có nhưng không công khai\nC. Có và công khai",
+            "logic": "A. 0\nB. 0.5\nC. 1",
+        }
+        query_plan = {
+            "option_focus": {
+                "B": ["chính sách môi trường", "không công khai"],
+                "C": ["chính sách môi trường", "công khai rộng rãi"],
+            },
+            "negative_options": ["A"],
+            "option_evidence_requirements": {"B": "policy_topic", "C": "policy_topic"},
+        }
+        sections = [
+            {
+                "source_id": "S1",
+                "source_file": "policy1.pdf",
+                "source_path": "/tmp/policy1.pdf",
+                "document_type": "policy_document",
+                "year_guess": 2024,
+                "page_start": 1,
+                "page_end": 1,
+                "matched_options": ["B"],
+                "content": "Có chính sách môi trường nhưng không công khai rộng rãi.",
+                "score": 30,
+                "quality_score": 1.0,
+            },
+            {
+                "source_id": "S2",
+                "source_file": "policy2.pdf",
+                "source_path": "/tmp/policy2.pdf",
+                "document_type": "policy_document",
+                "year_guess": 2024,
+                "page_start": 2,
+                "page_end": 2,
+                "matched_options": ["C"],
+                "content": "Có chính sách môi trường và công khai rộng rãi trên website.",
+                "score": 29,
+                "quality_score": 1.0,
+            },
+        ]
+        result = extractor.extract(rule, {
+            "context": "",
+            "sections": sections,
+            "context_char_limit": 22000,
+            "retrieval_meta": {"query_plan": query_plan},
+        })
+        self.assertEqual(result["answer"], "NULL")
+
+    def test_option_evidence_requires_option_specific_quote_relevance(self):
+        extractor = EvidenceExtractor()
+        rule = {
+            "id": "E.1.1.3",
+            "is_multi_select": True,
+            "question_type": "multi_select",
+            "options": (
+                "A. Được Hội đồng quản trị phê duyệt;\n"
+                "B. Cam kết tuân thủ pháp luật về môi trường;"
+            ),
+        }
+        source_sections = [{
+            "source_id": "S1",
+            "source_file": "governance.pdf",
+            "document_type": "policy_document",
+            "page_start": 41,
+            "page_end": 42,
+            "content": "đã có đầy đủ quyền hạn, nguồn lực, và tư cách độc lập để hỗ trợ Hội đồng quản trị thực hiện chức năng giám sát.",
+            "score": 10,
+            "quality_score": 0.9,
+        }]
+        query_plan = {
+            "option_focus": {
+                "A": ["chính sách", "Hội đồng quản trị phê duyệt"],
+                "B": ["chính sách", "tuân thủ pháp luật môi trường"],
+            },
+            "option_evidence_requirements": {
+                "A": "approval",
+                "B": "legal_commitment",
+            },
+        }
+
+        result = extractor._build_option_level_evidence(
+            rule=rule,
+            selected_options=["A"],
+            option_evidence={
+                "A": {
+                    "source_id": "S1",
+                    "quote": "đã có đầy đủ quyền hạn, nguồn lực, và tư cách độc lập để hỗ trợ Hội đồng quản trị thực hiện chức năng giám sát.",
+                }
+            },
+            source_sections=source_sections,
+            query_plan=query_plan,
+        )
+
+        self.assertEqual(result["selected_options"], [])
+        self.assertEqual(
+            result["option_evidence_verification"]["A"]["option_relevance_status"],
+            "unsupported",
+        )
+
+    def test_multi_select_fallback_uses_distinct_option_anchors(self):
+        plan = QuestionRetrievalMetadataBuilder(target_year=2024).build({
+            "id": "E.1.1.2",
+            "question_type": "multi_select",
+            "is_multi_select": True,
+            "question": "Chính sách môi trường đề cập khía cạnh chủ đề trọng yếu nào?",
+            "options": (
+                "A. Nguyên vật liệu\n"
+                "B. Năng lượng\n"
+                "C. Nước\n"
+                "D. Đa dạng sinh học\n"
+                "E. Phát thải\n"
+                "F. Nước thải và Chất thải\n"
+                "G. Quản lý môi trường nhà cung cấp\n"
+                "H. Tuân thủ pháp luật môi trường"
+            ),
+            "logic": "+0,125 trên 1 yêu cầu đáp ứng",
+        })
+        sections = [{
+            "source_id": "S1",
+            "source_file": "ptbv.pdf",
+            "document_type": "sustainability_report",
+            "page_start": 19,
+            "page_end": 19,
+            "matched_options": list("ABCDEFGH"),
+            "content": "\n".join([
+                "Nguồn nguyên liệu bền vững",
+                "Sử dụng năng lượng hiệu quả và sử dụng năng lượng xanh",
+                "Nguồn nước và chất lượng nước",
+                "Bảo vệ đa dạng sinh học",
+                "Giảm lượng phát thải khí nhà kính",
+                "Kiểm soát nước thải và chất thải",
+                "Mở rộng hoạt động đến các nhà cung cấp trong chuỗi cung ứng",
+                "Tuân thủ luật định về môi trường",
+            ]),
+            "score": 10,
+            "quality_score": 1.0,
+        }]
+
+        fallback = EvidenceExtractor()._fallback_option_evidence_from_retrieval(
+            rule={"is_multi_select": True},
+            source_sections=sections,
+            query_plan=plan,
+        )
+
+        self.assertEqual(set(fallback), set("ABCDEFGH"))
+        self.assertEqual(len({item["quote"] for item in fallback.values()}), 8)
+
     def test_policy_question_does_not_emit_connector_bigrams(self):
         rule = {
             "id": "E.1.1.1",
@@ -195,6 +519,53 @@ Tổng doanh thu hợp nhất năm 2024 đạt 40 tỷ đồng.
                     os.unlink(pdf_path)
                 except Exception:
                     pass
+
+    def test_screening_penalties_apply_deductions_once_and_keep_raw_formula(self):
+        scorer = VNSIScorer(rules_path="missing_rules.json", structure_path="missing_structure.json")
+        scores = {
+            "raw_max": 20.0,
+            "pillar_scores": {
+                "E": {"raw_score": 4.0, "raw_percentage": 40.0, "percentage": 40.0},
+                "S": {"raw_score": 3.0, "raw_percentage": 30.0, "percentage": 30.0},
+                "G": {"raw_score": 5.0, "raw_percentage": 50.0, "percentage": 50.0},
+            },
+        }
+        result = scorer.apply_screening_penalties(scores, {"direct_deductions": 2.0})
+        self.assertEqual(result["total_score"], 10.0)
+        self.assertEqual(result["raw_total"], 10.0)
+        self.assertEqual(result["raw_percentage"], 50.0)
+        self.assertEqual(result["score_100"], 50.0)
+
+    def test_diagnostics_classify_llm_and_fallback_failures(self):
+        scorer = VNSIScorer(rules_path="missing_rules.json", structure_path="missing_structure.json")
+        diagnostics = scorer._build_diagnostics([
+            {
+                "id": "E.1.1.1",
+                "question_bucket": "single_select_positive",
+                "answer_origin": "llm_empty_failure",
+                "parse_status": "empty_raw_response",
+                "resolution_status": "insufficient",
+                "answer": "NULL",
+                "score": 0.0,
+                "evidence_present": False,
+                "source_sections": [],
+                "reason": "",
+            },
+            {
+                "id": "E.1.1.2",
+                "question_bucket": "multi_select",
+                "answer_origin": "retrieval_fallback_multi",
+                "parse_status": "answer_regex_only",
+                "resolution_status": "supported",
+                "answer": "A,B",
+                "score": 0.25,
+                "evidence_present": True,
+                "source_sections": [{"rerank_score": 50}],
+                "reason": "",
+            },
+        ])
+        self.assertEqual(diagnostics["counts"]["failure_reason"]["llm_completion_failure"], 1)
+        self.assertEqual(diagnostics["counts"]["failure_reason"]["llm_json_failure"], 1)
 
 
 if __name__ == "__main__":
