@@ -1,49 +1,119 @@
-# Hạn Chế Của Hệ Thống Và Định Hướng Phát Triển (Future Works)
+# Hạn Chế Hiện Tại Và Hướng Phát Triển
 
-Dự án hiện tại đã xây dựng thành công một pipeline hoàn chỉnh, tự động hóa từ khâu đọc PDF (OCR), trích xuất thông tin bằng LLM (Qwen3:30b) cho đến phân tích nhân quả (PLS-SEM). Điểm sáng của hệ thống là khả năng bám sát 100% logic khắt khe của bộ quy chuẩn VNSI 2025, phạt điểm (-1) một cách sòng phẳng và khách quan khi doanh nghiệp thiếu sót thông tin công bố.
+Pipeline hiện tại đã tốt hơn đáng kể ở 3 điểm: chống lỗi JSON của LLM, giảm `NULL` oan bằng retrieval-grounded fallback, và tính điểm tổng đúng theo raw workbook. Tuy nhiên vẫn còn các giới hạn cần nhìn thẳng.
 
-Tuy nhiên, để đưa hệ thống này vào môi trường sản xuất thực tế (Production) với độ chính xác tuyệt đối, tránh hiện tượng "phạt oan" do lỗi kỹ thuật hoặc hạn chế của dữ liệu đầu vào, chúng ta cần nhìn nhận các hạn chế và hướng đi tiếp theo.
+## 1. Chất Lượng Retrieval Vẫn Là Nút Thắt Chính
 
-## 1. Mở Rộng Nguồn Dữ Liệu Đầu Vào (Data Collection)
+### Hiện trạng
 
-### Vấn đề hiện tại
-Bộ quy chuẩn VNSI yêu cầu đánh giá rất sâu về quản trị (Governance) và xã hội (Social) (ví dụ: giao dịch bên liên quan, tính độc lập của HĐQT, cơ chế khiếu nại của người lao động). Nếu chỉ nạp Báo cáo Thường niên và Báo cáo Tài chính, hệ thống sẽ thiếu hụt dữ liệu trầm trọng do các doanh nghiệp Việt Nam thường không công bố đủ các chính sách này trong BCTN. Theo quy chuẩn hiện hành, không tìm thấy bằng chứng công khai đồng nghĩa với việc bị trừ điểm (-1).
+- Khi retrieval không kéo đúng section, cả LLM lẫn fallback đều yếu.
+- Các câu Governance và policy chi tiết vẫn dễ bị thiếu bằng chứng nếu dossier tài liệu chưa đủ.
+- Câu hỏi có wording đặc thù ngành vẫn có thể bị bỏ sót dù đã có metadata routing.
 
-### Giải pháp đề xuất
-Cần xây dựng pipeline tự động thu thập thêm các tài liệu đại chúng sau từ website doanh nghiệp hoặc Ủy ban Chứng khoán:
-- **Báo cáo Phát triển Bền vững (Sustainability/ESG Report):** Nguồn dữ liệu cốt lõi cho Pillar E và S.
-- **Điều lệ công ty (Company Charter):** Trả lời các câu hỏi về cơ cấu và quyền hạn HĐQT, quyền cổ đông thiểu số.
-- **Quy chế Quản trị Công ty (Corporate Governance Regulations):** Giải quyết triệt để các câu về giao dịch với bên liên quan.
-- **Bộ Quy tắc Ứng xử / Đạo đức kinh doanh (Code of Conduct):** Bằng chứng cho các chính sách nhân quyền, lao động, chống tham nhũng.
-- **Báo cáo Tình hình Quản trị Công ty (6 tháng/1 năm):** Minh bạch về thù lao và các cuộc họp HĐQT.
+### Hướng phát triển
 
-## 2. Nâng Cấp Hệ Thống RAG (Retrieval-Augmented Generation)
+1. Nâng chất lượng semantic retrieval và reranking.
+2. Tăng coverage cho metadata question taxonomy.
+3. Theo dõi chặt các bucket có `retrieval_weak` trong diagnostics sau mỗi lần chạy lớn.
+4. Thiết lập benchmark retrieval theo từng nhóm câu để tránh tối ưu mù.
 
-### Vấn đề hiện tại
-Hệ thống hiện tại (Dù đã có cải tiến với top_k=6 và 15,000 ký tự) vẫn gặp rủi ro "Điểm mù" (Blind Spots) và hiệu ứng "Phạt kép" (Double Penalty):
-- **Từ đồng nghĩa & Đặc thù ngành:** Câu hỏi yêu cầu "đánh giá tác động môi trường", nhưng ngân hàng dùng từ "quản lý rủi ro tín dụng xanh". Keyword search sẽ bỏ sót. RAG sót thông tin dẫn đến LLM mặc định là doanh nghiệp vi phạm và chấm -1.
-- **Gộp chung tài liệu:** RAG tìm kiếm trên toàn bộ corpus, dễ dẫn đến việc lấy nhầm ngữ cảnh không liên quan.
+## 2. Citation Ở Markdown Chưa Phản Ánh Hết Dữ Liệu Gốc
 
-### Giải pháp đề xuất
-1. **Semantic Search & Vector Database:** Sử dụng các mô hình nhúng (ví dụ: `BGE-m3`) kết hợp `ChromaDB`. Quan trọng nhất là xây dựng **Từ điển đồng nghĩa ESG (Semantic Dictionary)** riêng cho từng ngành (ví dụ ngành Tài chính: "môi trường" = "tín dụng xanh", "phát thải").
-2. **Metadata & Router Filtering (Phân luồng tìm kiếm):** 
-   - Khi LLM chấm câu Quản trị (G) → Tăng trọng số tìm kiếm trong Điều lệ và Quy chế.
-   - Khi chấm câu Môi trường (E) → Ưu tiên Báo cáo PTBV.
-3. **Mở rộng Context Window:** Nâng giới hạn trích xuất lên top_k=15 hoặc 40,000 ký tự để tận dụng sức mạnh xử lý context dài của Qwen3:30b, giảm thiểu tối đa hiện tượng chặt đứt đoạn văn (chunking fragmentation).
+### Hiện trạng
 
-## 3. Xử lý Bảng biểu (Table Extraction)
+- `esg_report.json` và `scoring_audit.csv` có thể đã có `file + page`.
+- Nhưng markdown clean report hiện ưu tiên `evidence_items`; nếu evidence item rỗng, người đọc có thể tưởng là không có nguồn dù `top_source_refs` hoặc `source_sections` vẫn tồn tại.
 
-**Vấn đề hiện tại:** Mặc dù `pytesseract` đọc chữ từ ảnh scan cực tốt, nhưng khi gặp bảng biểu cấu trúc phức tạp (cơ cấu nhân sự, lượng phát thải qua các năm), OCR thường làm vỡ hàng/cột, khiến LLM mất khả năng đối chiếu số liệu.
+### Hướng phát triển
 
-**Giải pháp đề xuất:**
-Tích hợp thêm các mô hình chuyên đọc bảng biểu như `LlamaParse`, `Table Transformer` hoặc `Camelot` để bóc tách cấu trúc bảng thành định dạng JSON/Markdown chuẩn trước khi đưa vào RAG.
+1. Cải thiện `clean_reporter.py` để luôn hiển thị nguồn tham chiếu ngắn khi có `top_source_refs`.
+2. Bổ sung chế độ xuất report “audit-first” cho người rà soát thủ công.
+3. Tách rõ “quote evidence” và “reference-only support” trong report cuối.
 
-## 4. Đánh giá Đa tác tử (Multi-Agent System)
+## 3. Numeric/Table Questions Vẫn Cần Tăng Độ Bền
 
-**Vấn đề hiện tại:** Hệ thống đang phụ thuộc vào 1 lượt prompt duy nhất của Qwen3 để vừa đọc ngữ cảnh vừa ra quyết định. Nếu LLM thiếu kiến thức ngành, nó sẽ đưa ra lý lẽ từ chối cứng nhắc (Ví dụ: từ chối công nhận tín dụng xanh là hoạt động môi trường cốt lõi của ngân hàng).
+### Hiện trạng
 
-**Giải pháp đề xuất:** 
-Thiết kế hệ thống đa tác tử (Agentic RAG):
-- **Agent 1 (Researcher):** Lập luận nhiều bước (Multi-hop). "Tôi cần tìm chính sách nhân sự. Tôi thấy quy chế lương, tôi sẽ tìm tiếp quy chế thai sản...".
-- **Agent 2 (Scorer):** Chấm điểm dựa trên bằng chứng của Agent 1.
-- **Agent 3 (Reviewer):** Đóng vai trò "Kiểm toán viên ngành". Được cung cấp riêng prompt về đặc thù ngành (Domain Knowledge) để phản biện: *"Đối với ngân hàng, tín dụng xanh chính là quản lý môi trường. Hãy công nhận điểm này"*. Kiến trúc này sẽ giúp điểm số công bằng và chống ảo giác (hallucination).
+- OCR bảng phức tạp vẫn có thể làm vỡ cấu trúc.
+- `NumericExtractor` đã giúp được một phần, nhưng chưa thay thế hoàn toàn table parsing chuẩn.
+
+### Hướng phát triển
+
+1. Tăng khả năng trích số liệu có cấu trúc.
+2. Tách riêng pipeline cho bảng biểu và ratio questions.
+3. So khớp đơn vị, niên độ và ngữ cảnh số liệu chặt hơn.
+4. Tạo regression set riêng cho numeric disclosure và ratio calculation.
+
+## 4. Fallback Retrieval Cần Tiếp Tục Được Kiểm Soát
+
+### Hiện trạng
+
+- Retrieval fallback hiện nay hữu ích để cứu các case LLM rỗng/think-only.
+- Nhưng với câu ambiguous, negative option, hoặc policy rất tinh vi, fallback vẫn phải bảo thủ để tránh chấm oan.
+
+### Hướng phát triển
+
+1. Mở rộng taxonomy test cho từng loại câu hỏi.
+2. Gắn thêm confidence/audit marker để tách câu “điểm đáng tin” và câu “cần rà thủ công”.
+3. Bổ sung replay set từ các ca fail thực tế.
+4. Tách policy an toàn khác nhau cho:
+   - positive single-select
+   - negative single-select
+   - multi-select
+   - historical-allowed
+   - current-year-required
+
+## 5. Khả Năng Vận Hành Dài Hơi
+
+### Hiện trạng
+
+- Hệ thống đã có progress autosave và resume.
+- Nhưng report tổng vẫn chỉ ghi ở cuối job; nếu dừng giữa chừng thì người dùng phải đọc progress cache hoặc audit trung gian.
+
+### Hướng phát triển
+
+1. Sinh `partial_report.json` trong lúc chạy.
+2. Thêm dashboard hoặc CLI audit summary cho mỗi lần resume.
+3. Chuẩn hóa workflow kiểm thử full dossier sau mỗi thay đổi lớn.
+4. Bổ sung cơ chế checkpoint cho cả report layer, không chỉ scoring progress.
+
+## 6. Kiểm Thử Và Quan Sát
+
+### Hiện trạng
+
+- Đã có regression test cho parse/fallback/scoring quan trọng.
+- Nhưng độ tin cậy production còn phụ thuộc vào replay trên nhiều dossier thực.
+
+### Hướng phát triển
+
+1. Xây thêm bộ replay test đại diện theo bucket câu hỏi.
+2. So sánh score delta giữa các phiên bản code.
+3. Theo dõi các chỉ số:
+   - tỷ lệ `NULL`,
+   - tỷ lệ `llm_empty_failure`,
+   - tỷ lệ `retrieval_fallback_*`,
+   - số câu `weakly_supported`,
+   - tỷ lệ câu có citation đầy đủ.
+4. Thiết lập acceptance gate tối thiểu trước khi coi một phiên bản là đủ tốt để chạy diện rộng.
+
+## 7. Những Điều Không Nên Giả Định
+
+Khi vận hành dự án này, không nên mặc định rằng:
+
+- LLM trả answer là đủ để chấm điểm.
+- `reason` đẹp nghĩa là evidence đúng.
+- markdown clean report luôn phản ánh hết citation gốc.
+- preflight cache hit nghĩa là scoring sẽ tốt.
+- historical evidence luôn hợp lệ; nhiều câu vẫn bắt buộc current year.
+
+Hệ thống hiện tại đã giảm đáng kể các lỗi này, nhưng chưa loại bỏ hoàn toàn.
+
+## 8. Mục Tiêu Kỹ Thuật Hợp Lý Trong Giai Đoạn Tiếp Theo
+
+Thay vì đặt mục tiêu mơ hồ như “không còn lỗi”, nên theo đuổi các mục tiêu vận hành đo được:
+
+1. Giảm rõ rệt số câu `NULL` oan.
+2. Tăng tỷ lệ câu có citation file/trang rõ ràng trong report JSON.
+3. Giảm số câu `weakly_supported` nhưng vẫn đang được người dùng kỳ vọng có điểm.
+4. Làm cho markdown report phản ánh citation gần hơn với JSON report.
+5. Rút ngắn thời gian điều tra khi có fail nhờ debug artifact nhất quán.
