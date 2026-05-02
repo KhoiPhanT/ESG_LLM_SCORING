@@ -1,0 +1,5179 @@
+{
+  "passed": true,
+  "metadata_validation": {
+    "passed": true,
+    "question_count": 113,
+    "metadata_count": 113,
+    "missing": [],
+    "invalid": [],
+    "multi_missing": [],
+    "numeric_missing": [],
+    "governance_missing": []
+  },
+  "checked_count": 113,
+  "full": true,
+  "failure_count": 0,
+  "critical_failure_count": 0,
+  "failures": [],
+  "critical_failures": [],
+  "checks": [
+    {
+      "question_id": "E.1.1.0",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 7,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 10,
+          "page_end": 11,
+          "rerank_score": 103.792
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 51,
+          "rerank_score": 101.98
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 10,
+          "page_end": 10,
+          "rerank_score": 99.776
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 9,
+          "page_end": 10,
+          "rerank_score": 98.401
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 133,
+          "page_end": 134,
+          "rerank_score": 96.595
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.1.1.1",
+      "strategy": "policy_document",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 41,
+          "page_end": 42,
+          "rerank_score": 66.297
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 61,
+          "page_end": 62,
+          "rerank_score": 65.318
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 10,
+          "page_end": 11,
+          "rerank_score": 64.742
+        },
+        {
+          "source_file": "1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf",
+          "document_type": "policy_document",
+          "page_start": 15,
+          "page_end": 17,
+          "rerank_score": 64.274
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 51,
+          "rerank_score": 61.38
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.1.1.2",
+      "strategy": "multi_option",
+      "candidate_count": 11,
+      "actual_top_k": 16,
+      "max_queries_used": 24,
+      "top_sources": [
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 10,
+          "page_end": 11,
+          "rerank_score": 108.642
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 9,
+          "page_end": 10,
+          "rerank_score": 107.451
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 10,
+          "page_end": 10,
+          "rerank_score": 104.626
+        },
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 60,
+          "page_end": 63,
+          "rerank_score": 98.253
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 85,
+          "page_end": 86,
+          "rerank_score": 93.822
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.1.1.3",
+      "strategy": "multi_option",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 12,
+      "top_sources": [
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 41,
+          "page_end": 42,
+          "rerank_score": 103.147
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 10,
+          "page_end": 11,
+          "rerank_score": 100.242
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 50,
+          "rerank_score": 100.93
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 46,
+          "page_end": 47,
+          "rerank_score": 98.201
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 46,
+          "page_end": 48,
+          "rerank_score": 95.188
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.1.1.4",
+      "strategy": "policy_document",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 50,
+          "rerank_score": 81.23
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 51,
+          "rerank_score": 76.93
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 10,
+          "page_end": 11,
+          "rerank_score": 74.992
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 9,
+          "page_end": 10,
+          "rerank_score": 68.951
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 84,
+          "page_end": 88,
+          "rerank_score": 68.737
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.1.1.5",
+      "strategy": "csr_narrative",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 3,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 18,
+          "page_end": 20,
+          "rerank_score": 83.739
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 17,
+          "page_end": 19,
+          "rerank_score": 83.123
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 89,
+          "page_end": 92,
+          "rerank_score": 82.354
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 18,
+          "page_end": 19,
+          "rerank_score": 82.071
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 88,
+          "page_end": 89,
+          "rerank_score": 80.57
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.1.1",
+      "strategy": "policy_document",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 41,
+          "page_end": 42,
+          "rerank_score": 78.247
+        },
+        {
+          "source_file": "1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf",
+          "document_type": "policy_document",
+          "page_start": 12,
+          "page_end": 13,
+          "rerank_score": 78.02
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 51,
+          "rerank_score": 73.33
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 10,
+          "page_end": 10,
+          "rerank_score": 70.126
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 9,
+          "page_end": 10,
+          "rerank_score": 69.551
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.2.1",
+      "strategy": "certificate",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 46,
+          "page_end": 48,
+          "rerank_score": 78.738
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 46,
+          "page_end": 47,
+          "rerank_score": 77.551
+        },
+        {
+          "source_file": "1680152280_e9ef8eb09f1d52a32281ac79c16415aa6de81a80a162bc2b4cd381a80c68650c_d22f2976fd.pdf",
+          "document_type": "policy_document",
+          "page_start": 55,
+          "page_end": 56,
+          "rerank_score": 77.397
+        },
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 60,
+          "page_end": 63,
+          "rerank_score": 76.003
+        },
+        {
+          "source_file": "1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf",
+          "document_type": "policy_document",
+          "page_start": 15,
+          "page_end": 17,
+          "rerank_score": 75.974
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.2.2",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 41,
+          "page_end": 42,
+          "rerank_score": 80.297
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 9,
+          "page_end": 10,
+          "rerank_score": 77.401
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 50,
+          "rerank_score": 76.88
+        },
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 40,
+          "page_end": 42,
+          "rerank_score": 76.752
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 37,
+          "page_end": 38,
+          "rerank_score": 76.24
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.2.3",
+      "strategy": "multi_option",
+      "candidate_count": 10,
+      "actual_top_k": 16,
+      "max_queries_used": 16,
+      "top_sources": [
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 9,
+          "page_end": 10,
+          "rerank_score": 103.251
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 21,
+          "page_end": 23,
+          "rerank_score": 98.301
+        },
+        {
+          "source_file": "1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf",
+          "document_type": "policy_document",
+          "page_start": 27,
+          "page_end": 29,
+          "rerank_score": 96.188
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 26,
+          "page_end": 28,
+          "rerank_score": 88.195
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 26,
+          "page_end": 26,
+          "rerank_score": 87.97
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.2.4",
+      "strategy": "csr_narrative",
+      "candidate_count": 6,
+      "actual_top_k": 10,
+      "max_queries_used": 3,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 85,
+          "page_end": 86,
+          "rerank_score": 81.172
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 18,
+          "page_end": 20,
+          "rerank_score": 78.639
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 17,
+          "page_end": 19,
+          "rerank_score": 78.023
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 18,
+          "page_end": 19,
+          "rerank_score": 76.971
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 89,
+          "page_end": 92,
+          "rerank_score": 76.854
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.2.5",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 65,
+          "page_end": 65,
+          "rerank_score": 77.3
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 65,
+          "page_end": 66,
+          "rerank_score": 76.91
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 64,
+          "page_end": 65,
+          "rerank_score": 75.482
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 51,
+          "rerank_score": 74.38
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 35,
+          "page_end": 36,
+          "rerank_score": 73.666
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.2.6",
+      "strategy": "policy_document",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 41,
+          "page_end": 42,
+          "rerank_score": 87.347
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 50,
+          "rerank_score": 86.68
+        },
+        {
+          "source_file": "1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf",
+          "document_type": "policy_document",
+          "page_start": 22,
+          "page_end": 24,
+          "rerank_score": 84.865
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 51,
+          "rerank_score": 84.18
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 9,
+          "page_end": 10,
+          "rerank_score": 77.951
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.2.7",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 46,
+          "page_end": 47,
+          "rerank_score": 65.551
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 50,
+          "rerank_score": 64.88
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 51,
+          "rerank_score": 63.58
+        },
+        {
+          "source_file": "1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf",
+          "document_type": "policy_document",
+          "page_start": 24,
+          "page_end": 27,
+          "rerank_score": 63.454
+        },
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 41,
+          "page_end": 42,
+          "rerank_score": 63.147
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.2.8",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 6,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 84,
+          "page_end": 88,
+          "rerank_score": 76.537
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 83,
+          "page_end": 84,
+          "rerank_score": 76.3
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 61,
+          "page_end": 62,
+          "rerank_score": 75.518
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 60,
+          "page_end": 63,
+          "rerank_score": 72.113
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 9,
+          "page_end": 10,
+          "rerank_score": 70.801
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.2.9",
+      "strategy": "policy_document",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 61,
+          "page_end": 62,
+          "rerank_score": 91.668
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 60,
+          "page_end": 63,
+          "rerank_score": 91.263
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 25,
+          "page_end": 26,
+          "rerank_score": 77.712
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 94,
+          "page_end": 95,
+          "rerank_score": 76.587
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 51,
+          "rerank_score": 75.18
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.2.10",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 66,
+          "page_end": 67,
+          "rerank_score": 69.197
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 9,
+          "page_end": 10,
+          "rerank_score": 67.401
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 46,
+          "page_end": 48,
+          "rerank_score": 66.738
+        },
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 41,
+          "page_end": 42,
+          "rerank_score": 66.497
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 50,
+          "rerank_score": 66.08
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.2.11",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1585291596-7f525505f3621558355a60c10f6862cbb3b9c9863921a9b06587f7b42a0f9733.pdf",
+          "document_type": "annual_report",
+          "page_start": 64,
+          "page_end": 64,
+          "rerank_score": 46.725
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 10,
+          "page_end": 11,
+          "rerank_score": 46.339
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 20,
+          "page_end": 20,
+          "rerank_score": 46.306
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 9,
+          "page_end": 9,
+          "rerank_score": 46.032
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 105,
+          "page_end": 106,
+          "rerank_score": 46.02
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.2.12",
+      "strategy": "policy_document",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 121,
+          "page_end": 122,
+          "rerank_score": 72.397
+        },
+        {
+          "source_file": "1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf",
+          "document_type": "policy_document",
+          "page_start": 12,
+          "page_end": 13,
+          "rerank_score": 71.92
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 50,
+          "page_end": 65,
+          "rerank_score": 68.967
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 29,
+          "page_end": 30,
+          "rerank_score": 59.876
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 85,
+          "page_end": 86,
+          "rerank_score": 56.122
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.3.1",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 41,
+          "page_end": 42,
+          "rerank_score": 55.746
+        },
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 60,
+          "page_end": 63,
+          "rerank_score": 53.503
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 29,
+          "page_end": 30,
+          "rerank_score": 53.426
+        },
+        {
+          "source_file": "1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf",
+          "document_type": "policy_document",
+          "page_start": 26,
+          "page_end": 26,
+          "rerank_score": 52.67
+        },
+        {
+          "source_file": "vnm.pdf",
+          "document_type": "financial_report",
+          "page_start": 61,
+          "page_end": 63,
+          "rerank_score": 52.058
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.3.2",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 7,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1555043744_fa0d924547ebd9b6ebfaeb374df4a3263d462db8256435ccde59d6ae23dbb984_048a7a9c2a.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 36,
+          "page_end": 38,
+          "rerank_score": 66.011
+        },
+        {
+          "source_file": "1555043744_fa0d924547ebd9b6ebfaeb374df4a3263d462db8256435ccde59d6ae23dbb984_048a7a9c2a.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 40,
+          "page_end": 41,
+          "rerank_score": 65.861
+        },
+        {
+          "source_file": "1680152280_e9ef8eb09f1d52a32281ac79c16415aa6de81a80a162bc2b4cd381a80c68650c_d22f2976fd.pdf",
+          "document_type": "policy_document",
+          "page_start": 60,
+          "page_end": 61,
+          "rerank_score": 65.322
+        },
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 79,
+          "page_end": 82,
+          "rerank_score": 62.227
+        },
+        {
+          "source_file": "1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf",
+          "document_type": "policy_document",
+          "page_start": 87,
+          "page_end": 90,
+          "rerank_score": 62.006
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.3.3",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 61,
+          "page_end": 62,
+          "rerank_score": 62.318
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 84,
+          "page_end": 88,
+          "rerank_score": 62.137
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 60,
+          "page_end": 63,
+          "rerank_score": 61.913
+        },
+        {
+          "source_file": "1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf",
+          "document_type": "policy_document",
+          "page_start": 85,
+          "page_end": 86,
+          "rerank_score": 61.006
+        },
+        {
+          "source_file": "1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf",
+          "document_type": "policy_document",
+          "page_start": 82,
+          "page_end": 85,
+          "rerank_score": 59.639
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.3.4",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 43,
+          "page_end": 44,
+          "rerank_score": 62.151
+        },
+        {
+          "source_file": "vnm.pdf",
+          "document_type": "financial_report",
+          "page_start": 61,
+          "page_end": 63,
+          "rerank_score": 61.758
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 10,
+          "page_end": 10,
+          "rerank_score": 60.976
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 44,
+          "page_end": 45,
+          "rerank_score": 60.504
+        },
+        {
+          "source_file": "vnm.pdf",
+          "document_type": "financial_report",
+          "page_start": 69,
+          "page_end": 70,
+          "rerank_score": 59.958
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.3.5",
+      "strategy": "csr_narrative",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 3,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 18,
+          "page_end": 20,
+          "rerank_score": 75.339
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 17,
+          "page_end": 19,
+          "rerank_score": 74.723
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 18,
+          "page_end": 19,
+          "rerank_score": 73.671
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 89,
+          "page_end": 92,
+          "rerank_score": 73.554
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 10,
+          "page_end": 11,
+          "rerank_score": 71.142
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.2.3.6",
+      "strategy": "metric_table",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 41,
+          "page_end": 43,
+          "rerank_score": 65.399
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 51,
+          "page_end": 52,
+          "rerank_score": 63.84
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 39,
+          "page_end": 40,
+          "rerank_score": 62.872
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 49,
+          "page_end": 53,
+          "rerank_score": 62.454
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 61,
+          "page_end": 63,
+          "rerank_score": 61.649
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.3.1.1",
+      "strategy": "metric_table",
+      "candidate_count": 6,
+      "actual_top_k": 10,
+      "max_queries_used": 3,
+      "top_sources": [
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 138,
+          "page_end": 141,
+          "rerank_score": 81.638
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 100,
+          "page_end": 101,
+          "rerank_score": 80.143
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 100,
+          "page_end": 102,
+          "rerank_score": 75.72
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 99,
+          "page_end": 100,
+          "rerank_score": 74.996
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 49,
+          "page_end": 50,
+          "rerank_score": 72.822
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.3.1.2",
+      "strategy": "metric_table",
+      "candidate_count": 4,
+      "actual_top_k": 10,
+      "max_queries_used": 3,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 99,
+          "page_end": 100,
+          "rerank_score": 81.146
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 100,
+          "page_end": 102,
+          "rerank_score": 72.92
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 136,
+          "page_end": 137,
+          "rerank_score": 66.068
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 146,
+          "page_end": 148,
+          "rerank_score": 64.816
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.3.2.1",
+      "strategy": "ratio_with_revenue",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 5,
+      "top_sources": [
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 138,
+          "page_end": 141,
+          "rerank_score": 87.288
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 48,
+          "page_end": 48,
+          "rerank_score": 41.441
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 85,
+          "page_end": 86,
+          "rerank_score": 77.622
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 138,
+          "page_end": 139,
+          "rerank_score": 78.916
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 49,
+          "page_end": 53,
+          "rerank_score": 72.854
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.3.2.2",
+      "strategy": "ratio_with_revenue",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 5,
+      "top_sources": [
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 138,
+          "page_end": 141,
+          "rerank_score": 82.288
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 48,
+          "page_end": 48,
+          "rerank_score": 41.441
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 85,
+          "page_end": 86,
+          "rerank_score": 77.622
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 49,
+          "page_end": 53,
+          "rerank_score": 71.504
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 86,
+          "page_end": 87,
+          "rerank_score": 70.799
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.3.3.1",
+      "strategy": "ratio_with_revenue",
+      "candidate_count": 7,
+      "actual_top_k": 10,
+      "max_queries_used": 5,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 100,
+          "page_end": 101,
+          "rerank_score": 68.143
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 4,
+          "page_end": 5,
+          "rerank_score": 62.111
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 85,
+          "page_end": 85,
+          "rerank_score": 47.374
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 30,
+          "page_end": 31,
+          "rerank_score": 66.164
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 89,
+          "page_end": 89,
+          "rerank_score": 62.626
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.3.3.2",
+      "strategy": "ratio_with_revenue",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 5,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 96,
+          "page_end": 97,
+          "rerank_score": 68.166
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 4,
+          "page_end": 5,
+          "rerank_score": 41.161
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 85,
+          "page_end": 85,
+          "rerank_score": 47.374
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 30,
+          "page_end": 31,
+          "rerank_score": 69.064
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 95,
+          "page_end": 96,
+          "rerank_score": 68.116
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.3.3.3",
+      "strategy": "ratio_with_revenue",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 5,
+      "top_sources": [
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 84,
+          "page_end": 88,
+          "rerank_score": 79.987
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 48,
+          "page_end": 48,
+          "rerank_score": 44.191
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 85,
+          "page_end": 86,
+          "rerank_score": 77.822
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 89,
+          "page_end": 89,
+          "rerank_score": 72.976
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 30,
+          "page_end": 31,
+          "rerank_score": 72.764
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.3.4.1",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 23,
+          "page_end": 23,
+          "rerank_score": 59.22
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 20,
+          "page_end": 20,
+          "rerank_score": 59.206
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 58,
+          "page_end": 59,
+          "rerank_score": 57.905
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 68,
+          "page_end": 71,
+          "rerank_score": 57.342
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 19,
+          "page_end": 20,
+          "rerank_score": 57.273
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.3.5.1",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 4,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf",
+          "document_type": "policy_document",
+          "page_start": 25,
+          "page_end": 26,
+          "rerank_score": 77.767
+        },
+        {
+          "source_file": "QES_Nh_C3_A0_m_C3_A1y_S_E1_BB_A_Fa_Ngh_E1_BB_87_An_355f09c893.pdf",
+          "document_type": "policy_document",
+          "page_start": 13,
+          "page_end": 14,
+          "rerank_score": 73.195
+        },
+        {
+          "source_file": "1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf",
+          "document_type": "policy_document",
+          "page_start": 22,
+          "page_end": 24,
+          "rerank_score": 72.565
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 140,
+          "page_end": 140,
+          "rerank_score": 69.902
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.3.5.2",
+      "strategy": "metric_table",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 3,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 41,
+          "page_end": 43,
+          "rerank_score": 80.849
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 138,
+          "page_end": 141,
+          "rerank_score": 76.738
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 44,
+          "page_end": 44,
+          "rerank_score": 76.2395
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 100,
+          "page_end": 101,
+          "rerank_score": 72.643
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 40,
+          "page_end": 42,
+          "rerank_score": 77.728
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "E.3.5.3",
+      "strategy": "metric_table",
+      "candidate_count": 6,
+      "actual_top_k": 10,
+      "max_queries_used": 3,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 100,
+          "page_end": 101,
+          "rerank_score": 88.093
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 139,
+          "page_end": 139,
+          "rerank_score": 89.308
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 138,
+          "page_end": 139,
+          "rerank_score": 89.116
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 99,
+          "page_end": 100,
+          "rerank_score": 84.396
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 100,
+          "page_end": 102,
+          "rerank_score": 83.37
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.1.0.",
+      "strategy": "csr_narrative",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 3,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 86,
+          "page_end": 87,
+          "rerank_score": 101.916
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 18,
+          "page_end": 19,
+          "rerank_score": 101.871
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 29,
+          "page_end": 30,
+          "rerank_score": 101.026
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 10,
+          "page_end": 11,
+          "rerank_score": 100.042
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 98.373
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.1.1.0",
+      "strategy": "csr_narrative",
+      "candidate_count": 6,
+      "actual_top_k": 10,
+      "max_queries_used": 3,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 17,
+          "page_end": 19,
+          "rerank_score": 103.523
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 18,
+          "page_end": 19,
+          "rerank_score": 102.471
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 18,
+          "page_end": 20,
+          "rerank_score": 101.139
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 67,
+          "page_end": 67,
+          "rerank_score": 95.322
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 50,
+          "page_end": 51,
+          "rerank_score": 95.156
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.1.1.1",
+      "strategy": "policy_document",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 67,
+          "page_end": 67,
+          "rerank_score": 84.472
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 83.551
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 67,
+          "page_end": 68,
+          "rerank_score": 82.395
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 32,
+          "page_end": 33,
+          "rerank_score": 78.388
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 51,
+          "rerank_score": 67.43
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.1.1.2",
+      "strategy": "policy_document",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 67,
+          "page_end": 67,
+          "rerank_score": 84.072
+        },
+        {
+          "source_file": "1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf",
+          "document_type": "policy_document",
+          "page_start": 74,
+          "page_end": 75,
+          "rerank_score": 83.688
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 67,
+          "page_end": 68,
+          "rerank_score": 81.195
+        },
+        {
+          "source_file": "1555043744_fa0d924547ebd9b6ebfaeb374df4a3263d462db8256435ccde59d6ae23dbb984_048a7a9c2a.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 28,
+          "page_end": 28,
+          "rerank_score": 65.231
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 19,
+          "page_end": 20,
+          "rerank_score": 65.161
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.1.1.3",
+      "strategy": "policy_document",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 67,
+          "page_end": 67,
+          "rerank_score": 85.672
+        },
+        {
+          "source_file": "1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf",
+          "document_type": "policy_document",
+          "page_start": 35,
+          "page_end": 38,
+          "rerank_score": 85.223
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 83.651
+        },
+        {
+          "source_file": "1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf",
+          "document_type": "policy_document",
+          "page_start": 110,
+          "page_end": 112,
+          "rerank_score": 81.75
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 19,
+          "page_end": 20,
+          "rerank_score": 67.961
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.1.2.1",
+      "strategy": "policy_document",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 64,
+          "page_end": 70,
+          "rerank_score": 68.472
+        },
+        {
+          "source_file": "1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf",
+          "document_type": "policy_document",
+          "page_start": 45,
+          "page_end": 46,
+          "rerank_score": 65.32
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 121,
+          "page_end": 122,
+          "rerank_score": 62.197
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 51,
+          "rerank_score": 61.13
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 40,
+          "page_end": 41,
+          "rerank_score": 53.7
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.1.2.2",
+      "strategy": "policy_document",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 121,
+          "page_end": 122,
+          "rerank_score": 70.697
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 50,
+          "page_end": 65,
+          "rerank_score": 70.517
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 67,
+          "page_end": 67,
+          "rerank_score": 68.272
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 51,
+          "rerank_score": 62.98
+        },
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 16,
+          "page_end": 17,
+          "rerank_score": 59.06
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.1.3.1",
+      "strategy": "policy_document",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 51,
+          "page_end": 52,
+          "rerank_score": 81.49
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 50,
+          "page_end": 65,
+          "rerank_score": 79.567
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2020.pdf",
+          "document_type": "annual_report",
+          "page_start": 37,
+          "page_end": 42,
+          "rerank_score": 79.304
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 89,
+          "page_end": 92,
+          "rerank_score": 69.804
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 88,
+          "page_end": 89,
+          "rerank_score": 68.42
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.1.4.1",
+      "strategy": "policy_document",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 52,
+          "page_end": 53,
+          "rerank_score": 91.348
+        },
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 64,
+          "page_end": 70,
+          "rerank_score": 89.622
+        },
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 50,
+          "page_end": 51,
+          "rerank_score": 88.131
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 85,
+          "page_end": 86,
+          "rerank_score": 75.122
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 40,
+          "page_end": 41,
+          "rerank_score": 70.05
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.1.4.2",
+      "strategy": "policy_document",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 64,
+          "page_end": 70,
+          "rerank_score": 82.422
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 50,
+          "page_end": 65,
+          "rerank_score": 80.117
+        },
+        {
+          "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+          "document_type": "financial_report",
+          "page_start": 49,
+          "page_end": 51,
+          "rerank_score": 73.58
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 40,
+          "page_end": 41,
+          "rerank_score": 70.0
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 28,
+          "page_end": 29,
+          "rerank_score": 67.563
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.0.1",
+      "strategy": "policy_document",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 18,
+          "page_end": 20,
+          "rerank_score": 76.789
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 50,
+          "page_end": 65,
+          "rerank_score": 73.867
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 89,
+          "page_end": 92,
+          "rerank_score": 63.304
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 88,
+          "page_end": 89,
+          "rerank_score": 62.72
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 57,
+          "page_end": 58,
+          "rerank_score": 62.533
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.1.1",
+      "strategy": "certificate",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 50,
+          "page_end": 65,
+          "rerank_score": 67.717
+        },
+        {
+          "source_file": "1585291596-7f525505f3621558355a60c10f6862cbb3b9c9863921a9b06587f7b42a0f9733.pdf",
+          "document_type": "annual_report",
+          "page_start": 66,
+          "page_end": 66,
+          "rerank_score": 67.135
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 29,
+          "page_end": 30,
+          "rerank_score": 66.176
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 46,
+          "page_end": 48,
+          "rerank_score": 65.588
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 28,
+          "page_end": 29,
+          "rerank_score": 65.063
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.1.2",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 87,
+          "page_end": 88,
+          "rerank_score": 72.314
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 86,
+          "page_end": 87,
+          "rerank_score": 71.416
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 105,
+          "page_end": 106,
+          "rerank_score": 70.52
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 72,
+          "page_end": 73,
+          "rerank_score": 69.506
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 84,
+          "page_end": 86,
+          "rerank_score": 69.28
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.2.1",
+      "strategy": "multi_option",
+      "candidate_count": 10,
+      "actual_top_k": 16,
+      "max_queries_used": 14,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 73,
+          "page_end": 74,
+          "rerank_score": 104.681
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 72,
+          "page_end": 73,
+          "rerank_score": 103.456
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 73,
+          "page_end": 73,
+          "rerank_score": 101.917
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 51,
+          "page_end": 52,
+          "rerank_score": 103.49
+        },
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 47,
+          "page_end": 49,
+          "rerank_score": 99.936
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.2.2",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf",
+          "document_type": "policy_document",
+          "page_start": 74,
+          "page_end": 75,
+          "rerank_score": 67.788
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 72,
+          "page_end": 73,
+          "rerank_score": 65.606
+        },
+        {
+          "source_file": "1555043744_fa0d924547ebd9b6ebfaeb374df4a3263d462db8256435ccde59d6ae23dbb984_048a7a9c2a.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 25,
+          "page_end": 26,
+          "rerank_score": 65.061
+        },
+        {
+          "source_file": "1555043744_fa0d924547ebd9b6ebfaeb374df4a3263d462db8256435ccde59d6ae23dbb984_048a7a9c2a.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 28,
+          "page_end": 29,
+          "rerank_score": 64.921
+        },
+        {
+          "source_file": "1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf",
+          "document_type": "policy_document",
+          "page_start": 37,
+          "page_end": 41,
+          "rerank_score": 64.388
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.2.3",
+      "strategy": "multi_option",
+      "candidate_count": 12,
+      "actual_top_k": 12,
+      "max_queries_used": 10,
+      "top_sources": [
+        {
+          "source_file": "1680152280_e9ef8eb09f1d52a32281ac79c16415aa6de81a80a162bc2b4cd381a80c68650c_d22f2976fd.pdf",
+          "document_type": "policy_document",
+          "page_start": 30,
+          "page_end": 31,
+          "rerank_score": 100.735
+        },
+        {
+          "source_file": "1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf",
+          "document_type": "policy_document",
+          "page_start": 74,
+          "page_end": 75,
+          "rerank_score": 101.438
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 101,
+          "page_end": 102,
+          "rerank_score": 97.988
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 106,
+          "page_end": 108,
+          "rerank_score": 99.47
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 83,
+          "page_end": 84,
+          "rerank_score": 91.75
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.2.4",
+      "strategy": "policy_document",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 67,
+          "page_end": 68,
+          "rerank_score": 110.495
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 67,
+          "page_end": 67,
+          "rerank_score": 107.272
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 29,
+          "page_end": 30,
+          "rerank_score": 87.776
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 91,
+          "page_end": 92,
+          "rerank_score": 87.12
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 27,
+          "page_end": 29,
+          "rerank_score": 84.151
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.2.5",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 42,
+          "page_end": 44,
+          "rerank_score": 67.136
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 75,
+          "page_end": 76,
+          "rerank_score": 66.831
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 72,
+          "page_end": 73,
+          "rerank_score": 66.806
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 50,
+          "page_end": 51,
+          "rerank_score": 66.506
+        },
+        {
+          "source_file": "1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf",
+          "document_type": "policy_document",
+          "page_start": 54,
+          "page_end": 55,
+          "rerank_score": 66.461
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.2.6",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 41,
+          "page_end": 42,
+          "rerank_score": 74.646
+        },
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 42,
+          "page_end": 44,
+          "rerank_score": 73.936
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 65,
+          "page_end": 66,
+          "rerank_score": 73.71
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 65,
+          "page_end": 65,
+          "rerank_score": 73.7
+        },
+        {
+          "source_file": "1402563877_f44e98fa7b7a4f3d0628bb245d2dcef09468e0e8590e57150b766ebbb0ee6a72_5949a77b25.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 23,
+          "page_end": 24,
+          "rerank_score": 73.581
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.2.7",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 46,
+          "page_end": 47,
+          "rerank_score": 81.393
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 32,
+          "page_end": 33,
+          "rerank_score": 78.538
+        },
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 44,
+          "page_end": 45,
+          "rerank_score": 78.536
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 34,
+          "page_end": 35,
+          "rerank_score": 78.374
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 78.351
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.2.8",
+      "strategy": "multi_option",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 8,
+      "top_sources": [
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 38,
+          "page_end": 39,
+          "rerank_score": 108.04
+        },
+        {
+          "source_file": "1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf",
+          "document_type": "policy_document",
+          "page_start": 27,
+          "page_end": 29,
+          "rerank_score": 109.438
+        },
+        {
+          "source_file": "1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf",
+          "document_type": "policy_document",
+          "page_start": 25,
+          "page_end": 26,
+          "rerank_score": 108.413
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 36,
+          "page_end": 41,
+          "rerank_score": 100.13
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2020.pdf",
+          "document_type": "annual_report",
+          "page_start": 37,
+          "page_end": 42,
+          "rerank_score": 100.504
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.2.9",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 6,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf",
+          "document_type": "policy_document",
+          "page_start": 47,
+          "page_end": 48,
+          "rerank_score": 99.87
+        },
+        {
+          "source_file": "1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf",
+          "document_type": "policy_document",
+          "page_start": 35,
+          "page_end": 38,
+          "rerank_score": 98.623
+        },
+        {
+          "source_file": "1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf",
+          "document_type": "policy_document",
+          "page_start": 37,
+          "page_end": 41,
+          "rerank_score": 98.588
+        },
+        {
+          "source_file": "1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf",
+          "document_type": "policy_document",
+          "page_start": 89,
+          "page_end": 99,
+          "rerank_score": 98.067
+        },
+        {
+          "source_file": "1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf",
+          "document_type": "policy_document",
+          "page_start": 28,
+          "page_end": 30,
+          "rerank_score": 97.924
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.2.10",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 101,
+          "page_end": 102,
+          "rerank_score": 52.107
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 89,
+          "page_end": 92,
+          "rerank_score": 52.104
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 114,
+          "page_end": 115,
+          "rerank_score": 51.945
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 68,
+          "page_end": 71,
+          "rerank_score": 51.892
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 32,
+          "page_end": 33,
+          "rerank_score": 51.72
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.3.1",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf",
+          "document_type": "policy_document",
+          "page_start": 5,
+          "page_end": 5,
+          "rerank_score": 61.42
+        },
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 60,
+          "page_end": 63,
+          "rerank_score": 61.353
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 61.107
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 75,
+          "page_end": 76,
+          "rerank_score": 61.031
+        },
+        {
+          "source_file": "1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf",
+          "document_type": "policy_document",
+          "page_start": 4,
+          "page_end": 5,
+          "rerank_score": 60.875
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.4.1",
+      "strategy": "csr_narrative",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 3,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 89,
+          "page_end": 92,
+          "rerank_score": 67.354
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 18,
+          "page_end": 20,
+          "rerank_score": 64.939
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 88,
+          "page_end": 89,
+          "rerank_score": 64.37
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 17,
+          "page_end": 19,
+          "rerank_score": 64.323
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 89,
+          "page_end": 90,
+          "rerank_score": 63.426
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.4.2",
+      "strategy": "csr_narrative",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 3,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 89,
+          "page_end": 92,
+          "rerank_score": 57.754
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 88,
+          "page_end": 89,
+          "rerank_score": 55.97
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 18,
+          "page_end": 20,
+          "rerank_score": 55.289
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 89,
+          "page_end": 90,
+          "rerank_score": 55.026
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 17,
+          "page_end": 19,
+          "rerank_score": 54.123
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.4.3",
+      "strategy": "csr_narrative",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 3,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 18,
+          "page_end": 20,
+          "rerank_score": 55.089
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 17,
+          "page_end": 19,
+          "rerank_score": 54.473
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 18,
+          "page_end": 19,
+          "rerank_score": 52.871
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 89,
+          "page_end": 92,
+          "rerank_score": 50.304
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 88,
+          "page_end": 89,
+          "rerank_score": 49.42
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.5.1",
+      "strategy": "policy_document",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 64,
+          "page_end": 70,
+          "rerank_score": 77.572
+        },
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 52,
+          "page_end": 53,
+          "rerank_score": 76.298
+        },
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 50,
+          "page_end": 51,
+          "rerank_score": 76.081
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 40,
+          "page_end": 41,
+          "rerank_score": 65.75
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 85,
+          "page_end": 86,
+          "rerank_score": 64.122
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.5.2",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 31,
+          "page_end": 35,
+          "rerank_score": 70.448
+        },
+        {
+          "source_file": "1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf",
+          "document_type": "policy_document",
+          "page_start": 50,
+          "page_end": 52,
+          "rerank_score": 70.115
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 50,
+          "page_end": 65,
+          "rerank_score": 69.517
+        },
+        {
+          "source_file": "1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf",
+          "document_type": "policy_document",
+          "page_start": 51,
+          "page_end": 52,
+          "rerank_score": 69.465
+        },
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 34,
+          "page_end": 35,
+          "rerank_score": 68.874
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.2.5.3",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 14,
+          "page_end": 15,
+          "rerank_score": 60.932
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 34,
+          "page_end": 35,
+          "rerank_score": 60.822
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 28,
+          "page_end": 29,
+          "rerank_score": 60.713
+        },
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 64,
+          "page_end": 70,
+          "rerank_score": 59.722
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 68,
+          "page_end": 69,
+          "rerank_score": 59.475
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.3.1.1",
+      "strategy": "metric_table",
+      "candidate_count": 4,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 51,
+          "page_end": 52,
+          "rerank_score": 78.19
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 49,
+          "page_end": 50,
+          "rerank_score": 75.376
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 50,
+          "page_end": 51,
+          "rerank_score": 74.706
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 68,
+          "page_end": 69,
+          "rerank_score": 72.506
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.3.1.2",
+      "strategy": "metric_table",
+      "candidate_count": 4,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 45,
+          "page_end": 45,
+          "rerank_score": 57.225
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 56.307
+        },
+        {
+          "source_file": "VNM_Baocaotaichinh_2024_Kiemtoan_Hopnhat (1).pdf",
+          "document_type": "financial_report",
+          "page_start": 22,
+          "page_end": 23,
+          "rerank_score": 54.748
+        },
+        {
+          "source_file": "VNM_Baocaotaichinh_2024_Kiemtoan_Hopnhat (1).pdf",
+          "document_type": "financial_report",
+          "page_start": 23,
+          "page_end": 24,
+          "rerank_score": 54.71
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.3.1.3",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf",
+          "document_type": "policy_document",
+          "page_start": 37,
+          "page_end": 41,
+          "rerank_score": 73.088
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 29,
+          "page_end": 32,
+          "rerank_score": 65.741
+        },
+        {
+          "source_file": "1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf",
+          "document_type": "policy_document",
+          "page_start": 37,
+          "page_end": 38,
+          "rerank_score": 64.509
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 51,
+          "page_end": 52,
+          "rerank_score": 64.19
+        },
+        {
+          "source_file": "1402563877_f44e98fa7b7a4f3d0628bb245d2dcef09468e0e8590e57150b766ebbb0ee6a72_5949a77b25.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 23,
+          "page_end": 24,
+          "rerank_score": 63.931
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.3.1.4",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf",
+          "document_type": "policy_document",
+          "page_start": 37,
+          "page_end": 41,
+          "rerank_score": 68.888
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 29,
+          "page_end": 32,
+          "rerank_score": 65.741
+        },
+        {
+          "source_file": "1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf",
+          "document_type": "policy_document",
+          "page_start": 37,
+          "page_end": 38,
+          "rerank_score": 64.509
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 51,
+          "page_end": 52,
+          "rerank_score": 64.19
+        },
+        {
+          "source_file": "1402563877_f44e98fa7b7a4f3d0628bb245d2dcef09468e0e8590e57150b766ebbb0ee6a72_5949a77b25.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 23,
+          "page_end": 24,
+          "rerank_score": 63.931
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.3.1.5",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf",
+          "document_type": "policy_document",
+          "page_start": 47,
+          "page_end": 48,
+          "rerank_score": 72.87
+        },
+        {
+          "source_file": "1680152280_e9ef8eb09f1d52a32281ac79c16415aa6de81a80a162bc2b4cd381a80c68650c_d22f2976fd.pdf",
+          "document_type": "policy_document",
+          "page_start": 67,
+          "page_end": 68,
+          "rerank_score": 72.262
+        },
+        {
+          "source_file": "1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf",
+          "document_type": "policy_document",
+          "page_start": 49,
+          "page_end": 50,
+          "rerank_score": 72.215
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 106,
+          "page_end": 108,
+          "rerank_score": 71.57
+        },
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 94,
+          "page_end": 94,
+          "rerank_score": 71.34
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.3.1.6",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 72,
+          "page_end": 73,
+          "rerank_score": 65.406
+        },
+        {
+          "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 20,
+          "page_end": 20,
+          "rerank_score": 63.92
+        },
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 45,
+          "page_end": 49,
+          "rerank_score": 63.717
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 71,
+          "page_end": 72,
+          "rerank_score": 63.188
+        },
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 46,
+          "page_end": 47,
+          "rerank_score": 63.143
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.3.1.7",
+      "strategy": "narrative_disclosure",
+      "candidate_count": 3,
+      "actual_top_k": 10,
+      "max_queries_used": 1,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 59,
+          "page_end": 59,
+          "rerank_score": 44.255
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 43,
+          "page_end": 44,
+          "rerank_score": 44.251
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 71,
+          "page_end": 72,
+          "rerank_score": 43.917
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.3.2.1",
+      "strategy": "multi_option",
+      "candidate_count": 6,
+      "actual_top_k": 12,
+      "max_queries_used": 10,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 85,
+          "page_end": 86,
+          "rerank_score": 100.472
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 34,
+          "page_end": 37,
+          "rerank_score": 81.595
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 74,
+          "page_end": 75,
+          "rerank_score": 79.672
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 94,
+          "page_end": 95,
+          "rerank_score": 79.387
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 89,
+          "page_end": 90,
+          "rerank_score": 82.526
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.3.2.2",
+      "strategy": "ratio_with_revenue",
+      "candidate_count": 5,
+      "actual_top_k": 10,
+      "max_queries_used": 4,
+      "top_sources": [
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 85,
+          "page_end": 85,
+          "rerank_score": 40.974
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 1,
+          "page_end": 2,
+          "rerank_score": 65.361
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 89,
+          "page_end": 92,
+          "rerank_score": 71.304
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 30,
+          "page_end": 31,
+          "rerank_score": 63.914
+        },
+        {
+          "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+          "document_type": "sustainability_report",
+          "page_start": 84,
+          "page_end": 86,
+          "rerank_score": 40.23
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "S.3.3.1",
+      "strategy": "policy_document",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 67,
+          "page_end": 67,
+          "rerank_score": 78.772
+        },
+        {
+          "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+          "document_type": "policy_document",
+          "page_start": 50,
+          "page_end": 65,
+          "rerank_score": 75.317
+        },
+        {
+          "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+          "document_type": "policy_document",
+          "page_start": 93,
+          "page_end": 94,
+          "rerank_score": 67.6
+        },
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 16,
+          "page_end": 17,
+          "rerank_score": 62.46
+        },
+        {
+          "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+          "document_type": "sustainability_report",
+          "page_start": 17,
+          "page_end": 18,
+          "rerank_score": 62.372
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.1",
+      "strategy": "governance_agm_resolution",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 61,
+          "page_end": 63,
+          "rerank_score": 87.149
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 59,
+          "page_end": 60,
+          "rerank_score": 80.926
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 80,
+          "page_end": 80,
+          "rerank_score": 77.553
+        },
+        {
+          "source_file": "Tài liệu họp Đại hội đồng cổ đông thường niên.pdf",
+          "document_type": "resolution",
+          "page_start": 1,
+          "page_end": 3,
+          "rerank_score": 77.202
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 63,
+          "page_end": 64,
+          "rerank_score": 76.783
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.2",
+      "strategy": "governance_agm_resolution",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 82.173
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 61,
+          "page_end": 63,
+          "rerank_score": 76.749
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 1,
+          "page_end": 2,
+          "rerank_score": 75.261
+        },
+        {
+          "source_file": "Tài liệu họp Đại hội đồng cổ đông thường niên.pdf",
+          "document_type": "resolution",
+          "page_start": 1,
+          "page_end": 3,
+          "rerank_score": 74.852
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 63,
+          "page_end": 64,
+          "rerank_score": 74.783
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.3",
+      "strategy": "governance_agm_resolution",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 61,
+          "page_end": 63,
+          "rerank_score": 84.149
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 59,
+          "page_end": 60,
+          "rerank_score": 79.126
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 63,
+          "page_end": 64,
+          "rerank_score": 77.983
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 74.573
+        },
+        {
+          "source_file": "Tài liệu họp Đại hội đồng cổ đông thường niên.pdf",
+          "document_type": "resolution",
+          "page_start": 1,
+          "page_end": 3,
+          "rerank_score": 74.202
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.4",
+      "strategy": "governance_agm_resolution",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 61,
+          "page_end": 63,
+          "rerank_score": 85.949
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 59,
+          "page_end": 60,
+          "rerank_score": 80.926
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 63,
+          "page_end": 64,
+          "rerank_score": 79.783
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 76.457
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 76.373
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.5",
+      "strategy": "governance_agm_resolution",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 61,
+          "page_end": 63,
+          "rerank_score": 86.349
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 76.773
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 76.457
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 80,
+          "page_end": 80,
+          "rerank_score": 76.353
+        },
+        {
+          "source_file": "Tài liệu họp Đại hội đồng cổ đông thường niên.pdf",
+          "document_type": "resolution",
+          "page_start": 1,
+          "page_end": 3,
+          "rerank_score": 76.002
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.6",
+      "strategy": "governance_agm_resolution",
+      "candidate_count": 7,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 61,
+          "page_end": 63,
+          "rerank_score": 82.949
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 77.573
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 76.138
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 63,
+          "page_end": 64,
+          "rerank_score": 75.583
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 86,
+          "page_end": 87,
+          "rerank_score": 74.876
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.7",
+      "strategy": "governance_agm_resolution",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "Tài liệu họp Đại hội đồng cổ đông thường niên.pdf",
+          "document_type": "resolution",
+          "page_start": 1,
+          "page_end": 3,
+          "rerank_score": 78.202
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 61,
+          "page_end": 63,
+          "rerank_score": 75.549
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 74.457
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 72.938
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 80,
+          "page_end": 81,
+          "rerank_score": 72.757
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.8",
+      "strategy": "governance_agm_resolution",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 61,
+          "page_end": 63,
+          "rerank_score": 83.549
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 59,
+          "page_end": 60,
+          "rerank_score": 78.526
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 63,
+          "page_end": 64,
+          "rerank_score": 77.383
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 74.057
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 80,
+          "page_end": 81,
+          "rerank_score": 72.357
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.9",
+      "strategy": "governance_agm_resolution",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 61,
+          "page_end": 63,
+          "rerank_score": 90.549
+        },
+        {
+          "source_file": "Tài liệu họp Đại hội đồng cổ đông thường niên.pdf",
+          "document_type": "resolution",
+          "page_start": 1,
+          "page_end": 3,
+          "rerank_score": 82.202
+        },
+        {
+          "source_file": "Tài liệu họp Đại hội đồng cổ đông thường niên.pdf",
+          "document_type": "resolution",
+          "page_start": 3,
+          "page_end": 4,
+          "rerank_score": 77.266
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 60,
+          "page_end": 61,
+          "rerank_score": 76.92
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 76.857
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.10",
+      "strategy": "governance_compensation",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 35,
+          "page_end": 35,
+          "rerank_score": 82.326
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 79,
+          "page_end": 80,
+          "rerank_score": 80.805
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 80.057
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 79.961
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 78.188
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.11",
+      "strategy": "governance_agm_resolution",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 83.257
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 78.973
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 71,
+          "page_end": 72,
+          "rerank_score": 76.037
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 80,
+          "page_end": 81,
+          "rerank_score": 75.157
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 74.761
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.12",
+      "strategy": "governance_compensation",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 83.057
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 63,
+          "page_end": 64,
+          "rerank_score": 81.426
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 78.773
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 78.188
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 48,
+          "page_end": 49,
+          "rerank_score": 78.126
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.13",
+      "strategy": "governance_board_profile",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 81.457
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 75.761
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 74.573
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 78,
+          "page_end": 79,
+          "rerank_score": 71.276
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 75,
+          "page_end": 76,
+          "rerank_score": 70.954
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.14",
+      "strategy": "governance_agm_resolution",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 33,
+          "rerank_score": 87.295
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 85.876
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 83.857
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 83.773
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 83.761
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.15",
+      "strategy": "governance_compensation",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 85.161
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 33,
+          "rerank_score": 85.095
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 83.876
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 80.973
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 77,
+          "rerank_score": 78.576
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.16",
+      "strategy": "governance_compensation",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 86.057
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 63,
+          "page_end": 64,
+          "rerank_score": 81.426
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 79.961
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 35,
+          "page_end": 35,
+          "rerank_score": 79.326
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 78.773
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.17",
+      "strategy": "governance_related_party",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 85.457
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 81.173
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 33,
+          "rerank_score": 80.495
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 71,
+          "page_end": 72,
+          "rerank_score": 79.237
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 79.076
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.18",
+      "strategy": "governance_related_party",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 85.457
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 35,
+          "page_end": 35,
+          "rerank_score": 79.076
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 33,
+          "rerank_score": 76.945
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 48,
+          "page_end": 49,
+          "rerank_score": 76.676
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 80,
+          "page_end": 80,
+          "rerank_score": 76.403
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.19",
+      "strategy": "governance_board_profile",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 75.823
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 71.611
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 28,
+          "page_end": 29,
+          "rerank_score": 70.296
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 77,
+          "page_end": 78,
+          "rerank_score": 69.857
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 27,
+          "page_end": 28,
+          "rerank_score": 69.705
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.20",
+      "strategy": "governance_board_profile",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 85.011
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 79.623
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 20,
+          "page_end": 21,
+          "rerank_score": 79.323
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 82,
+          "page_end": 82,
+          "rerank_score": 75.526
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 22,
+          "page_end": 24,
+          "rerank_score": 74.511
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.21",
+      "strategy": "governance_board_profile",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 78.811
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 79,
+          "page_end": 80,
+          "rerank_score": 73.926
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 20,
+          "page_end": 21,
+          "rerank_score": 73.923
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 73.423
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 22,
+          "page_end": 24,
+          "rerank_score": 70.311
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.22",
+      "strategy": "governance_board_profile",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 83.011
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 20,
+          "page_end": 21,
+          "rerank_score": 81.523
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 79,
+          "page_end": 80,
+          "rerank_score": 78.126
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 77.623
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 76.988
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.23",
+      "strategy": "governance_compensation",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 91.411
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 77,
+          "rerank_score": 88.626
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 87.638
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 86.023
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 74,
+          "page_end": 75,
+          "rerank_score": 85.312
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.24",
+      "strategy": "governance_board_profile",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 87.211
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 84.823
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 20,
+          "page_end": 21,
+          "rerank_score": 84.523
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 79,
+          "page_end": 80,
+          "rerank_score": 80.326
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 79.607
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.25",
+      "strategy": "governance_audit_control",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 83.023
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 81.588
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 78.907
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 80,
+          "page_end": 80,
+          "rerank_score": 78.803
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 82,
+          "page_end": 82,
+          "rerank_score": 78.526
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.26",
+      "strategy": "governance_compensation",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 82.623
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 80.038
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 71,
+          "page_end": 72,
+          "rerank_score": 79.826
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 79.734
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 79.611
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.27",
+      "strategy": "governance_audit_control",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 81.588
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 80.023
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 33,
+          "rerank_score": 75.545
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 74.011
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 17,
+          "page_end": 19,
+          "rerank_score": 73.761
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.28",
+      "strategy": "governance_board_profile",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 80.011
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 79.423
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 20,
+          "page_end": 21,
+          "rerank_score": 77.323
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 79,
+          "page_end": 80,
+          "rerank_score": 74.926
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 77,
+          "rerank_score": 74.591
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.29",
+      "strategy": "governance_committee",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 82.888
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 78.311
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 77.207
+        },
+        {
+          "source_file": "Biên bản họp Đại hội đồng cổ đông (1).pdf",
+          "document_type": "resolution",
+          "page_start": 2,
+          "page_end": 3,
+          "rerank_score": 75.928
+        },
+        {
+          "source_file": "Tài liệu họp Đại hội đồng cổ đông thường niên.pdf",
+          "document_type": "resolution",
+          "page_start": 3,
+          "page_end": 4,
+          "rerank_score": 73.016
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.30",
+      "strategy": "governance_board_profile",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 88.111
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 84.007
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 78,
+          "page_end": 79,
+          "rerank_score": 79.826
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 79.723
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 75,
+          "page_end": 76,
+          "rerank_score": 79.504
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.31",
+      "strategy": "governance_committee",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 81.311
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 80.207
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 80.123
+        },
+        {
+          "source_file": "Tài liệu họp Đại hội đồng cổ đông thường niên.pdf",
+          "document_type": "resolution",
+          "page_start": 1,
+          "page_end": 3,
+          "rerank_score": 79.352
+        },
+        {
+          "source_file": "Tài liệu họp Đại hội đồng cổ đông thường niên.pdf",
+          "document_type": "resolution",
+          "page_start": 3,
+          "page_end": 4,
+          "rerank_score": 79.203
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.32",
+      "strategy": "governance_board_profile",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 83.311
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 17,
+          "page_end": 19,
+          "rerank_score": 78.861
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 77.923
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 78,
+          "page_end": 79,
+          "rerank_score": 76.926
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 76.907
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.33",
+      "strategy": "governance_committee",
+      "candidate_count": 8,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 33,
+          "page_end": 34,
+          "rerank_score": 82.488
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 81.311
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 81,
+          "page_end": 82,
+          "rerank_score": 78.445
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 76.007
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 75.923
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.34",
+      "strategy": "governance_compensation",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 73,
+          "rerank_score": 92.063
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 66,
+          "page_end": 67,
+          "rerank_score": 90.997
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 72,
+          "page_end": 75,
+          "rerank_score": 85.361
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 75,
+          "page_end": 75,
+          "rerank_score": 84.326
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 67,
+          "page_end": 67,
+          "rerank_score": 82.872
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.35",
+      "strategy": "governance_esg",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 75.857
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 61,
+          "page_end": 63,
+          "rerank_score": 72.749
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 71.573
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 80,
+          "page_end": 80,
+          "rerank_score": 71.553
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 68,
+          "page_end": 69,
+          "rerank_score": 69.65
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.36",
+      "strategy": "governance_committee",
+      "candidate_count": 10,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 80,
+          "page_end": 80,
+          "rerank_score": 75.753
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 74.057
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 80,
+          "page_end": 81,
+          "rerank_score": 71.157
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 84,
+          "page_end": 85,
+          "rerank_score": 70.726
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 82,
+          "page_end": 82,
+          "rerank_score": 70.726
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "question_id": "G.37",
+      "strategy": "governance_esg",
+      "candidate_count": 9,
+      "actual_top_k": 10,
+      "max_queries_used": 2,
+      "top_sources": [
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 86,
+          "page_end": 87,
+          "rerank_score": 70.076
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 76,
+          "page_end": 79,
+          "rerank_score": 69.773
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 82,
+          "page_end": 83,
+          "rerank_score": 69.01
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 70,
+          "page_end": 71,
+          "rerank_score": 67.457
+        },
+        {
+          "source_file": "VNM_Baocaothuongnien_2024.pdf",
+          "document_type": "annual_report",
+          "page_start": 81,
+          "page_end": 82,
+          "rerank_score": 66.895
+        }
+      ],
+      "passed": true,
+      "reasons": []
+    }
+  ],
+  "schema_version": "retrieval_preflight_v2",
+  "input_fingerprint": "c6cd87137f692c938281051ff17cfd17a97e3f47d297dab4013a65a432febf5a"
+}

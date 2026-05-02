@@ -1,0 +1,271 @@
+question_id,factor,pillar,question_type,time_policy,question_bucket,answer,selected_options,score,max_score,lost_points,logic,resolution_status,answer_origin,parse_status,evidence_present,evidence_source_ref,top_source_refs,loss_reason
+E.1.1.0,E1,E,default,unspecified,single_select_positive,C,C,1.0,1.0,0.0,"A. 0
+B. 0
+C. +1
+D. +1",supported,llm_valid_json,valid_json,True,VNMSR_Full_VN_2351c45431.pdf pp.10-11,VNMSR_Full_VN_2351c45431.pdf pp.10-11; 1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf pp.49-51; VNMSR_Full_VN_2351c45431.pdf p.10,
+E.1.1.1,E1,E,policy,latest_valid_allowed,single_select_negative,C,C,1.0,1.0,0.0,"A. -1
+B. 0
+C. +1
+Nếu chọn A thì kệ các câu có đề cập đến câu này (E.1.1.1.)",supported,llm_valid_json,valid_json,True,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.61-62,1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.41-42; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.61-62; VNMSR_Full_VN_2351c45431.pdf pp.10-11,
+E.1.1.2,E1,E,multi_select,unspecified,multi_select,"A,B,C,D,E,G,H","A,B,C,D,E,G,H",0.875,1.0,0.125,"+0,125 trên 1 yêu cầu đáp ứng",supported,retrieval_fallback_multi,empty_raw_response,True,VNMSR_Full_VN_2351c45431.pdf pp.10-11,1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf pp.24-25; 1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf pp.27-29; VNMSR_Full_VN_2351c45431.pdf pp.10-11,multi_select_incomplete
+E.1.1.3,E1,E,multi_select,unspecified,multi_select,"A,B,D","A,B,D",0.75,1.0,0.25,"+0,25 trên 1 yêu cầu đáp ứng",supported,retrieval_fallback_multi,empty_raw_response,True,1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.46-47,1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.41-42; 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.46-47; VNMSR_Full_VN_2351c45431.pdf pp.10-11,multi_select_incomplete
+E.1.1.4,E1,E,policy,unspecified,single_select_negative,NULL,,0.0,1.0,1.0,"A. -1
+B. 0
+C. +1",insufficient,llm_valid_json,valid_json,False,1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf pp.49-50,1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf pp.49-50; 1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf pp.49-51; VNMSR_Full_VN_2351c45431.pdf pp.10-11,llm_null_or_no_answer
+E.1.1.5,E1,E,default,unspecified,single_select_negative,C,C,0.0,1.0,1.0,"A. -1
+B. 0
+C. +1",insufficient,llm_valid_json,valid_json,False,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.18-20,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.18-20; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.17-19; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.89-92,evidence_missing
+E.2.1.1,E2,E,policy,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf pp.12-13,1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.41-42; 1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf pp.12-13; 1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf pp.49-51,
+E.2.2.1,E2,E,policy,latest_valid_allowed,single_select_negative,C,C,1.0,1.0,0.0,"A. -1
+B. 0
+C. +1",supported,llm_valid_json,valid_json,True,1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.46-48,1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.46-48; 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.46-47; 1680152280_e9ef8eb09f1d52a32281ac79c16415aa6de81a80a162bc2b4cd381a80c68650c_d22f2976fd.pdf pp.55-56,
+E.2.2.2,E2,E,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. 0
+C. -1",supported,retrieval_fallback_single,empty_raw_response,True,1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.41-42,1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.41-42; VNMSR_Full_VN_2351c45431.pdf pp.9-10; 1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf pp.49-50,
+E.2.2.3,E2,E,multi_select,unspecified,multi_select,"A,B,C,D,E,F,G,H","A,B,C,D,E,F,G,H",1.0,1.0,0.0,"+0,125 trên 1 yêu cầu đáp ứng",supported,retrieval_fallback_multi,empty_raw_response,True,VNMSR_Full_VN_2351c45431.pdf pp.9-10,VNMSR_Full_VN_2351c45431.pdf pp.9-10; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.21-23; 1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf pp.27-29,
+E.2.2.4,E2,E,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.85-86,VNM_Baocaothuongnien_2024.pdf pp.85-86; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.18-20; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.17-19,
+E.2.2.5,E2,E,default,unspecified,single_select_negative,NULL,,0.0,1.0,1.0,"A. -1
+B. 0
+C. +1",insufficient,llm_empty_failure,empty_raw_response,False,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf p.65,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf p.65; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.65-66; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.64-65,llm_null_or_no_answer
+E.2.2.6,E2,E,policy,historical_allowed,single_select_negative,A,A,0.0,1.0,1.0,"A. +1
+B. -1",insufficient,llm_valid_json,valid_json,False,1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.41-42,1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.41-42; 1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf pp.49-50; 1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf pp.22-24,evidence_missing
+E.2.2.7,E2,E,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.46-47,1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.46-47; 1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf pp.49-50; 1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf pp.49-51,
+E.2.2.8,E2,E,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNMSR_Full_VN_2351c45431.pdf pp.84-88,VNMSR_Full_VN_2351c45431.pdf pp.84-88; VNMSR_Full_VN_2351c45431.pdf pp.83-84; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.61-62,
+E.2.2.9,E2,E,policy,historical_allowed,historical_allowed,A,A,1.0,1.0,0.0,"A. +1
+B. 0
+C. -1",supported,llm_valid_json,valid_json,True,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.61-62,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.61-62; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.60-63; 1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf pp.25-26,
+E.2.2.10,E2,E,default,unspecified,single_select_negative,NULL,,0.0,1.0,1.0,"A. +1
+B. -1",insufficient,llm_valid_json,valid_json,False,VNM_Baocaothuongnien_2024.pdf pp.66-67,VNM_Baocaothuongnien_2024.pdf pp.66-67; VNMSR_Full_VN_2351c45431.pdf pp.9-10; 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.46-48,llm_null_or_no_answer
+E.2.2.11,E2,E,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,1585291596-7f525505f3621558355a60c10f6862cbb3b9c9863921a9b06587f7b42a0f9733.pdf p.64,1585291596-7f525505f3621558355a60c10f6862cbb3b9c9863921a9b06587f7b42a0f9733.pdf p.64; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.10-11; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf p.20,
+E.2.2.12,E2,E,policy,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf pp.12-13,VNMSR_Full_VN_2351c45431.pdf pp.121-122; 1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf pp.12-13; 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.50-65,
+E.2.3.1,E2,E,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf pp.60-63,VNM_Baocaothuongnien_2024.pdf pp.41-42; 1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf pp.60-63; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.29-30,
+E.2.3.2,E2,E,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,1555043744_fa0d924547ebd9b6ebfaeb374df4a3263d462db8256435ccde59d6ae23dbb984_048a7a9c2a.pdf pp.36-38,1555043744_fa0d924547ebd9b6ebfaeb374df4a3263d462db8256435ccde59d6ae23dbb984_048a7a9c2a.pdf pp.36-38; 1555043744_fa0d924547ebd9b6ebfaeb374df4a3263d462db8256435ccde59d6ae23dbb984_048a7a9c2a.pdf pp.40-41; 1680152280_e9ef8eb09f1d52a32281ac79c16415aa6de81a80a162bc2b4cd381a80c68650c_d22f2976fd.pdf pp.60-61,
+E.2.3.3,E2,E,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.61-62,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.61-62; VNMSR_Full_VN_2351c45431.pdf pp.84-88; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.60-63,
+E.2.3.4,E2,E,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.43-44,VNM_Baocaothuongnien_2024.pdf pp.43-44; vnm.pdf pp.61-63; VNMSR_Full_VN_2351c45431.pdf p.10,
+E.2.3.5,E2,E,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.18-20,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.18-20; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.17-19; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.18-19,
+E.2.3.6,E2,E,ratio_calculation,current_year_required,ratio_calculation,NULL,,0.0,0.0,0.0,"Lấy số liệu trong ""Research & Development Expense - Expensed & Capitalized - Total -Supplemental"" chia cho ""Business Activities"" - Total
+Phụ lục có bảng so sánh",insufficient,llm_valid_json,valid_json,False,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.41-43,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.41-43; VNM_Baocaothuongnien_2024.pdf pp.51-52; VNM_Baocaothuongnien_2024.pdf pp.39-40,llm_null_or_no_answer
+E.3.1.1,E3,E,numeric_disclosure,current_year_required,numeric_disclosure,NULL,,0.0,1.0,1.0,"Câu hỏi này chỉ áp dụng với doanh nghiệp thuộc ngành sản xuất.
+Nếu có đề cập số liệu: +1
+Nếu không có hoặc thiếu sót: 0",insufficient,llm_valid_json,valid_json,False,VNMSR_Full_VN_2351c45431.pdf pp.138-141,VNMSR_Full_VN_2351c45431.pdf pp.138-141; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.100-101; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.100-102,llm_null_or_no_answer
+E.3.1.2,E3,E,numeric_disclosure,current_year_required,numeric_disclosure,NULL,,0.0,1.0,1.0,"Câu hỏi này chỉ áp dụng với doanh nghiệp thuộc ngành sản xuất.
+Nếu có đề cập số liệu: +1
+Nếu không có hoặc thiếu sót: 0",insufficient,llm_valid_json,valid_json,False,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.99-100,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.99-100; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.100-102; VNMSR_Full_VN_2351c45431.pdf pp.136-137,llm_null_or_no_answer
+E.3.2.1,E3,E,ratio_calculation,cross_year_reference,ratio_calculation,A,A,1.0,1.0,0.0,"Câu hỏi này chỉ áp dụng với doanh nghiệp thuộc ngành sản xuất.
+Nếu có đề cập số liệu: +1
+Nếu không có hoặc thiếu sót: 0",supported,numeric_override,empty_raw_response,True,VNM_Baocaothuongnien_2024.pdf p.48,VNMSR_Full_VN_2351c45431.pdf pp.138-141; VNM_Baocaothuongnien_2024.pdf p.48; VNM_Baocaothuongnien_2024.pdf pp.85-86,
+E.3.2.2,E3,E,ratio_calculation,current_year_required,ratio_calculation,A,A,1.0,1.0,0.0,"Câu hỏi này chỉ áp dụng với doanh nghiệp thuộc ngành sản xuất.
+Nếu có đề cập số liệu: +1
+Nếu không có hoặc thiếu sót: 0",supported,numeric_override,valid_json,True,VNM_Baocaothuongnien_2024.pdf p.48,VNMSR_Full_VN_2351c45431.pdf pp.138-141; VNM_Baocaothuongnien_2024.pdf p.48; VNM_Baocaothuongnien_2024.pdf pp.85-86,
+E.3.3.1,E3,E,ratio_calculation,current_year_required,ratio_calculation,A,A,1.0,1.0,0.0,"Câu hỏi này chỉ áp dụng với doanh nghiệp thuộc ngành sản xuất.
+Nếu có đề cập số liệu: +1
+Nếu không có hoặc thiếu sót: 0",supported,numeric_override,empty_raw_response,True,VNM_Baocaothuongnien_2024.pdf pp.30-31,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.100-101; VNM_Baocaothuongnien_2024.pdf pp.4-5; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf p.85,
+E.3.3.2,E3,E,ratio_calculation,current_year_required,ratio_calculation,A,A,1.0,1.0,0.0,"Câu hỏi này chỉ áp dụng với doanh nghiệp thuộc ngành sản xuất.
+Nếu có đề cập số liệu: +1
+Nếu không có hoặc thiếu sót: 0",supported,numeric_override,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.30-31,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.96-97; VNM_Baocaothuongnien_2024.pdf pp.4-5; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf p.85,
+E.3.3.3,E3,E,ratio_calculation,cross_year_reference,ratio_calculation,A,A,1.0,1.0,0.0,"Câu hỏi này chỉ áp dụng với doanh nghiệp thuộc ngành sản xuất.
+Nếu có đề cập số liệu: +1
+Nếu không có hoặc thiếu sót: 0",supported,retrieval_fallback_single,valid_json,True,VNMSR_Full_VN_2351c45431.pdf pp.84-88,VNMSR_Full_VN_2351c45431.pdf pp.84-88; VNM_Baocaothuongnien_2024.pdf p.48; VNM_Baocaothuongnien_2024.pdf pp.85-86,
+E.3.4.1,E3,E,default,unspecified,single_select_negative,NULL,,0.0,1.0,1.0,"A. 0
+B. -1
+C. +1
+D. 0 (hoặc tự đánh giá)",insufficient,llm_valid_json,valid_json,False,VNMSR_Full_VN_2351c45431.pdf p.23,VNMSR_Full_VN_2351c45431.pdf p.23; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf p.20; VNMSR_Full_VN_2351c45431.pdf pp.68-71,llm_null_or_no_answer
+E.3.5.1,E3,E,default,unspecified,single_select_negative,B,B,0.0,1.0,1.0,"A. +1
+B. 0
+C. -1",supported,llm_valid_json,valid_json,True,QES_Nh_C3_A0_m_C3_A1y_N_C6_B0_E1_BB_9_Bc_Gi_E1_BA_A3i_Kh_C3_A1t_Vi_E1_BB_87t_Nam_1f3e825bbd.pdf pp.11-22,QES_Nh_C3_A0_m_C3_A1y_N_C6_B0_E1_BB_9_Bc_Gi_E1_BA_A3i_Kh_C3_A1t_Vi_E1_BB_87t_Nam_1f3e825bbd.pdf pp.11-22; NGK_QES_T03_2024_20_V2_779405e731.pdf pp.17-20; QES_Trang_tr_E1_BA_A1i_b_C3_B2_s_E1_BB_A_Fa_Ngh_E1_BB_87_An_6799093e99.pdf pp.11-28,partial_score
+E.3.5.2,E3,E,numeric_disclosure,unspecified,numeric_disclosure,A,A,1.0,1.0,0.0,"Câu hỏi này chỉ áp dụng với doanh nghiệp thuộc ngành sản xuất.
+Nếu có đề cập số liệu: +1
+Nếu không có hoặc thiếu sót: 0",supported,numeric_override,empty_raw_response,True,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.41-43,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.41-43; VNMSR_Full_VN_2351c45431.pdf pp.138-141; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf p.44,
+E.3.5.3,E3,E,numeric_disclosure,current_year_required,numeric_disclosure,NULL,,0.0,1.0,1.0,"Câu hỏi này chỉ áp dụng với doanh nghiệp thuộc ngành sản xuất.
+Nếu có đề cập số liệu: +1
+Nếu không có hoặc thiếu sót: 0",insufficient,llm_empty_failure,empty_raw_response,False,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.100-101,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.100-101; VNMSR_Full_VN_2351c45431.pdf p.139; VNMSR_Full_VN_2351c45431.pdf pp.138-139,llm_null_or_no_answer
+S.1.0.,S1,S,default,unspecified,single_select_positive,NULL,,0.0,1.0,1.0,"A. 0
+B. 0
+C. +1
+D. +1",insufficient,llm_valid_json,valid_json,False,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.86-87,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.86-87; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.29-30; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.18-19,llm_null_or_no_answer
+S.1.1.0,S1,S,default,unspecified,single_select_negative,A,A,0.0,1.0,1.0,"A. 0
+B. +1
+C. +1
+D. 0",supported,llm_valid_json,valid_json,True,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.17-19,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.17-19; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.18-19; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.18-20,partial_score
+S.1.1.1,S1,S,policy,historical_allowed,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. 0
+C. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf p.67,VNM_Baocaothuongnien_2024.pdf p.67; 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.33-34; VNM_Baocaothuongnien_2024.pdf pp.67-68,
+S.1.1.2,S1,S,policy,historical_allowed,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. 0
+C. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf p.67,VNM_Baocaothuongnien_2024.pdf p.67; 1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf pp.74-75; VNM_Baocaothuongnien_2024.pdf pp.67-68,
+S.1.1.3,S1,S,policy,historical_allowed,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf p.67,VNM_Baocaothuongnien_2024.pdf p.67; 1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf pp.35-38; 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.33-34,
+S.1.2.1,S1,S,policy,historical_allowed,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.64-70,1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.64-70; 1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf pp.45-46; VNMSR_Full_VN_2351c45431.pdf pp.121-122,
+S.1.2.2,S1,S,policy,historical_allowed,single_select_negative,C,C,0.0,1.0,1.0,"A. -1
+B. +0,5
+C. +0,5
+D. +1",insufficient,llm_valid_json,valid_json,False,VNMSR_Full_VN_2351c45431.pdf pp.121-122,VNMSR_Full_VN_2351c45431.pdf pp.121-122; 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.50-65; VNM_Baocaothuongnien_2024.pdf p.67,evidence_missing
+S.1.3.1,S1,S,policy,latest_valid_allowed,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.51-52,VNM_Baocaothuongnien_2024.pdf pp.51-52; 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.50-65; VNM_Baocaothuongnien_2020.pdf pp.37-42,
+S.1.4.1,S1,S,policy,historical_allowed,single_select_negative,NULL,,0.0,1.0,1.0,"A. -1
+B. 0
+C. +1",insufficient,llm_valid_json,valid_json,False,1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.52-53,1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.52-53; 1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.64-70; 1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.50-51,llm_null_or_no_answer
+S.1.4.2,S1,S,policy,historical_allowed,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.64-70,1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.64-70; 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.50-65; 1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf pp.49-51,
+S.2.0.1,S2,S,policy,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.18-20,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.18-20; 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.50-65; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.89-92,
+S.2.1.1,S2,S,policy,latest_valid_allowed,single_select_negative,NULL,,0.0,1.0,1.0,"A. -1
+B. 0
+C. +1",insufficient,llm_valid_json,valid_json,False,1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.50-65,1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.50-65; 1585291596-7f525505f3621558355a60c10f6862cbb3b9c9863921a9b06587f7b42a0f9733.pdf p.66; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.29-30,llm_null_or_no_answer
+S.2.1.2,S2,S,default,unspecified,single_select_negative,NULL,,0.0,1.0,1.0,"A. +1
+B. 0
+C. -1",insufficient,llm_valid_json,valid_json,False,1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf pp.87-88,1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf pp.87-88; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.86-87; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.105-106,llm_null_or_no_answer
+S.2.2.1,S2,S,multi_select,unspecified,multi_select,G,G,0.125,0.875,0.75,+0125 trên 1 điều kiện đáp ứng,supported,retrieval_fallback_multi,empty_raw_response,True,1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf pp.47-49,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.73-74; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.72-73; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf p.73,multi_select_incomplete
+S.2.2.2,S2,S,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,1555043744_fa0d924547ebd9b6ebfaeb374df4a3263d462db8256435ccde59d6ae23dbb984_048a7a9c2a.pdf pp.25-26,1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf pp.74-75; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.72-73; 1555043744_fa0d924547ebd9b6ebfaeb374df4a3263d462db8256435ccde59d6ae23dbb984_048a7a9c2a.pdf pp.25-26,
+S.2.2.3,S2,S,multi_select,unspecified,multi_select,"A,B,C,D,E","A,B,C,D,E",1.25,1.25,0.0,"+0,25 trên 1 yêu cầu đáp ứng. (trừ câu E)",supported,retrieval_fallback_multi,empty_raw_response,True,1680152280_e9ef8eb09f1d52a32281ac79c16415aa6de81a80a162bc2b4cd381a80c68650c_d22f2976fd.pdf pp.30-31,1680152280_e9ef8eb09f1d52a32281ac79c16415aa6de81a80a162bc2b4cd381a80c68650c_d22f2976fd.pdf pp.30-31; 1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf pp.74-75; 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.101-102,
+S.2.2.4,S2,S,policy,unspecified,single_select_negative,A,A,0.0,1.0,1.0,"A. 0
+B. +1
+C. 0
+D. 0 (hoặc tự đánh giá)",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.67-68,VNM_Baocaothuongnien_2024.pdf pp.67-68; VNM_Baocaothuongnien_2024.pdf p.67; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.29-30,partial_score
+S.2.2.5,S2,S,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.103-104,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.75-76; 1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf pp.54-55; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf p.75,
+S.2.2.6,S2,S,default,unspecified,single_select_positive,NULL,,0.0,1.0,1.0,"A. +1
+B. 0
+C. 0
+D. 0 (hoặc tự đánh giá)",insufficient,llm_valid_json,valid_json,False,VNM_Baocaothuongnien_2024.pdf pp.41-42,VNM_Baocaothuongnien_2024.pdf pp.41-42; 1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf pp.42-44; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.65-66,llm_null_or_no_answer
+S.2.2.7,S2,S,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.34-35,1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf pp.46-47; 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.32-33; 1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf pp.44-45,
+S.2.2.8,S2,S,multi_select,unspecified,multi_select,"A,D","A,D",0.5,1.25,0.75,"+0,25 trên 1 yêu cầu đáp ứng. (trừ câu E)",supported,retrieval_fallback_multi,valid_json,True,1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf pp.27-29,1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.38-39; 1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf pp.27-29; 1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf pp.25-26,multi_select_incomplete
+S.2.2.9,S2,S,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. +1
+C. 0 (hoặc tự đánh giá)
+D. -1",supported,llm_valid_json,valid_json,True,1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf pp.35-38,1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf pp.47-48; 1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf pp.35-38; 1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf pp.37-41,
+S.2.2.10,S2,S,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.89-92,VNMSR_Full_VN_2351c45431.pdf pp.101-102; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.89-92; VNMSR_Full_VN_2351c45431.pdf pp.114-115,
+S.2.3.1,S2,S,default,unspecified,single_select_negative,NULL,,0.0,1.0,1.0,"A. -1
+B. +0,5
+C. +0,5
+D. +1",insufficient,llm_valid_json,valid_json,False,1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf p.5,1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf p.5; 1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf pp.60-63; VNM_Baocaothuongnien_2024.pdf pp.70-71,llm_null_or_no_answer
+S.2.4.1,S2,S,default,unspecified,single_select_negative,NULL,,0.0,1.0,1.0,"A. 0
+B. +1
+C. -1",insufficient,llm_valid_json,valid_json,False,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.89-92,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.89-92; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.18-20; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.88-89,llm_null_or_no_answer
+S.2.4.2,S2,S,default,current_year_required,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.89-92,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.89-92; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.88-89; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.18-20,
+S.2.4.3,S2,S,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.18-20,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.18-20; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.17-19; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.18-19,
+S.2.5.1,S2,S,policy,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.64-70,1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.64-70; 1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.52-53; 1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.50-51,
+S.2.5.2,S2,S,default,unspecified,single_select_negative,C,C,0.5,1.0,0.5,"A. -1
+B. +0,5
+C. +0,5
+D. +1",supported,llm_valid_json,valid_json,True,1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf pp.31-35,1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf pp.31-35; 1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf pp.50-52; 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.50-65,partial_score
+S.2.5.3,S2,S,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.64-70,VNMSR_Full_VN_2351c45431.pdf pp.14-15; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.34-35; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.28-29,
+S.3.1.1,S3,S,numeric_disclosure,current_year_required,numeric_disclosure,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.51-52,VNM_Baocaothuongnien_2024.pdf pp.51-52; VNM_Baocaothuongnien_2024.pdf pp.49-50; VNM_Baocaothuongnien_2024.pdf pp.50-51,
+S.3.1.2,S3,S,numeric_disclosure,current_year_required,numeric_disclosure,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.70-71,VNM_Baocaothuongnien_2024.pdf p.45; VNM_Baocaothuongnien_2024.pdf pp.70-71; VNM_Baocaotaichinh_2024_Kiemtoan_Hopnhat (1).pdf pp.22-23,
+S.3.1.3,S3,S,default,unspecified,single_select_negative,NULL,,0.0,1.0,1.0,"A. +0,5
+B. +0,5
+C. +1
+D. -1",insufficient,llm_valid_json,valid_json,False,1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf pp.37-41,1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf pp.37-41; 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.29-32; VNM_Baocaothuongnien_2024.pdf pp.51-52,llm_null_or_no_answer
+S.3.1.4,S3,S,default,unspecified,single_select_negative,A,A,0.5,1.0,0.5,"A. +0,5
+B. +0,5
+C. +1
+D. -1",supported,llm_valid_json,valid_json,True,1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf pp.37-41,1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf pp.37-41; 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.29-32; VNM_Baocaothuongnien_2024.pdf pp.51-52,partial_score
+S.3.1.5,S3,S,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf pp.47-48,1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf pp.47-48; 1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf p.94; 1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf pp.108-111,
+S.3.1.6,S3,S,default,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNMSR_Full_VN_2351c45431.pdf p.20,VNMSR_Full_VN_2351c45431.pdf p.20; 1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf pp.45-49; 1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf p.33,
+S.3.1.7,S3,S,default,current_year_required,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. 0
+C. -1",supported,llm_valid_json,valid_json,True,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.71-72,VNM_Baocaothuongnien_2024.pdf p.59; VNM_Baocaothuongnien_2024.pdf pp.43-44; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.71-72,
+S.3.2.1,S3,S,multi_select,current_year_required,multi_select,NULL,,0.0,1.2,1.2,"+0,2 trên 1 yêu cầu đáp ứng. (trừ câu F)",insufficient,llm_valid_json,valid_json,False,VNM_Baocaothuongnien_2024.pdf pp.85-86,VNM_Baocaothuongnien_2024.pdf pp.85-86; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.34-37; VNM_Baocaothuongnien_2024.pdf pp.89-90,llm_null_or_no_answer
+S.3.2.2,S3,S,numeric_disclosure,current_year_required,numeric_disclosure,A,A,1.0,0.0,0.0,"Nếu có đề cập đến số liệu chi tiết: +1
+Nếu không có hoặc đề cập không chi tiết rõ ràng: 0",supported,numeric_override,empty_raw_response,True,VNM_Baocaothuongnien_2024.pdf pp.30-31,1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf p.85; VNM_Baocaothuongnien_2024.pdf pp.1-2; 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf pp.89-92,
+S.3.3.1,S3,S,policy,historical_allowed,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. 0",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf p.67,VNM_Baocaothuongnien_2024.pdf p.67; 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf pp.50-65; 1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf pp.93-94,
+G.1,G1,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.61-63,VNM_Baocaothuongnien_2024.pdf pp.61-63; VNM_Baocaothuongnien_2024.pdf pp.59-60; VNM_Baocaothuongnien_2024.pdf p.80,
+G.2,G1,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.76-79,VNM_Baocaothuongnien_2024.pdf pp.76-79; VNM_Baocaothuongnien_2024.pdf pp.61-63; VNM_Baocaothuongnien_2024.pdf pp.1-2,
+G.3,G1,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.61-63,VNM_Baocaothuongnien_2024.pdf pp.61-63; VNM_Baocaothuongnien_2024.pdf pp.59-60; VNM_Baocaothuongnien_2024.pdf pp.63-64,
+G.4,G1,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.61-63,VNM_Baocaothuongnien_2024.pdf pp.61-63; VNM_Baocaothuongnien_2024.pdf pp.59-60; VNM_Baocaothuongnien_2024.pdf pp.63-64,
+G.5,G1,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.61-63,VNM_Baocaothuongnien_2024.pdf pp.61-63; VNM_Baocaothuongnien_2024.pdf pp.76-79; VNM_Baocaothuongnien_2024.pdf pp.70-71,
+G.6,G1,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.61-63,VNM_Baocaothuongnien_2024.pdf pp.61-63; VNM_Baocaothuongnien_2024.pdf pp.76-79; VNM_Baocaothuongnien_2024.pdf pp.33-34,
+G.7,G1,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,Tài liệu họp Đại hội đồng cổ đông thường niên.pdf pp.1-3,Tài liệu họp Đại hội đồng cổ đông thường niên.pdf pp.1-3; VNM_Baocaothuongnien_2024.pdf pp.61-63; VNM_Baocaothuongnien_2024.pdf pp.70-71,
+G.8,G1,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.61-63,VNM_Baocaothuongnien_2024.pdf pp.61-63; VNM_Baocaothuongnien_2024.pdf pp.59-60; VNM_Baocaothuongnien_2024.pdf pp.63-64,
+G.9,G1,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,empty_raw_response,True,VNM_Baocaothuongnien_2024.pdf pp.61-63,VNM_Baocaothuongnien_2024.pdf pp.61-63; Tài liệu họp Đại hội đồng cổ đông thường niên.pdf pp.1-3; Tài liệu họp Đại hội đồng cổ đông thường niên.pdf pp.3-4,
+G.10,G2,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.79-80,VNM_Baocaothuongnien_2024.pdf p.35; VNM_Baocaothuongnien_2024.pdf pp.79-80; VNM_Baocaothuongnien_2024.pdf pp.70-71,
+G.11,G2,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.70-71,VNM_Baocaothuongnien_2024.pdf pp.70-71; VNM_Baocaothuongnien_2024.pdf pp.76-79; VNM_Baocaothuongnien_2024.pdf pp.71-72,
+G.12,G2,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.70-71,VNM_Baocaothuongnien_2024.pdf pp.70-71; VNM_Baocaothuongnien_2024.pdf pp.63-64; VNM_Baocaothuongnien_2024.pdf pp.76-79,
+G.13,G2,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.70-71,VNM_Baocaothuongnien_2024.pdf pp.70-71; VNM_Baocaothuongnien_2024.pdf pp.72-75; VNM_Baocaothuongnien_2024.pdf pp.76-79,
+G.14,G2,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf p.33,VNM_Baocaothuongnien_2024.pdf p.33; VNM_Baocaothuongnien_2024.pdf pp.33-34; VNM_Baocaothuongnien_2024.pdf pp.70-71,
+G.15,G2,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,empty_raw_response,True,VNM_Baocaothuongnien_2024.pdf pp.72-75,VNM_Baocaothuongnien_2024.pdf pp.72-75; VNM_Baocaothuongnien_2024.pdf p.33; VNM_Baocaothuongnien_2024.pdf pp.33-34,
+G.16,G2,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.70-71,VNM_Baocaothuongnien_2024.pdf pp.70-71; VNM_Baocaothuongnien_2024.pdf pp.63-64; VNM_Baocaothuongnien_2024.pdf pp.72-75,
+G.17,G2,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.70-71,VNM_Baocaothuongnien_2024.pdf pp.70-71; VNM_Baocaothuongnien_2024.pdf pp.76-79; VNM_Baocaothuongnien_2024.pdf p.33,
+G.18,G2,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.70-71,VNM_Baocaothuongnien_2024.pdf pp.70-71; VNM_Baocaothuongnien_2024.pdf p.35; VNM_Baocaothuongnien_2024.pdf p.64,
+G.19,G3,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.76-79,VNM_Baocaothuongnien_2024.pdf pp.76-79; VNM_Baocaothuongnien_2024.pdf pp.72-75; VNM_Baocaothuongnien_2024.pdf pp.28-29,
+G.20,G3,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.72-75,VNM_Baocaothuongnien_2024.pdf pp.72-75; VNM_Baocaothuongnien_2024.pdf pp.76-79; VNM_Baocaothuongnien_2024.pdf pp.20-21,
+G.21,G3,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.72-75,VNM_Baocaothuongnien_2024.pdf pp.72-75; VNM_Baocaothuongnien_2024.pdf pp.79-80; VNM_Baocaothuongnien_2024.pdf pp.20-21,
+G.22,G3,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.72-75,VNM_Baocaothuongnien_2024.pdf pp.72-75; VNM_Baocaothuongnien_2024.pdf pp.20-21; VNM_Baocaothuongnien_2024.pdf pp.79-80,
+G.23,G3,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,empty_raw_response,True,VNM_Baocaothuongnien_2024.pdf pp.72-75,VNM_Baocaothuongnien_2024.pdf pp.72-75; VNM_Baocaothuongnien_2024.pdf pp.76-77; VNM_Baocaothuongnien_2024.pdf pp.33-34,
+G.24,G3,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.72-75,VNM_Baocaothuongnien_2024.pdf pp.72-75; VNM_Baocaothuongnien_2024.pdf pp.76-79; VNM_Baocaothuongnien_2024.pdf pp.20-21,
+G.25,G3,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.76-79,VNM_Baocaothuongnien_2024.pdf pp.76-79; VNM_Baocaothuongnien_2024.pdf pp.33-34; VNM_Baocaothuongnien_2024.pdf pp.70-71,
+G.26,G3,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.76-79,VNM_Baocaothuongnien_2024.pdf pp.76-79; VNM_Baocaothuongnien_2024.pdf pp.33-34; VNM_Baocaothuongnien_2024.pdf pp.71-72,
+G.27,G3,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.33-34,VNM_Baocaothuongnien_2024.pdf pp.33-34; VNM_Baocaothuongnien_2024.pdf pp.76-79; VNM_Baocaothuongnien_2024.pdf p.33,
+G.28,G3,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.72-75,VNM_Baocaothuongnien_2024.pdf pp.72-75; VNM_Baocaothuongnien_2024.pdf pp.76-79; VNM_Baocaothuongnien_2024.pdf pp.20-21,
+G.29,G4,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.33-34,VNM_Baocaothuongnien_2024.pdf pp.33-34; VNM_Baocaothuongnien_2024.pdf pp.72-75; VNM_Baocaothuongnien_2024.pdf pp.70-71,
+G.30,G4,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.72-75,VNM_Baocaothuongnien_2024.pdf pp.72-75; VNM_Baocaothuongnien_2024.pdf pp.70-71; VNM_Baocaothuongnien_2024.pdf pp.78-79,
+G.31,G4,G,governance,unspecified,single_select_negative,B,B,-1.0,1.0,2.0,"A. +1
+B. -1",contradicted,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.72-75,VNM_Baocaothuongnien_2024.pdf pp.72-75; VNM_Baocaothuongnien_2024.pdf pp.70-71; VNM_Baocaothuongnien_2024.pdf pp.76-79,negative_disclosure_or_non_compliance
+G.32,G4,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.72-75,VNM_Baocaothuongnien_2024.pdf pp.72-75; VNM_Baocaothuongnien_2024.pdf pp.17-19; VNM_Baocaothuongnien_2024.pdf pp.76-79,
+G.33,G4,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.33-34,VNM_Baocaothuongnien_2024.pdf pp.33-34; VNM_Baocaothuongnien_2024.pdf pp.72-75; VNM_Baocaothuongnien_2024.pdf pp.81-82,
+G.34,G5,G,governance,unspecified,single_select_negative,NULL,,0.0,1.0,1.0,"A. +0,5
+B. +0,5
+C. +1
+D. -1",insufficient,llm_valid_json,valid_json,False,VNM_Baocaothuongnien_2024.pdf pp.72-73,VNM_Baocaothuongnien_2024.pdf pp.72-73; VNM_Baocaothuongnien_2024.pdf pp.66-67; VNM_Baocaothuongnien_2024.pdf pp.72-75,llm_null_or_no_answer
+G.35,G5,G,governance,current_year_required,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.70-71,VNM_Baocaothuongnien_2024.pdf pp.70-71; VNM_Baocaothuongnien_2024.pdf pp.61-63; VNM_Baocaothuongnien_2024.pdf pp.76-79,
+G.36,G5,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,retrieval_fallback_single,empty_raw_response,True,VNM_Baocaothuongnien_2024.pdf p.80,VNM_Baocaothuongnien_2024.pdf p.80; VNM_Baocaothuongnien_2024.pdf pp.70-71; VNM_Baocaothuongnien_2024.pdf pp.80-81,
+G.37,G5,G,governance,unspecified,single_select_negative,A,A,1.0,1.0,0.0,"A. +1
+B. -1",supported,llm_valid_json,valid_json,True,VNM_Baocaothuongnien_2024.pdf pp.86-87,VNM_Baocaothuongnien_2024.pdf pp.86-87; VNM_Baocaothuongnien_2024.pdf pp.76-79; VNM_Baocaothuongnien_2024.pdf pp.82-83,

@@ -1,0 +1,702 @@
+=================================================================
+  HỆ THỐNG ĐÁNH GIÁ VÀ PHÂN TÍCH ESG (VNSI 2025)
+  Powered by Qwen3:30b Local LLM
+=================================================================
+
+[0/6] Parsing bộ quy tắc VNSI 2025...
+[Excel Parser] Đã xuất tất cả rules vào outputs/
+  Sinh metadata retrieval offline cho 113 câu hỏi...
+  Metadata retrieval: coverage=113/113, passed=True
+  [CACHE HIT] Đọc từ cache: outputs/cache/01_09_na_pas2060_24_tuyen_bo_cacbon_trung_tinh_nmsna_c1c6295263.pdf_f3cae26ef028_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/1402563877_f44e98fa7b7a4f3d0628bb245d2dcef09468e0e8590e57150b766ebbb0ee6a72_5949a77b25.pdf_5710bff14032_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf_c657ab83a363_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf_33f3b2ae1b48_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/1555043744_fa0d924547ebd9b6ebfaeb374df4a3263d462db8256435ccde59d6ae23dbb984_048a7a9c2a.pdf_be42a2fdd3ec_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/1585291596-7f525505f3621558355a60c10f6862cbb3b9c9863921a9b06587f7b42a0f9733.pdf_3539cd59d430_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf_728ea18c8ee8_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf_b2e1565c3079_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf_e34f406f31e6_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf_96d714f10634_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/1680152280_e9ef8eb09f1d52a32281ac79c16415aa6de81a80a162bc2b4cd381a80c68650c_d22f2976fd.pdf_6efa64d6a2fa_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/1680152599_eb86d997113eef1ee2d14ceebcbad8a0d8fd8ed391faabf99f47d72e2802bbf8_9af10bfadb.pdf_1a00e73491c4_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf_0219cd3a7f0e_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf_a905b6e25faf_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf_9ecd40ae3661_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20181203_20181203---VNM---CBTT--Thay-doi-co-cau-nhan-su--Bo-nhiem-GHDH-KDQT.pdf_c6a67c9dafee_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20181204_20181204---VNM---NQHDQT-ve-viec-tam-ung-co-tuc-dot-2-nam-2018.pdf_a8e5b0e08579_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20190313_20190312---VNM---CBTT--Nghi-quyet-HDQT--Chao-mua-cong-khai-GTN.pdf_e2c2fde6697a_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20190422_20190422 - VNM -  Bien Ban DHDCD thuong nien 2019- TViet.pdf_eb63d1e2a315_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20190422_20190422 - VNM -  Nghi quyet DHDCD thuong nien 2019.pdf_d2447773440d_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20191203_20191202---VNM---CBTT-NQ-HDQT-vv-Chot-DS-Tam-ung-co-tuc-dot-2-2019.pdf_acc9578521cc_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20191210_20191210---VNM---NQ-HDQ-T.pdf_1e3ac81d1c8c_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20200629_20200629 - VNM - Bien Ban DHDCD thuong nien 2020- TViet.pdf_c6f844c64241_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20210205_20210205---VNM---NQ-HDQT-vv-lap-ViBev--CBTT.pdf_732c4c5915d1_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20210427_20210427 - VNM - Bien Ban DHDCD thuong nien 2021- TViet.pdf_a02f77a19b87_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20210427_20210427 - VNM - Nghi quyet - DHDCD 2021- Tieng Viet.pdf_cd29b600da24_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20210520_20210520---VNM--NQ-06-2021-ve-ban-hanh-QCQT-va-QCHDHDQT--CBTT.pdf_d0d163c9f02c_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20211202_20211202---VNM--NQ-10-2021-ve-viec-Tam-ung-co-tuc-va-to-chuc-DHCD-2022.pdf_360a41cc0d31_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20211215_20211215---VNM---NQ-13-2021-ve-viec-GDDH-nghi-huu.pdf_73b196f68b47_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20211231_20211231--VNM--NQ-14-2021-ve-viec-GDDH-nghi-huu.pdf_94fa35265a6f_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20220426_20220426___vnm___nghi_quyet_hdqt_05_2022.pdf_7158aff3b65d_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20220722_20220722___vnm___nghi_quyet_hdqt_09_2022.pdf_96ed0d115d50_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20221201_20221201___vnm___cbtt_nghi_quyet_hdqt_16_2022.pdf_5debd6aa69b7_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20221201_20221201___vnm___cbtt_nghi_quyet_hdqt_17_2022.pdf_9b06f4b305cb_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20221229_20221228___vnm___nq_18_2022_to_chuc_dhcd_2023__003_.pdf_b9b6d81602a5_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20231208_20231208___vnm___cbtt_nghi_quyet_hdqt_23_2023__003_ (1).pdf_284db6e10764_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20240131_20240131___vnm___ngay_to_chuc_dcdcd_2024 (1).pdf_60150fedffa1_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20241206_20241205___vnm___tam_ung_co_tuc_dot_2_2024__cbtt_ (1).pdf_be43c7872d89_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20241206_20241205___vnm___thong_qua_giao_dich_cac_blq__cbtt___cv_den_ (1).pdf_32113f91621e_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/20241227_20241227___vnm___nghi_quyet_hdqt_17_2024.pdf_7b044a4aef5b_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/2_20_PAS_202060_SVN_QES_Ver_2001_05_04_2024_20_28_E_29_12d6a7e3c2.pdf_e1f2c4a9efbd_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/BCTC HOP NHAT 31.12.2019 - VN.pdf_93e7bf93b831_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/BDP_Giay_phep_moi_truong_03_10_2023_bfdd06886d.pdf_12b650ce0c47_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/Biên bản họp Đại hội đồng cổ đông (1).pdf_8bbf831a16e2_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/Biên bản kiểm phiếu biểu quyết Đại hội cổ đông 2024 (1).pdf_d46bc64675e2_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/CARBON_20_NEUTRALITY_20_DECLARATION_20_SVN_2009_04_2024_cec0582a4f.pdf_b06f625df341_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/CTP_GXN_hoan_thanh_cong_trinh_BVMT_10_02_2020_b0b24c01e2.pdf_26269b21546f_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/Chinh_sach_phuc_loi_dong_vat_1_577b716dd2.pdf_71d12e5c5306_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/Chinh_sach_thu_mua_sua_tuoi_nguyen_lieu_1_288611f658.pdf_bd0e8af4d57a_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/Chinh_sach_thuc_hanh_san_xuat_nong_nghiep_ben_vung_e0678ecf9a.pdf_b8ec78c4891c_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/DLP_GXN_da_thuc_hien_BVMT_2013_a6488f8968.pdf_7f97ae834fda_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/DNP_GXN_hoan_thanh_CTBVMT_14_08_2021_0af11bd4e4.pdf_e2adf1d2162e_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/GIAI_20_THICH_20_DU_20_DIEU_20_KIEN_20_DAT_20_TRUNG_20_HOA_20_CARBON_20_28duyet_29_da08d37d22.pdf_24a1ec702e61_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/GKP_Giay_Phep_MT_03_02_2025_dabb647e71.pdf_e5dfa1996044_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/LSP_Giay_phep_moi_truong_24_09_2025_cf65ad4355.pdf_ba6fffc5eac0_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/NAP_Giay_phep_moi_truong_13_06_2025_b5b8d682d0.pdf_5e3be6832237_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/NGK_QES_T03_2024_20_V2_779405e731.pdf_c88de8dd774c_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/NM_20_NGK_Tuyen_20bo_20_Cacbon_20_Trung_20t_C3_A_Dnh_202023_aea7be7051.pdf_25709015f520_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/Nghị quyết họp Đại hội đồng cổ đông (1).pdf_28702fe8cbdd_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/QES_Nh_C3_A0_m_C3_A1y_N_C6_B0_E1_BB_9_Bc_Gi_E1_BA_A3i_Kh_C3_A1t_Vi_E1_BB_87t_Nam_1f3e825bbd.pdf_ebd69e52cd77_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/QES_Nh_C3_A0_m_C3_A1y_S_E1_BB_A_Fa_Ngh_E1_BB_87_An_355f09c893.pdf_a3b560eb44b2_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/QES_Trang_tr_E1_BA_A1i_b_C3_B2_s_E1_BB_A_Fa_Ngh_E1_BB_87_An_6799093e99.pdf_7911142d9903_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/SBP_GXN_hoan_thanh_CTBVMT_12_01_2015_043999b11a.pdf_435d70c22689_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/SGP_Giay_Phep_Moi_Truong_29_22_2022_415deda866.pdf_04b41c18c7f0_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/TNP_Giay_phep_moi_truong_02_02_2024_dc1392aa7e.pdf_ed95652bb54b_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/TSP_Giay_phep_moi_truong_23_01_2025_1babfc66e3.pdf_fddf8000101d_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/TTP_Giay_phep_moi_truong_11_06_2025_f1e6542c68.pdf_8388dde8d9b8_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/TUYEN_20_BO_20_CARBON_20_TRUNG_20_TINH_TRANG_20_TRAI_20_NGHE_20_AN_20_28duyet_29_f2a88e9bd5.pdf_11954c3f7ab8_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/Tài liệu họp Đại hội đồng cổ đông thường niên.pdf_155c988e1822_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNMSR_Full_VN_2351c45431.pdf_bca5c6400a83_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaoquantri_2019 (1).pdf_e6f4ee635b0b_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaoquantri_2020.pdf_22bbab2243cb_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaoquantri_2021.pdf_c88c42ba7f40_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaoquantri_2022.pdf_8a5016976d15_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaoquantri_2023.pdf_a302efaec3b8_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaoquantri_2024 (1).pdf_fecf20aacc81_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaoquantri_6T_2019.pdf_9edb9ce1d517_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaoquantri_6T_2020.pdf_91ef499b7a14_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaoquantri_6T_2021.pdf_e0c06dc3df29_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaoquantri_6T_2022.pdf_eb33cbcc2e90_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaoquantri_6T_2023.pdf_cea2fbed2f21_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaoquantri_6T_2024 (1).pdf_98c5caf98a76_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaotaichinh_2019_Kiemtoan_Congtyme.pdf_c8fd2b97bbc9_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaotaichinh_2020_Kiemtoan_Congtyme.pdf_6b32fcb6dfdf_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaotaichinh_2020_Kiemtoan_Hopnhat.pdf_b9b12ad26359_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaotaichinh_2021_Kiemtoan_Congtyme.pdf_4eb0588c07e9_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaotaichinh_2021_Kiemtoan_Hopnhat.pdf_d1b51fd2c901_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaotaichinh_2022_Kiemtoan_Congtyme.pdf_ef90fdc33568_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaotaichinh_2022_Kiemtoan_Hopnhat.pdf_744b30d29cfa_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaotaichinh_2023_Kiemtoan_Congtyme.pdf_35885ce546ba_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaotaichinh_2023_Kiemtoan_Hopnhat.pdf_7cdcebe4a0be_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaotaichinh_2024_Kiemtoan_Congtyme (1).pdf_eade71d2725d_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaotaichinh_2024_Kiemtoan_Hopnhat (1).pdf_a70f448abc8a_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaothuongnien_2020.pdf_194b026b233f_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaothuongnien_2021.pdf_d2f1b6c068b9_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaothuongnien_2022.pdf_f42ef1377ca8_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Baocaothuongnien_2024.pdf_4c756bba77e3_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Giaitrinh_KQKD_6T_2024 (1).pdf_cf2a4c35df0a_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Giaitrinh_KQKD_Q1_2022_Soatxet_Hopnhat.pdf_3b7bfc0c1475_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Giaitrinh_KQKD_Q2_2024 (1).pdf_b4d259dc062d_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Giaitrinh_KQKD_Q3_2022.pdf_f90f871c87cb_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Giaitrinh_KQKD_Q4_2018_Hopnhat.pdf_adbbe9dc1c62_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Giaitrinh_KQKD_Q4_2023.pdf_f9fffa748cb7_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Nghiquyet_DHCD thuong nien_2020.pdf_869a160ca237_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNM_Nghiquyet_DHCD thuong nien_2022.pdf_8b9da85cf0ec_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/VNP_Giay_xac_nhan_hoan_thanh_cong_trinh_BVMT_16_11_2020_c7c999b79b.pdf_c332b90455fa_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/dự thảo nghị quyết.pdf_1b950bf8113b_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/vnm.pdf_cb59e97fe198_ocr.json
+  [CACHE HIT] Đọc từ cache: outputs/cache/z7776784507923_780f2f86fa43c8a3db72127b09c1e4b4.jpg_28674bc9be17_ocr.json
+
+[1/6] Đọc bộ tài liệu (126 file)
+  - 01_09_na_pas2060_24_tuyen_bo_cacbon_trung_tinh_nmsna_c1c6295263.pdf
+  - 1402563877_f44e98fa7b7a4f3d0628bb245d2dcef09468e0e8590e57150b766ebbb0ee6a72_5949a77b25.pdf
+  - 1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf
+  - 1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf
+  - 1555043744_fa0d924547ebd9b6ebfaeb374df4a3263d462db8256435ccde59d6ae23dbb984_048a7a9c2a.pdf
+  - 1585291596-7f525505f3621558355a60c10f6862cbb3b9c9863921a9b06587f7b42a0f9733.pdf
+  - 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf
+  - 1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf
+  - 1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf
+  - 1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf
+  - 1680152280_e9ef8eb09f1d52a32281ac79c16415aa6de81a80a162bc2b4cd381a80c68650c_d22f2976fd.pdf
+  - 1680152599_eb86d997113eef1ee2d14ceebcbad8a0d8fd8ed391faabf99f47d72e2802bbf8_9af10bfadb.pdf
+  - 1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf
+  - 1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf
+  - 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf
+  - 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb.pdf
+  - 20181203_20181203---VNM---CBTT--Thay-doi-co-cau-nhan-su--Bo-nhiem-GHDH-KDQT.pdf
+  - 20181204_20181204---VNM---NQHDQT-ve-viec-tam-ung-co-tuc-dot-2-nam-2018.pdf
+  - 20190313_20190312---VNM---CBTT--Nghi-quyet-HDQT--Chao-mua-cong-khai-GTN.pdf
+  - 20190422_20190422 - VNM -  Bien Ban DHDCD thuong nien 2019- TViet.pdf
+  - 20190422_20190422 - VNM -  Nghi quyet DHDCD thuong nien 2019.pdf
+  - 20191203_20191202---VNM---CBTT-NQ-HDQT-vv-Chot-DS-Tam-ung-co-tuc-dot-2-2019.pdf
+  - 20191210_20191210---VNM---NQ-HDQ-T.pdf
+  - 20200629_20200629 - VNM - Bien Ban DHDCD thuong nien 2020- TViet.pdf
+  - 20210205_20210205---VNM---NQ-HDQT-vv-lap-ViBev--CBTT.pdf
+  - 20210427_20210427 - VNM - Bien Ban DHDCD thuong nien 2021- TViet.pdf
+  - 20210427_20210427 - VNM - Nghi quyet - DHDCD 2021- Tieng Viet.pdf
+  - 20210520_20210520---VNM--NQ-06-2021-ve-ban-hanh-QCQT-va-QCHDHDQT--CBTT.pdf
+  - 20211202_20211202---VNM--NQ-10-2021-ve-viec-Tam-ung-co-tuc-va-to-chuc-DHCD-2022.pdf
+  - 20211215_20211215---VNM---NQ-13-2021-ve-viec-GDDH-nghi-huu.pdf
+  - 20211231_20211231--VNM--NQ-14-2021-ve-viec-GDDH-nghi-huu.pdf
+  - 20220426_20220426___vnm___nghi_quyet_hdqt_05_2022.pdf
+  - 20220722_20220722___vnm___nghi_quyet_hdqt_09_2022.pdf
+  - 20221201_20221201___vnm___cbtt_nghi_quyet_hdqt_16_2022.pdf
+  - 20221201_20221201___vnm___cbtt_nghi_quyet_hdqt_17_2022.pdf
+  - 20221229_20221228___vnm___nq_18_2022_to_chuc_dhcd_2023__003_.pdf
+  - 20231208_20231208___vnm___cbtt_nghi_quyet_hdqt_23_2023__003_ (1).pdf
+  - 20231208_20231208___vnm___cbtt_nghi_quyet_hdqt_23_2023__003_.pdf
+  - 20240131_20240131___vnm___ngay_to_chuc_dcdcd_2024 (1).pdf
+  - 20240131_20240131___vnm___ngay_to_chuc_dcdcd_2024.pdf
+  - 20241206_20241205___vnm___tam_ung_co_tuc_dot_2_2024__cbtt_ (1).pdf
+  - 20241206_20241205___vnm___tam_ung_co_tuc_dot_2_2024__cbtt_.pdf
+  - 20241206_20241205___vnm___thong_qua_giao_dich_cac_blq__cbtt___cv_den_ (1).pdf
+  - 20241206_20241205___vnm___thong_qua_giao_dich_cac_blq__cbtt___cv_den_.pdf
+  - 20241227_20241227___vnm___nghi_quyet_hdqt_17_2024.pdf
+  - 2_20_PAS_202060_SVN_QES_Ver_2001_05_04_2024_20_28_E_29_12d6a7e3c2.pdf
+  - BCTC HOP NHAT 31.12.2019 - VN.pdf
+  - BDP_Giay_phep_moi_truong_03_10_2023_bfdd06886d.pdf
+  - Biên bản họp Đại hội đồng cổ đông (1).pdf
+  - Biên bản họp Đại hội đồng cổ đông.pdf
+  - Biên bản kiểm phiếu biểu quyết Đại hội cổ đông 2024 (1).pdf
+  - Biên bản kiểm phiếu biểu quyết Đại hội cổ đông 2024.pdf
+  - CARBON_20_NEUTRALITY_20_DECLARATION_20_SVN_2009_04_2024_cec0582a4f.pdf
+  - CTP_GXN_hoan_thanh_cong_trinh_BVMT_10_02_2020_b0b24c01e2.pdf
+  - Chinh_sach_phuc_loi_dong_vat_1_577b716dd2.pdf
+  - Chinh_sach_thu_mua_sua_tuoi_nguyen_lieu_1_288611f658.pdf
+  - Chinh_sach_thuc_hanh_san_xuat_nong_nghiep_ben_vung_e0678ecf9a.pdf
+  - DLP_GXN_da_thuc_hien_BVMT_2013_a6488f8968.pdf
+  - DNP_GXN_hoan_thanh_CTBVMT_14_08_2021_0af11bd4e4.pdf
+  - GIAI_20_THICH_20_DU_20_DIEU_20_KIEN_20_DAT_20_TRUNG_20_HOA_20_CARBON_20_28duyet_29_da08d37d22.pdf
+  - GKP_Giay_Phep_MT_03_02_2025_dabb647e71.pdf
+  - LSP_Giay_phep_moi_truong_24_09_2025_cf65ad4355.pdf
+  - NAP_Giay_phep_moi_truong_13_06_2025_b5b8d682d0.pdf
+  - NGK_QES_T03_2024_20_V2_779405e731.pdf
+  - NM_20_NGK_Tuyen_20bo_20_Cacbon_20_Trung_20t_C3_A_Dnh_202023_aea7be7051.pdf
+  - Nghị quyết họp Đại hội đồng cổ đông (1).pdf
+  - Nghị quyết họp Đại hội đồng cổ đông.pdf
+  - QES_Nh_C3_A0_m_C3_A1y_N_C6_B0_E1_BB_9_Bc_Gi_E1_BA_A3i_Kh_C3_A1t_Vi_E1_BB_87t_Nam_1f3e825bbd.pdf
+  - QES_Nh_C3_A0_m_C3_A1y_S_E1_BB_A_Fa_Ngh_E1_BB_87_An_355f09c893.pdf
+  - QES_Nh_C3_A0_m_C3_A1y_S_E1_BB_A_Fa_Ngh_E1_BB_87_An_f66510c5aa.pdf
+  - QES_Trang_tr_E1_BA_A1i_b_C3_B2_s_E1_BB_A_Fa_Ngh_E1_BB_87_An_6799093e99.pdf
+  - SBP_GXN_hoan_thanh_CTBVMT_12_01_2015_043999b11a.pdf
+  - SGP_Giay_Phep_Moi_Truong_29_22_2022_415deda866.pdf
+  - TNP_Giay_phep_moi_truong_02_02_2024_dc1392aa7e.pdf
+  - TSP_Giay_phep_moi_truong_23_01_2025_1babfc66e3.pdf
+  - TTP_Giay_phep_moi_truong_11_06_2025_f1e6542c68.pdf
+  - TUYEN_20_BO_20_CARBON_20_TRUNG_20_TINH_TRANG_20_TRAI_20_NGHE_20_AN_20_28duyet_29_f2a88e9bd5.pdf
+  - Tài liệu họp Đại hội đồng cổ đông thường niên.pdf
+  - VNMSR_Full_VN_2351c45431.pdf
+  - VNM_Baocaoquantri_2019 (1).pdf
+  - VNM_Baocaoquantri_2019.pdf
+  - VNM_Baocaoquantri_2020.pdf
+  - VNM_Baocaoquantri_2021.pdf
+  - VNM_Baocaoquantri_2022.pdf
+  - VNM_Baocaoquantri_2023.pdf
+  - VNM_Baocaoquantri_2024 (1).pdf
+  - VNM_Baocaoquantri_2024.pdf
+  - VNM_Baocaoquantri_6T_2019.pdf
+  - VNM_Baocaoquantri_6T_2020.pdf
+  - VNM_Baocaoquantri_6T_2021.pdf
+  - VNM_Baocaoquantri_6T_2022.pdf
+  - VNM_Baocaoquantri_6T_2023.pdf
+  - VNM_Baocaoquantri_6T_2024 (1).pdf
+  - VNM_Baocaoquantri_6T_2024.pdf
+  - VNM_Baocaotaichinh_2019_Kiemtoan_Congtyme.pdf
+  - VNM_Baocaotaichinh_2020_Kiemtoan_Congtyme.pdf
+  - VNM_Baocaotaichinh_2020_Kiemtoan_Hopnhat.pdf
+  - VNM_Baocaotaichinh_2021_Kiemtoan_Congtyme.pdf
+  - VNM_Baocaotaichinh_2021_Kiemtoan_Hopnhat.pdf
+  - VNM_Baocaotaichinh_2022_Kiemtoan_Congtyme.pdf
+  - VNM_Baocaotaichinh_2022_Kiemtoan_Hopnhat.pdf
+  - VNM_Baocaotaichinh_2023_Kiemtoan_Congtyme.pdf
+  - VNM_Baocaotaichinh_2023_Kiemtoan_Hopnhat.pdf
+  - VNM_Baocaotaichinh_2024_Kiemtoan_Congtyme (1).pdf
+  - VNM_Baocaotaichinh_2024_Kiemtoan_Congtyme.pdf
+  - VNM_Baocaotaichinh_2024_Kiemtoan_Hopnhat (1).pdf
+  - VNM_Baocaotaichinh_2024_Kiemtoan_Hopnhat.pdf
+  - VNM_Baocaothuongnien_2020.pdf
+  - VNM_Baocaothuongnien_2021.pdf
+  - VNM_Baocaothuongnien_2022.pdf
+  - VNM_Baocaothuongnien_2024.pdf
+  - VNM_Giaitrinh_KQKD_6T_2024 (1).pdf
+  - VNM_Giaitrinh_KQKD_6T_2024.pdf
+  - VNM_Giaitrinh_KQKD_Q1_2022_Soatxet_Hopnhat.pdf
+  - VNM_Giaitrinh_KQKD_Q2_2024 (1).pdf
+  - VNM_Giaitrinh_KQKD_Q2_2024.pdf
+  - VNM_Giaitrinh_KQKD_Q3_2022.pdf
+  - VNM_Giaitrinh_KQKD_Q4_2018_Hopnhat.pdf
+  - VNM_Giaitrinh_KQKD_Q4_2023.pdf
+  - VNM_Nghiquyet_DHCD thuong nien_2020.pdf
+  - VNM_Nghiquyet_DHCD thuong nien_2022.pdf
+  - VNP_Giay_xac_nhan_hoan_thanh_cong_trinh_BVMT_16_11_2020_c7c999b79b.pdf
+  - dự thảo nghị quyết.pdf
+  - s.pdf
+  - vnm.pdf
+  - z7776784507923_780f2f86fa43c8a3db72127b09c1e4b4.jpg
+  Metadata registry:
+  - 01_09_na_pas2060_24_tuyen_bo_cacbon_trung_tinh_nmsna_c1c6295263.pdf | policy_document | year=2014 | extract=native | ocr=1.00 | review
+  - 1402563877_f44e98fa7b7a4f3d0628bb245d2dcef09468e0e8590e57150b766ebbb0ee6a72_5949a77b25.pdf | sustainability_report | year=2012 | extract=mixed | ocr=0.99 | review
+  - 1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf | policy_document | year=2013 | extract=mixed | ocr=0.99 | review
+  - 1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf | policy_document | year=2014 | extract=mixed | ocr=0.99 | review
+  - 1555043744_fa0d924547ebd9b6ebfaeb374df4a3263d462db8256435ccde59d6ae23dbb984_048a7a9c2a.pdf | sustainability_report | year=2018 | extract=mixed | ocr=0.99 | ok
+  - 1585291596-7f525505f3621558355a60c10f6862cbb3b9c9863921a9b06587f7b42a0f9733.pdf | annual_report | year=2019 | extract=mixed | ocr=1.00 | review
+  - 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf | policy_document | year=2020 | extract=mixed | ocr=0.98 | ok
+  - 1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf | policy_document | year=2019 | extract=mixed | ocr=0.99 | review
+  - 1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf | financial_report | year=2021 | extract=mixed | ocr=0.99 | review
+  - 1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf | policy_document | year=2015 | extract=ocr | ocr=1.00 | review
+  - 1680152280_e9ef8eb09f1d52a32281ac79c16415aa6de81a80a162bc2b4cd381a80c68650c_d22f2976fd.pdf | policy_document | year=2016 | extract=ocr | ocr=1.00 | ok
+  - 1680152599_eb86d997113eef1ee2d14ceebcbad8a0d8fd8ed391faabf99f47d72e2802bbf8_9af10bfadb.pdf | sustainability_report | year=2017 | extract=mixed | ocr=0.74 | review
+  - 1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf | sustainability_report | year=2022 | extract=native | ocr=0.99 | ok
+  - 1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf | policy_document | year=2023 | extract=native | ocr=0.99 | review
+  - 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf | sustainability_report | year=2024 | extract=mixed | ocr=0.99 | ok
+  - 20181203_20181203---VNM---CBTT--Thay-doi-co-cau-nhan-su--Bo-nhiem-GHDH-KDQT.pdf | policy_document | year=2018 | extract=native | ocr=0.99 | review
+  - 20181204_20181204---VNM---NQHDQT-ve-viec-tam-ung-co-tuc-dot-2-nam-2018.pdf | policy_document | year=2018 | extract=ocr | ocr=1.00 | review
+  - 20190313_20190312---VNM---CBTT--Nghi-quyet-HDQT--Chao-mua-cong-khai-GTN.pdf | other | year=2019 | extract=mixed | ocr=0.99 | review
+  - 20190422_20190422 - VNM -  Bien Ban DHDCD thuong nien 2019- TViet.pdf | resolution | year=2019 | extract=native | ocr=1.00 | ok
+  - 20190422_20190422 - VNM -  Nghi quyet DHDCD thuong nien 2019.pdf | resolution | year=2019 | extract=ocr | ocr=1.00 | ok
+  - 20191203_20191202---VNM---CBTT-NQ-HDQT-vv-Chot-DS-Tam-ung-co-tuc-dot-2-2019.pdf | other | year=2019 | extract=native | ocr=1.00 | review
+  - 20191210_20191210---VNM---NQ-HDQ-T.pdf | policy_document | year=2019 | extract=ocr | ocr=1.00 | review
+  - 20200629_20200629 - VNM - Bien Ban DHDCD thuong nien 2020- TViet.pdf | resolution | year=2020 | extract=native | ocr=1.00 | ok
+  - 20210205_20210205---VNM---NQ-HDQT-vv-lap-ViBev--CBTT.pdf | other | year=2021 | extract=native | ocr=1.00 | review
+  - 20210427_20210427 - VNM - Bien Ban DHDCD thuong nien 2021- TViet.pdf | resolution | year=2021 | extract=native | ocr=1.00 | ok
+  - 20210427_20210427 - VNM - Nghi quyet - DHDCD 2021- Tieng Viet.pdf | resolution | year=2021 | extract=native | ocr=1.00 | ok
+  - 20210520_20210520---VNM--NQ-06-2021-ve-ban-hanh-QCQT-va-QCHDHDQT--CBTT.pdf | policy_document | year=2021 | extract=ocr | ocr=1.00 | review
+  - 20211202_20211202---VNM--NQ-10-2021-ve-viec-Tam-ung-co-tuc-va-to-chuc-DHCD-2022.pdf | policy_document | year=2022 | extract=mixed | ocr=0.99 | review
+  - 20211215_20211215---VNM---NQ-13-2021-ve-viec-GDDH-nghi-huu.pdf | other | year=2021 | extract=native | ocr=0.98 | review
+  - 20211231_20211231--VNM--NQ-14-2021-ve-viec-GDDH-nghi-huu.pdf | other | year=2021 | extract=native | ocr=0.98 | review
+  - 20220426_20220426___vnm___nghi_quyet_hdqt_05_2022.pdf | policy_document | year=2022 | extract=mixed | ocr=0.99 | review
+  - 20220722_20220722___vnm___nghi_quyet_hdqt_09_2022.pdf | policy_document | year=2022 | extract=mixed | ocr=0.99 | review
+  - 20221201_20221201___vnm___cbtt_nghi_quyet_hdqt_16_2022.pdf | other | year=2022 | extract=native | ocr=0.98 | review
+  - 20221201_20221201___vnm___cbtt_nghi_quyet_hdqt_17_2022.pdf | other | year=2022 | extract=native | ocr=0.98 | review
+  - 20221229_20221228___vnm___nq_18_2022_to_chuc_dhcd_2023__003_.pdf | resolution | year=2023 | extract=native | ocr=1.00 | ok
+  - 20231208_20231208___vnm___cbtt_nghi_quyet_hdqt_23_2023__003_ (1).pdf | policy_document | year=2023 | extract=native | ocr=1.00 | review
+  - 20240131_20240131___vnm___ngay_to_chuc_dcdcd_2024 (1).pdf | resolution | year=2024 | extract=ocr | ocr=1.00 | ok
+  - 20241206_20241205___vnm___tam_ung_co_tuc_dot_2_2024__cbtt_ (1).pdf | policy_document | year=2024 | extract=mixed | ocr=0.99 | review
+  - 20241206_20241205___vnm___thong_qua_giao_dich_cac_blq__cbtt___cv_den_ (1).pdf | resolution | year=2024 | extract=mixed | ocr=1.00 | ok
+  - 20241227_20241227___vnm___nghi_quyet_hdqt_17_2024.pdf | resolution | year=2024 | extract=native | ocr=1.00 | ok
+  - 2_20_PAS_202060_SVN_QES_Ver_2001_05_04_2024_20_28_E_29_12d6a7e3c2.pdf | other | year=2024 | extract=native | ocr=1.00 | review
+  - BCTC HOP NHAT 31.12.2019 - VN.pdf | financial_report | year=2019 | extract=ocr | ocr=1.00 | ok
+  - BDP_Giay_phep_moi_truong_03_10_2023_bfdd06886d.pdf | policy_document | year=2023 | extract=native | ocr=1.00 | review
+  - Biên bản họp Đại hội đồng cổ đông (1).pdf | resolution | year=2024 | extract=native | ocr=1.00 | ok
+  - Biên bản kiểm phiếu biểu quyết Đại hội cổ đông 2024 (1).pdf | resolution | year=2024 | extract=mixed | ocr=0.99 | ok
+  - CARBON_20_NEUTRALITY_20_DECLARATION_20_SVN_2009_04_2024_cec0582a4f.pdf | policy_document | year=2024 | extract=native | ocr=1.00 | review
+  - CTP_GXN_hoan_thanh_cong_trinh_BVMT_10_02_2020_b0b24c01e2.pdf | policy_document | year=2020 | extract=ocr | ocr=1.00 | review
+  - Chinh_sach_phuc_loi_dong_vat_1_577b716dd2.pdf | policy_document | year=? | extract=native | ocr=0.99 | ok
+  - Chinh_sach_thu_mua_sua_tuoi_nguyen_lieu_1_288611f658.pdf | policy_document | year=? | extract=native | ocr=0.99 | ok
+  - Chinh_sach_thuc_hanh_san_xuat_nong_nghiep_ben_vung_e0678ecf9a.pdf | policy_document | year=? | extract=native | ocr=0.99 | ok
+  - DLP_GXN_da_thuc_hien_BVMT_2013_a6488f8968.pdf | policy_document | year=2013 | extract=ocr | ocr=1.00 | ok
+  - DNP_GXN_hoan_thanh_CTBVMT_14_08_2021_0af11bd4e4.pdf | policy_document | year=2021 | extract=native | ocr=1.00 | review
+  - GIAI_20_THICH_20_DU_20_DIEU_20_KIEN_20_DAT_20_TRUNG_20_HOA_20_CARBON_20_28duyet_29_da08d37d22.pdf | other | year=2023 | extract=mixed | ocr=1.00 | review
+  - GKP_Giay_Phep_MT_03_02_2025_dabb647e71.pdf | policy_document | year=2025 | extract=native | ocr=0.99 | review
+  - LSP_Giay_phep_moi_truong_24_09_2025_cf65ad4355.pdf | policy_document | year=2025 | extract=native | ocr=1.00 | review
+  - NAP_Giay_phep_moi_truong_13_06_2025_b5b8d682d0.pdf | policy_document | year=2025 | extract=ocr | ocr=1.00 | review
+  - NGK_QES_T03_2024_20_V2_779405e731.pdf | policy_document | year=2024 | extract=native | ocr=1.00 | review
+  - NM_20_NGK_Tuyen_20bo_20_Cacbon_20_Trung_20t_C3_A_Dnh_202023_aea7be7051.pdf | policy_document | year=2014 | extract=native | ocr=1.00 | review
+  - Nghị quyết họp Đại hội đồng cổ đông (1).pdf | resolution | year=2024 | extract=native | ocr=0.99 | ok
+  - QES_Nh_C3_A0_m_C3_A1y_N_C6_B0_E1_BB_9_Bc_Gi_E1_BA_A3i_Kh_C3_A1t_Vi_E1_BB_87t_Nam_1f3e825bbd.pdf | policy_document | year=2022 | extract=native | ocr=1.00 | review
+  - QES_Nh_C3_A0_m_C3_A1y_S_E1_BB_A_Fa_Ngh_E1_BB_87_An_355f09c893.pdf | policy_document | year=2022 | extract=native | ocr=1.00 | review
+  - QES_Trang_tr_E1_BA_A1i_b_C3_B2_s_E1_BB_A_Fa_Ngh_E1_BB_87_An_6799093e99.pdf | policy_document | year=2014 | extract=native | ocr=1.00 | review
+  - SBP_GXN_hoan_thanh_CTBVMT_12_01_2015_043999b11a.pdf | policy_document | year=2015 | extract=ocr | ocr=0.99 | ok
+  - SGP_Giay_Phep_Moi_Truong_29_22_2022_415deda866.pdf | policy_document | year=2022 | extract=native | ocr=1.00 | review
+  - TNP_Giay_phep_moi_truong_02_02_2024_dc1392aa7e.pdf | policy_document | year=2024 | extract=ocr | ocr=1.00 | review
+  - TSP_Giay_phep_moi_truong_23_01_2025_1babfc66e3.pdf | policy_document | year=2025 | extract=ocr | ocr=1.00 | review
+  - TTP_Giay_phep_moi_truong_11_06_2025_f1e6542c68.pdf | policy_document | year=2025 | extract=native | ocr=0.99 | review
+  - TUYEN_20_BO_20_CARBON_20_TRUNG_20_TINH_TRANG_20_TRAI_20_NGHE_20_AN_20_28duyet_29_f2a88e9bd5.pdf | other | year=2014 | extract=mixed | ocr=1.00 | review
+  - Tài liệu họp Đại hội đồng cổ đông thường niên.pdf | resolution | year=2024 | extract=native | ocr=1.00 | ok
+  - VNMSR_Full_VN_2351c45431.pdf | sustainability_report | year=2025 | extract=native | ocr=0.99 | ok
+  - VNM_Baocaoquantri_2019 (1).pdf | resolution | year=2019 | extract=mixed | ocr=1.00 | ok
+  - VNM_Baocaoquantri_2020.pdf | resolution | year=2020 | extract=native | ocr=1.00 | ok
+  - VNM_Baocaoquantri_2021.pdf | resolution | year=2021 | extract=native | ocr=1.00 | ok
+  - VNM_Baocaoquantri_2022.pdf | resolution | year=2022 | extract=native | ocr=1.00 | ok
+  - VNM_Baocaoquantri_2023.pdf | resolution | year=2023 | extract=native | ocr=1.00 | ok
+  - VNM_Baocaoquantri_2024 (1).pdf | policy_document | year=2024 | extract=native | ocr=1.00 | ok
+  - VNM_Baocaoquantri_6T_2019.pdf | resolution | year=2019 | extract=ocr | ocr=0.97 | ok
+  - VNM_Baocaoquantri_6T_2020.pdf | resolution | year=2020 | extract=native | ocr=1.00 | ok
+  - VNM_Baocaoquantri_6T_2021.pdf | resolution | year=2021 | extract=native | ocr=1.00 | ok
+  - VNM_Baocaoquantri_6T_2022.pdf | resolution | year=2022 | extract=native | ocr=1.00 | ok
+  - VNM_Baocaoquantri_6T_2023.pdf | resolution | year=2023 | extract=native | ocr=1.00 | ok
+  - VNM_Baocaoquantri_6T_2024 (1).pdf | policy_document | year=2024 | extract=native | ocr=1.00 | ok
+  - VNM_Baocaotaichinh_2019_Kiemtoan_Congtyme.pdf | financial_report | year=2019 | extract=ocr | ocr=1.00 | ok
+  - VNM_Baocaotaichinh_2020_Kiemtoan_Congtyme.pdf | financial_report | year=2020 | extract=ocr | ocr=1.00 | ok
+  - VNM_Baocaotaichinh_2020_Kiemtoan_Hopnhat.pdf | financial_report | year=2020 | extract=ocr | ocr=1.00 | ok
+  - VNM_Baocaotaichinh_2021_Kiemtoan_Congtyme.pdf | financial_report | year=2021 | extract=ocr | ocr=1.00 | ok
+  - VNM_Baocaotaichinh_2021_Kiemtoan_Hopnhat.pdf | financial_report | year=2021 | extract=ocr | ocr=1.00 | ok
+  - VNM_Baocaotaichinh_2022_Kiemtoan_Congtyme.pdf | financial_report | year=2022 | extract=ocr | ocr=1.00 | ok
+  - VNM_Baocaotaichinh_2022_Kiemtoan_Hopnhat.pdf | financial_report | year=2022 | extract=ocr | ocr=1.00 | ok
+  - VNM_Baocaotaichinh_2023_Kiemtoan_Congtyme.pdf | financial_report | year=2023 | extract=ocr | ocr=1.00 | ok
+  - VNM_Baocaotaichinh_2023_Kiemtoan_Hopnhat.pdf | financial_report | year=2023 | extract=ocr | ocr=1.00 | ok
+  - VNM_Baocaotaichinh_2024_Kiemtoan_Congtyme (1).pdf | financial_report | year=2024 | extract=ocr | ocr=1.00 | ok
+  - VNM_Baocaotaichinh_2024_Kiemtoan_Hopnhat (1).pdf | financial_report | year=2024 | extract=ocr | ocr=1.00 | ok
+  - VNM_Baocaothuongnien_2020.pdf | annual_report | year=2020 | extract=mixed | ocr=1.00 | ok
+  - VNM_Baocaothuongnien_2021.pdf | annual_report | year=2021 | extract=native | ocr=0.99 | ok
+  - VNM_Baocaothuongnien_2022.pdf | annual_report | year=2022 | extract=native | ocr=1.00 | ok
+  - VNM_Baocaothuongnien_2024.pdf | annual_report | year=2024 | extract=native | ocr=0.99 | ok
+  - VNM_Giaitrinh_KQKD_6T_2024 (1).pdf | other | year=2024 | extract=native | ocr=0.99 | review
+  - VNM_Giaitrinh_KQKD_Q1_2022_Soatxet_Hopnhat.pdf | other | year=2022 | extract=native | ocr=0.98 | review
+  - VNM_Giaitrinh_KQKD_Q2_2024 (1).pdf | other | year=2024 | extract=native | ocr=0.99 | review
+  - VNM_Giaitrinh_KQKD_Q3_2022.pdf | other | year=2022 | extract=native | ocr=0.98 | review
+  - VNM_Giaitrinh_KQKD_Q4_2018_Hopnhat.pdf | policy_document | year=2018 | extract=ocr | ocr=1.00 | review
+  - VNM_Giaitrinh_KQKD_Q4_2023.pdf | other | year=2023 | extract=native | ocr=0.98 | review
+  - VNM_Nghiquyet_DHCD thuong nien_2020.pdf | resolution | year=2020 | extract=ocr | ocr=1.00 | ok
+  - VNM_Nghiquyet_DHCD thuong nien_2022.pdf | resolution | year=2022 | extract=native | ocr=1.00 | ok
+  - VNP_Giay_xac_nhan_hoan_thanh_cong_trinh_BVMT_16_11_2020_c7c999b79b.pdf | policy_document | year=2020 | extract=ocr | ocr=1.00 | review
+  - dự thảo nghị quyết.pdf | resolution | year=2024 | extract=native | ocr=0.99 | ok
+  - vnm.pdf | financial_report | year=2023 | extract=mixed | ocr=1.00 | review
+  - z7776784507923_780f2f86fa43c8a3db72127b09c1e4b4.jpg | other | year=? | extract=ocr | ocr=1.00 | review
+  - 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  - 20231208_20231208___vnm___cbtt_nghi_quyet_hdqt_23_2023__003_.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  - 20240131_20240131___vnm___ngay_to_chuc_dcdcd_2024.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  - 20241206_20241205___vnm___tam_ung_co_tuc_dot_2_2024__cbtt_.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  - 20241206_20241205___vnm___thong_qua_giao_dich_cac_blq__cbtt___cv_den_.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  - Biên bản họp Đại hội đồng cổ đông.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  - Biên bản kiểm phiếu biểu quyết Đại hội cổ đông 2024.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  - Nghị quyết họp Đại hội đồng cổ đông.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  - QES_Nh_C3_A0_m_C3_A1y_S_E1_BB_A_Fa_Ngh_E1_BB_87_An_f66510c5aa.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  - VNM_Baocaoquantri_2019.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  - VNM_Baocaoquantri_2024.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  - VNM_Baocaoquantri_6T_2024.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  - VNM_Baocaotaichinh_2024_Kiemtoan_Congtyme.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  - VNM_Baocaotaichinh_2024_Kiemtoan_Hopnhat.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  - VNM_Giaitrinh_KQKD_6T_2024.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  - VNM_Giaitrinh_KQKD_Q2_2024.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  - s.pdf | duplicate | year=? | extract=skipped | ocr=0.00 | ok
+  ✅ 3481 trang, 1,559,000 từ
+
+[2/6] Phân tích từ khóa...
+  Từ khóa rủi ro: 2695 ({'rủi ro': 1570, 'biến động': 355, 'thách thức': 238, 'khó khăn': 268, 'bất ổn': 12, 'suy giảm': 71, 'gián đoạn': 39, 'thiệt hại': 21, 'nguy cơ': 63, 'ảnh hưởng tiêu cực': 10, 'kiện tụng': 2, 'tranh chấp': 24, 'khủng hoảng': 22})
+  Chứng chỉ ISO : ['ISO 14001', 'ISO 45001', 'ISO 9001', 'ISO 27001', 'ISO 50001']
+  Đang kiểm tra coverage index/sections...
+  [INDEX COVERAGE] 1/109 01_09_na_pas2060_24_tuyen_bo_cacbon_trung_tinh_nmsna_c1c6295263.pdf
+  [INDEX COVERAGE] 2/109 1402563877_f44e98fa7b7a4f3d0628bb245d2dcef09468e0e8590e57150b766ebbb0ee6a72_5949a77b25.pdf
+  [INDEX COVERAGE] 3/109 1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf
+  [INDEX COVERAGE] 4/109 1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf
+  [INDEX COVERAGE] 5/109 1555043744_fa0d924547ebd9b6ebfaeb374df4a3263d462db8256435ccde59d6ae23dbb984_048a7a9c2a.pdf
+  [INDEX COVERAGE] 6/109 1585291596-7f525505f3621558355a60c10f6862cbb3b9c9863921a9b06587f7b42a0f9733.pdf
+  [INDEX COVERAGE] 7/109 1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf
+  [INDEX COVERAGE] 8/109 1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf
+  [INDEX COVERAGE] 9/109 1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf
+  [INDEX COVERAGE] 10/109 1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf
+  [INDEX COVERAGE] 11/109 1680152280_e9ef8eb09f1d52a32281ac79c16415aa6de81a80a162bc2b4cd381a80c68650c_d22f2976fd.pdf
+  [INDEX COVERAGE] 12/109 1680152599_eb86d997113eef1ee2d14ceebcbad8a0d8fd8ed391faabf99f47d72e2802bbf8_9af10bfadb.pdf
+  [INDEX COVERAGE] 13/109 1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf
+  [INDEX COVERAGE] 14/109 1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf
+  [INDEX COVERAGE] 15/109 1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf
+  [INDEX COVERAGE] 16/109 20181203_20181203---VNM---CBTT--Thay-doi-co-cau-nhan-su--Bo-nhiem-GHDH-KDQT.pdf
+  [INDEX COVERAGE] 17/109 20181204_20181204---VNM---NQHDQT-ve-viec-tam-ung-co-tuc-dot-2-nam-2018.pdf
+  [INDEX COVERAGE] 18/109 20190313_20190312---VNM---CBTT--Nghi-quyet-HDQT--Chao-mua-cong-khai-GTN.pdf
+  [INDEX COVERAGE] 19/109 20190422_20190422 - VNM -  Bien Ban DHDCD thuong nien 2019- TViet.pdf
+  [INDEX COVERAGE] 20/109 20190422_20190422 - VNM -  Nghi quyet DHDCD thuong nien 2019.pdf
+  [INDEX COVERAGE] 21/109 20191203_20191202---VNM---CBTT-NQ-HDQT-vv-Chot-DS-Tam-ung-co-tuc-dot-2-2019.pdf
+  [INDEX COVERAGE] 22/109 20191210_20191210---VNM---NQ-HDQ-T.pdf
+  [INDEX COVERAGE] 23/109 20200629_20200629 - VNM - Bien Ban DHDCD thuong nien 2020- TViet.pdf
+  [INDEX COVERAGE] 24/109 20210205_20210205---VNM---NQ-HDQT-vv-lap-ViBev--CBTT.pdf
+  [INDEX COVERAGE] 25/109 20210427_20210427 - VNM - Bien Ban DHDCD thuong nien 2021- TViet.pdf
+  [INDEX COVERAGE] 26/109 20210427_20210427 - VNM - Nghi quyet - DHDCD 2021- Tieng Viet.pdf
+  [INDEX COVERAGE] 27/109 20210520_20210520---VNM--NQ-06-2021-ve-ban-hanh-QCQT-va-QCHDHDQT--CBTT.pdf
+  [INDEX COVERAGE] 28/109 20211202_20211202---VNM--NQ-10-2021-ve-viec-Tam-ung-co-tuc-va-to-chuc-DHCD-2022.pdf
+  [INDEX COVERAGE] 29/109 20211215_20211215---VNM---NQ-13-2021-ve-viec-GDDH-nghi-huu.pdf
+  [INDEX COVERAGE] 30/109 20211231_20211231--VNM--NQ-14-2021-ve-viec-GDDH-nghi-huu.pdf
+  [INDEX COVERAGE] 31/109 20220426_20220426___vnm___nghi_quyet_hdqt_05_2022.pdf
+  [INDEX COVERAGE] 32/109 20220722_20220722___vnm___nghi_quyet_hdqt_09_2022.pdf
+  [INDEX COVERAGE] 33/109 20221201_20221201___vnm___cbtt_nghi_quyet_hdqt_16_2022.pdf
+  [INDEX COVERAGE] 34/109 20221201_20221201___vnm___cbtt_nghi_quyet_hdqt_17_2022.pdf
+  [INDEX COVERAGE] 35/109 20221229_20221228___vnm___nq_18_2022_to_chuc_dhcd_2023__003_.pdf
+  [INDEX COVERAGE] 36/109 20231208_20231208___vnm___cbtt_nghi_quyet_hdqt_23_2023__003_ (1).pdf
+  [INDEX COVERAGE] 37/109 20240131_20240131___vnm___ngay_to_chuc_dcdcd_2024 (1).pdf
+  [INDEX COVERAGE] 38/109 20241206_20241205___vnm___tam_ung_co_tuc_dot_2_2024__cbtt_ (1).pdf
+  [INDEX COVERAGE] 39/109 20241206_20241205___vnm___thong_qua_giao_dich_cac_blq__cbtt___cv_den_ (1).pdf
+  [INDEX COVERAGE] 40/109 20241227_20241227___vnm___nghi_quyet_hdqt_17_2024.pdf
+  [INDEX COVERAGE] 41/109 2_20_PAS_202060_SVN_QES_Ver_2001_05_04_2024_20_28_E_29_12d6a7e3c2.pdf
+  [INDEX COVERAGE] 42/109 BCTC HOP NHAT 31.12.2019 - VN.pdf
+  [INDEX COVERAGE] 43/109 BDP_Giay_phep_moi_truong_03_10_2023_bfdd06886d.pdf
+  [INDEX COVERAGE] 44/109 Biên bản họp Đại hội đồng cổ đông (1).pdf
+  [INDEX COVERAGE] 45/109 Biên bản kiểm phiếu biểu quyết Đại hội cổ đông 2024 (1).pdf
+  [INDEX COVERAGE] 46/109 CARBON_20_NEUTRALITY_20_DECLARATION_20_SVN_2009_04_2024_cec0582a4f.pdf
+  [INDEX COVERAGE] 47/109 CTP_GXN_hoan_thanh_cong_trinh_BVMT_10_02_2020_b0b24c01e2.pdf
+  [INDEX COVERAGE] 48/109 Chinh_sach_phuc_loi_dong_vat_1_577b716dd2.pdf
+  [INDEX COVERAGE] 49/109 Chinh_sach_thu_mua_sua_tuoi_nguyen_lieu_1_288611f658.pdf
+  [INDEX COVERAGE] 50/109 Chinh_sach_thuc_hanh_san_xuat_nong_nghiep_ben_vung_e0678ecf9a.pdf
+  [INDEX COVERAGE] 51/109 DLP_GXN_da_thuc_hien_BVMT_2013_a6488f8968.pdf
+  [INDEX COVERAGE] 52/109 DNP_GXN_hoan_thanh_CTBVMT_14_08_2021_0af11bd4e4.pdf
+  [INDEX COVERAGE] 53/109 GIAI_20_THICH_20_DU_20_DIEU_20_KIEN_20_DAT_20_TRUNG_20_HOA_20_CARBON_20_28duyet_29_da08d37d22.pdf
+  [INDEX COVERAGE] 54/109 GKP_Giay_Phep_MT_03_02_2025_dabb647e71.pdf
+  [INDEX COVERAGE] 55/109 LSP_Giay_phep_moi_truong_24_09_2025_cf65ad4355.pdf
+  [INDEX COVERAGE] 56/109 NAP_Giay_phep_moi_truong_13_06_2025_b5b8d682d0.pdf
+  [INDEX COVERAGE] 57/109 NGK_QES_T03_2024_20_V2_779405e731.pdf
+  [INDEX COVERAGE] 58/109 NM_20_NGK_Tuyen_20bo_20_Cacbon_20_Trung_20t_C3_A_Dnh_202023_aea7be7051.pdf
+  [INDEX COVERAGE] 59/109 Nghị quyết họp Đại hội đồng cổ đông (1).pdf
+  [INDEX COVERAGE] 60/109 QES_Nh_C3_A0_m_C3_A1y_N_C6_B0_E1_BB_9_Bc_Gi_E1_BA_A3i_Kh_C3_A1t_Vi_E1_BB_87t_Nam_1f3e825bbd.pdf
+  [INDEX COVERAGE] 61/109 QES_Nh_C3_A0_m_C3_A1y_S_E1_BB_A_Fa_Ngh_E1_BB_87_An_355f09c893.pdf
+  [INDEX COVERAGE] 62/109 QES_Trang_tr_E1_BA_A1i_b_C3_B2_s_E1_BB_A_Fa_Ngh_E1_BB_87_An_6799093e99.pdf
+  [INDEX COVERAGE] 63/109 SBP_GXN_hoan_thanh_CTBVMT_12_01_2015_043999b11a.pdf
+  [INDEX COVERAGE] 64/109 SGP_Giay_Phep_Moi_Truong_29_22_2022_415deda866.pdf
+  [INDEX COVERAGE] 65/109 TNP_Giay_phep_moi_truong_02_02_2024_dc1392aa7e.pdf
+  [INDEX COVERAGE] 66/109 TSP_Giay_phep_moi_truong_23_01_2025_1babfc66e3.pdf
+  [INDEX COVERAGE] 67/109 TTP_Giay_phep_moi_truong_11_06_2025_f1e6542c68.pdf
+  [INDEX COVERAGE] 68/109 TUYEN_20_BO_20_CARBON_20_TRUNG_20_TINH_TRANG_20_TRAI_20_NGHE_20_AN_20_28duyet_29_f2a88e9bd5.pdf
+  [INDEX COVERAGE] 69/109 Tài liệu họp Đại hội đồng cổ đông thường niên.pdf
+  [INDEX COVERAGE] 70/109 VNMSR_Full_VN_2351c45431.pdf
+  [INDEX COVERAGE] 71/109 VNM_Baocaoquantri_2019 (1).pdf
+  [INDEX COVERAGE] 72/109 VNM_Baocaoquantri_2020.pdf
+  [INDEX COVERAGE] 73/109 VNM_Baocaoquantri_2021.pdf
+  [INDEX COVERAGE] 74/109 VNM_Baocaoquantri_2022.pdf
+  [INDEX COVERAGE] 75/109 VNM_Baocaoquantri_2023.pdf
+  [INDEX COVERAGE] 76/109 VNM_Baocaoquantri_2024 (1).pdf
+  [INDEX COVERAGE] 77/109 VNM_Baocaoquantri_6T_2019.pdf
+  [INDEX COVERAGE] 78/109 VNM_Baocaoquantri_6T_2020.pdf
+  [INDEX COVERAGE] 79/109 VNM_Baocaoquantri_6T_2021.pdf
+  [INDEX COVERAGE] 80/109 VNM_Baocaoquantri_6T_2022.pdf
+  [INDEX COVERAGE] 81/109 VNM_Baocaoquantri_6T_2023.pdf
+  [INDEX COVERAGE] 82/109 VNM_Baocaoquantri_6T_2024 (1).pdf
+  [INDEX COVERAGE] 83/109 VNM_Baocaotaichinh_2019_Kiemtoan_Congtyme.pdf
+  [INDEX COVERAGE] 84/109 VNM_Baocaotaichinh_2020_Kiemtoan_Congtyme.pdf
+  [INDEX COVERAGE] 85/109 VNM_Baocaotaichinh_2020_Kiemtoan_Hopnhat.pdf
+  [INDEX COVERAGE] 86/109 VNM_Baocaotaichinh_2021_Kiemtoan_Congtyme.pdf
+  [INDEX COVERAGE] 87/109 VNM_Baocaotaichinh_2021_Kiemtoan_Hopnhat.pdf
+  [INDEX COVERAGE] 88/109 VNM_Baocaotaichinh_2022_Kiemtoan_Congtyme.pdf
+  [INDEX COVERAGE] 89/109 VNM_Baocaotaichinh_2022_Kiemtoan_Hopnhat.pdf
+  [INDEX COVERAGE] 90/109 VNM_Baocaotaichinh_2023_Kiemtoan_Congtyme.pdf
+  [INDEX COVERAGE] 91/109 VNM_Baocaotaichinh_2023_Kiemtoan_Hopnhat.pdf
+  [INDEX COVERAGE] 92/109 VNM_Baocaotaichinh_2024_Kiemtoan_Congtyme (1).pdf
+  [INDEX COVERAGE] 93/109 VNM_Baocaotaichinh_2024_Kiemtoan_Hopnhat (1).pdf
+  [INDEX COVERAGE] 94/109 VNM_Baocaothuongnien_2020.pdf
+  [INDEX COVERAGE] 95/109 VNM_Baocaothuongnien_2021.pdf
+  [INDEX COVERAGE] 96/109 VNM_Baocaothuongnien_2022.pdf
+  [INDEX COVERAGE] 97/109 VNM_Baocaothuongnien_2024.pdf
+  [INDEX COVERAGE] 98/109 VNM_Giaitrinh_KQKD_6T_2024 (1).pdf
+  [INDEX COVERAGE] 99/109 VNM_Giaitrinh_KQKD_Q1_2022_Soatxet_Hopnhat.pdf
+  [INDEX COVERAGE] 100/109 VNM_Giaitrinh_KQKD_Q2_2024 (1).pdf
+  [INDEX COVERAGE] 101/109 VNM_Giaitrinh_KQKD_Q3_2022.pdf
+  [INDEX COVERAGE] 102/109 VNM_Giaitrinh_KQKD_Q4_2018_Hopnhat.pdf
+  [INDEX COVERAGE] 103/109 VNM_Giaitrinh_KQKD_Q4_2023.pdf
+  [INDEX COVERAGE] 104/109 VNM_Nghiquyet_DHCD thuong nien_2020.pdf
+  [INDEX COVERAGE] 105/109 VNM_Nghiquyet_DHCD thuong nien_2022.pdf
+  [INDEX COVERAGE] 106/109 VNP_Giay_xac_nhan_hoan_thanh_cong_trinh_BVMT_16_11_2020_c7c999b79b.pdf
+  [INDEX COVERAGE] 107/109 dự thảo nghị quyết.pdf
+  [INDEX COVERAGE] 108/109 vnm.pdf
+  [INDEX COVERAGE] 109/109 z7776784507923_780f2f86fa43c8a3db72127b09c1e4b4.jpg
+  Index coverage: avg_page_coverage=1.00, low_coverage_docs=0
+  Đang dựng retrieval/semantic index cho audit và scoring...
+  [EMBEDDING] Loaded cached embeddings: (8560, 1024)
+  Chạy retrieval preflight toàn bộ câu hỏi scoring...
+  Retrieval preflight: bỏ qua theo ESG_SKIP_PREFLIGHT=1.
+  Retrieval preflight: passed=True, checked=113, failures=0, critical_failures=0
+  📄 Retrieval preflight report: outputs/audit/VNM_2024_retrieval_preflight.md
+  [RETRIEVAL AUDIT] 1/20 SL1
+  [EMBEDDING] Loading model intfloat/multilingual-e5-large...
+  [EMBEDDING] Offline local cache mode enabled
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 13454.53it/s]
+  [RETRIEVAL AUDIT] 2/20 SL2
+  [RETRIEVAL AUDIT] 3/20 SL3
+  [RETRIEVAL AUDIT] 4/20 SL4
+  [RETRIEVAL AUDIT] 5/20 SL5
+  [RETRIEVAL AUDIT] 6/20 E.1.1.0
+  [RETRIEVAL AUDIT] 7/20 E.1.1.1
+  [RETRIEVAL AUDIT] 8/20 E.1.1.2
+  [RETRIEVAL AUDIT] 9/20 E.1.1.3
+  [RETRIEVAL AUDIT] 10/20 E.1.1.4
+  [RETRIEVAL AUDIT] 11/20 E.1.1.5
+  [RETRIEVAL AUDIT] 12/20 E.2.1.1
+  [RETRIEVAL AUDIT] 13/20 E.2.2.1
+  [RETRIEVAL AUDIT] 14/20 E.2.2.2
+  [RETRIEVAL AUDIT] 15/20 E.2.2.3
+  [RETRIEVAL AUDIT] 16/20 E.2.2.4
+  [RETRIEVAL AUDIT] 17/20 E.2.2.5
+  [RETRIEVAL AUDIT] 18/20 E.2.2.6
+  [RETRIEVAL AUDIT] 19/20 E.2.2.7
+  [RETRIEVAL AUDIT] 20/20 E.2.2.8
+  Retrieval audit: coverage=20/20, low_value_ratio=0.23, preferred_hit_ratio=0.80, semantic_support=0.55, rerank_gain=0.82, review_items=11
+
+[3/6] Khởi tạo Qwen3:30b LLM...
+
+  [SCREENING] Đang đánh giá 5 câu hỏi sàng lọc...
+    [SL1] ✅ Không vi phạm 
+    [SL2] ✅ Không vi phạm 
+    [SL3] ✅ Không vi phạm 
+    [SL4] ✅ Không vi phạm 
+    [SL5] ✅ Không vi phạm 
+
+[4/6] Chấm điểm VNSI (Consumer Staples)...
+
+  [SCORING] Ngành: Consumer Staples | Tổng số câu hỏi: 113 | Điểm tổng = raw_percentage (không nhân trọng số ngành)
+  [RESUME] Đã nạp lại kết quả của 109 câu hỏi từ lần chạy trước.
+    [1/113] E.1.1.0... → C (Đã chấm)
+    [2/113] E.1.1.1... → C (Đã chấm)
+    [3/113] E.1.1.2... → A,B,C,D,E,G,H (Đã chấm)
+    [4/113] E.1.1.3... → A,B,D (Đã chấm)
+    [5/113] E.1.1.4... → NULL (Đã chấm)
+    [6/113] E.1.1.5... → C (Đã chấm)
+    [7/113] E.2.1.1... → A (Đã chấm)
+    [8/113] E.2.2.1... → C (Đã chấm)
+    [9/113] E.2.2.2... → A (Đã chấm)
+    [10/113] E.2.2.3... → A,B,C,D,E,F,G,H (Đã chấm)
+    [11/113] E.2.2.4... → A (Đã chấm)
+    [12/113] E.2.2.5... → NULL (Đã chấm)
+    [13/113] E.2.2.6... → A (Đã chấm)
+    [14/113] E.2.2.7... → A (Đã chấm)
+    [15/113] E.2.2.8... → A (Đã chấm)
+    [16/113] E.2.2.9... → A (Đã chấm)
+    [17/113] E.2.2.10... → NULL (Đã chấm)
+    [18/113] E.2.2.11... → A (Đã chấm)
+    [19/113] E.2.2.12... → A (Đã chấm)
+    [20/113] E.2.3.1... → A (Đã chấm)
+    [21/113] E.2.3.2... → A (Đã chấm)
+    [22/113] E.2.3.3... → A (Đã chấm)
+    [23/113] E.2.3.4... → A (Đã chấm)
+    [24/113] E.2.3.5... → A (Đã chấm)
+    [25/113] E.2.3.6... → NULL (Đã chấm)
+    [26/113] E.3.1.1... → NULL (Đã chấm)
+    [27/113] E.3.1.2... → NULL (Đã chấm)
+    [28/113] E.3.2.1... → A (Đã chấm)
+    [29/113] E.3.2.2... → A (Đã chấm)
+    [30/113] E.3.3.1... → A (Đã chấm)
+    [31/113] E.3.3.2... → A (Đã chấm)
+    [32/113] E.3.3.3... → A (Đã chấm)
+    [33/113] E.3.4.1... → NULL (Đã chấm)
+    [34/113] E.3.5.1... → B (Đã chấm)
+    [35/113] E.3.5.2... → A (Đã chấm)
+    [36/113] E.3.5.3... → NULL (Đã chấm)
+    [37/113] S.1.0.... → NULL (Đã chấm)
+    [38/113] S.1.1.0... → A (Đã chấm)
+    [39/113] S.1.1.1... → A (Đã chấm)
+    [40/113] S.1.1.2... → A (Đã chấm)
+    [41/113] S.1.1.3... → A (Đã chấm)
+    [42/113] S.1.2.1... → A (Đã chấm)
+    [43/113] S.1.2.2... → C (Đã chấm)
+    [44/113] S.1.3.1... → A (Đã chấm)
+    [45/113] S.1.4.1... → NULL (Đã chấm)
+    [46/113] S.1.4.2... → A (Đã chấm)
+    [47/113] S.2.0.1... → A (Đã chấm)
+    [48/113] S.2.1.1... → NULL (Đã chấm)
+    [49/113] S.2.1.2... → NULL (Đã chấm)
+    [50/113] S.2.2.1... → G (Đã chấm)
+    [51/113] S.2.2.2... → A (Đã chấm)
+    [52/113] S.2.2.3... → A,B,C,D,E (Đã chấm)
+    [53/113] S.2.2.4... → A (Đã chấm)
+    [54/113] S.2.2.5... → A (Đã chấm)
+    [55/113] S.2.2.6... → NULL (Đã chấm)
+    [56/113] S.2.2.7... → A (Đã chấm)
+    [57/113] S.2.2.8... → A,D (Đã chấm)
+    [58/113] S.2.2.9... → A (Đã chấm)
+    [59/113] S.2.2.10... → A (Đã chấm)
+    [60/113] S.2.3.1... → NULL (Đã chấm)
+    [61/113] S.2.4.1... → NULL (Đã chấm)
+    [62/113] S.2.4.2... → A (Đã chấm)
+    [63/113] S.2.4.3... → A (Đã chấm)
+    [64/113] S.2.5.1... → A (Đã chấm)
+    [65/113] S.2.5.2... → C (Đã chấm)
+    [66/113] S.2.5.3... → A (Đã chấm)
+    [67/113] S.3.1.1... → A (Đã chấm)
+    [68/113] S.3.1.2... → A (Đã chấm)
+    [69/113] S.3.1.3... → NULL (Đã chấm)
+    [70/113] S.3.1.4... → A (Đã chấm)
+    [71/113] S.3.1.5... → A (Đã chấm)
+    [72/113] S.3.1.6... → A (Đã chấm)
+    [73/113] S.3.1.7... → A (Đã chấm)
+    [74/113] S.3.2.1... → NULL (Đã chấm)
+    [75/113] S.3.2.2... → A (Đã chấm)
+    [76/113] S.3.3.1... → A (Đã chấm)
+    [77/113] G.1... → A (Đã chấm)
+    [78/113] G.2... → A (Đã chấm)
+    [79/113] G.3... → A (Đã chấm)
+    [80/113] G.4... → A (Đã chấm)
+    [81/113] G.5... → A (Đã chấm)
+    [82/113] G.6... → A (Đã chấm)
+    [83/113] G.7... → A (Đã chấm)
+    [84/113] G.8... → A (Đã chấm)
+    [85/113] G.9... → A (Đã chấm)
+    [86/113] G.10... → A (Đã chấm)
+    [87/113] G.11... → A (Đã chấm)
+    [88/113] G.12... → A (Đã chấm)
+    [89/113] G.13... → A (Đã chấm)
+    [90/113] G.14... → A (Đã chấm)
+    [91/113] G.15... → A (Đã chấm)
+    [92/113] G.16... → A (Đã chấm)
+    [93/113] G.17... → A (Đã chấm)
+    [94/113] G.18... → A (Đã chấm)
+    [95/113] G.19... → A (Đã chấm)
+    [96/113] G.20... → A (Đã chấm)
+    [97/113] G.21... → A (Đã chấm)
+    [98/113] G.22... → A (Đã chấm)
+    [99/113] G.23... → A (Đã chấm)
+    [100/113] G.24... → A (Đã chấm)
+    [101/113] G.25... → A (Đã chấm)
+    [102/113] G.26... → A (Đã chấm)
+    [103/113] G.27... → A (Đã chấm)
+    [104/113] G.28... → A (Đã chấm)
+    [105/113] G.29... → A (Đã chấm)
+    [106/113] G.30... → A (Đã chấm)
+    [107/113] G.31... → B (Đã chấm)
+    [108/113] G.32... → A (Đã chấm)
+    [109/113] G.33... → A (Đã chấm)
+    [110/113] G.34...   [LLM RETRY] G.34 full -> empty_raw_response; thử lại với context/schema gọn hơn...
+  [LLM RETRY] G.34 half_context -> empty_raw_response; thử lại với context/schema gọn hơn...
+→ NULL (+0.00)
+    [111/113] G.35...   [LLM RETRY] G.35 full -> empty_raw_response; thử lại với context/schema gọn hơn...
+→ A (+1.00)
+      Lý do: LLM không trả bằng chứng đủ dùng; dùng option dương trội nhất từ retrieval đã được grounding kiểm tra.
+      Bằng chứng: C.2.5 Thông tin giới thiệu về nhân sự chủ chốt của Công ty
+    [112/113] G.36...   [LLM RETRY] G.36 full -> empty_raw_response; thử lại với context/schema gọn hơn...
+  [LLM RETRY] G.36 half_context -> empty_raw_response; thử lại với context/schema gọn hơn...
+  [LLM RETRY] G.36 half_context_minimal -> empty_raw_response; thử lại với context/schema gọn hơn...
+→ A (+1.00)
+      Lý do: LLM không trả bằng chứng đủ dùng; dùng option dương trội nhất từ retrieval đã được grounding kiểm tra.
+      Bằng chứng: Công ty có công bố cách quản lý rủi ro và cơ hội
+    [113/113] G.37... → A (+1.00)
+      Lý do: Nguồn S1 đề cập đúng nội dung cần chấm.
+      Bằng chứng: Vinamilk nhận thức rõ rằng việc chủ động nhận diện, đánh giá, và ứng phó với rủi ro là yếu tố then chốt để đạt được các mục tiêu kinh doanh, bảo vệ giá trị Cổ đông, và duy trì sự phát triển bền vững của Công ty trong dài hạn.
+
+[5/6] Tính toán ESGUI (năm 2024)...
+  ESGUI = (1 - 75.73/100) × (1 + 0.0724) = 0.2603
+
+[6/6] Phân tích nhân quả PLS-SEM...
+  [PLS-SEM] Bỏ qua phân tích nhân quả vì không tìm thấy file dữ liệu: inputs/ACB/chỉ số hiệu qủa tài chính/Data (4).xlsx
+  [PLS-SEM] Không đủ dữ liệu
+
+=================================================================
+  BÁO CÁO KẾT QUẢ ĐÁNH GIÁ ESG
+=================================================================
+  Doanh nghiệp    : VNM
+  Ngành            : Consumer Staples
+  Năm đánh giá     : 2024
+  Báo cáo          : VNM_Baocaothuongnien_2024.pdf
+  Thời gian xử lý  : 1324 giây
+-----------------------------------------------------------------
+
+  ĐIỂM VNSI RAW THEO WORKBOOK: 84.50 / 111.58
+  ĐIỂM QUY ĐỔI THANG 100   : 75.73
+  ┌───────────────────────────────────────────┐
+  │  E (Môi trường) :  66.10%                  │
+  │  S (Xã hội)     :  67.42%                  │
+  │  G (Quản trị)   :  87.00%                  │
+  └───────────────────────────────────────────┘
+
+  Screening        : ✅ PASS
+
+  ESGUI Index      : 0.2603
+  WUI (2024)       : 0.0724
+  Đánh giá         : Rủi ro THẤP — ESG khá tốt
+
+  Từ khóa rủi ro   : 2695 lần xuất hiện
+  Chứng chỉ ISO    : ISO 14001, ISO 45001, ISO 9001, ISO 27001, ISO 50001
+=================================================================
+
+  📄 Báo cáo chi tiết: outputs/reports/VNM_2024_esg_report.json
+  📄 Index coverage audit: outputs/audit/VNM_2024_index_coverage.md
+  📄 Scoring audit: outputs/audit/VNM_2024_scoring_audit.csv
+  📄 Review advisor: outputs/reports/VNM_2024_review_advisor.md
+  📄 Company improvement advisor: outputs/reports/VNM_2024_company_improvement_advisor.md
+  📄 Goldset benchmark: count=0, answer_accuracy=None, evidence_hit_rate=None
+Generated clean report at: outputs/reports/VNM_2024_esg_report_clean.md
+  📄 Báo cáo Clean (Dễ đọc): outputs/reports/VNM_2024_esg_report_clean.md

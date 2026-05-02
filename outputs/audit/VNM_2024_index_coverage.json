@@ -1,0 +1,2171 @@
+{
+  "document_count": 109,
+  "low_coverage_count": 0,
+  "average_page_coverage": 1.0,
+  "documents": [
+    {
+      "source_file": "01_09_na_pas2060_24_tuyen_bo_cacbon_trung_tinh_nmsna_c1c6295263.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2014,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 803,
+      "indexed_chars_with_overlap": 2274,
+      "indexed_char_ratio_with_overlap": 2.8319,
+      "section_count": 3,
+      "coverage_sources": {
+        "section_builder": 1,
+        "metric_key_value": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "1402563877_f44e98fa7b7a4f3d0628bb245d2dcef09468e0e8590e57150b766ebbb0ee6a72_5949a77b25.pdf",
+      "document_type": "sustainability_report",
+      "year_guess": 2012,
+      "page_count": 28,
+      "text_pages": 28,
+      "indexed_pages": 28,
+      "page_coverage": 1.0,
+      "total_chars": 92482,
+      "indexed_chars_with_overlap": 346719,
+      "indexed_char_ratio_with_overlap": 3.749,
+      "section_count": 89,
+      "coverage_sources": {
+        "section_builder": 24,
+        "pdfplumber_table": 19,
+        "metric_key_value": 19,
+        "text_table": 2,
+        "page_fallback": 25
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "1409041085_fe01f561f86685301191fcabb60f574efe83afbf5b3703d3692afff2e69f734c_df6d76777d.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2013,
+      "page_count": 51,
+      "text_pages": 51,
+      "indexed_pages": 51,
+      "page_coverage": 1.0,
+      "total_chars": 130555,
+      "indexed_chars_with_overlap": 441565,
+      "indexed_char_ratio_with_overlap": 3.3822,
+      "section_count": 106,
+      "coverage_sources": {
+        "section_builder": 30,
+        "pdfplumber_table": 11,
+        "metric_key_value": 22,
+        "text_table": 1,
+        "page_fallback": 42
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "1463573710_80d0136b9fd8926b73cc054696c389ec74fcc8845f56ac1f59c23bda4fe58d96_b5a60cb541.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2014,
+      "page_count": 53,
+      "text_pages": 53,
+      "indexed_pages": 53,
+      "page_coverage": 1.0,
+      "total_chars": 128416,
+      "indexed_chars_with_overlap": 463950,
+      "indexed_char_ratio_with_overlap": 3.6129,
+      "section_count": 111,
+      "coverage_sources": {
+        "section_builder": 29,
+        "pdfplumber_table": 8,
+        "metric_key_value": 24,
+        "text_table": 1,
+        "page_fallback": 49
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "1555043744_fa0d924547ebd9b6ebfaeb374df4a3263d462db8256435ccde59d6ae23dbb984_048a7a9c2a.pdf",
+      "document_type": "sustainability_report",
+      "year_guess": 2018,
+      "page_count": 89,
+      "text_pages": 89,
+      "indexed_pages": 89,
+      "page_coverage": 1.0,
+      "total_chars": 188488,
+      "indexed_chars_with_overlap": 741792,
+      "indexed_char_ratio_with_overlap": 3.9355,
+      "section_count": 233,
+      "coverage_sources": {
+        "section_builder": 48,
+        "pdfplumber_table": 40,
+        "metric_key_value": 54,
+        "text_table": 3,
+        "page_fallback": 88
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "1585291596-7f525505f3621558355a60c10f6862cbb3b9c9863921a9b06587f7b42a0f9733.pdf",
+      "document_type": "annual_report",
+      "year_guess": 2019,
+      "page_count": 105,
+      "text_pages": 104,
+      "indexed_pages": 104,
+      "page_coverage": 1.0,
+      "total_chars": 303227,
+      "indexed_chars_with_overlap": 1145687,
+      "indexed_char_ratio_with_overlap": 3.7783,
+      "section_count": 350,
+      "coverage_sources": {
+        "section_builder": 79,
+        "pdfplumber_table": 82,
+        "metric_key_value": 59,
+        "text_table": 31,
+        "page_fallback": 99
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "1618816554_ee7ebf4f06d574c3578582f216943b5f34098b89872b7de19c218513271550a6_ab312b4b02.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2020,
+      "page_count": 107,
+      "text_pages": 106,
+      "indexed_pages": 106,
+      "page_coverage": 1.0,
+      "total_chars": 276915,
+      "indexed_chars_with_overlap": 1051772,
+      "indexed_char_ratio_with_overlap": 3.7982,
+      "section_count": 250,
+      "coverage_sources": {
+        "section_builder": 68,
+        "pdfplumber_table": 21,
+        "metric_key_value": 50,
+        "text_table": 9,
+        "page_fallback": 102
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "1620207714_e3cfc52e4ad5dff98c95899e572436272485aa1fd25939b33d90af899b376d65_48d967f7c5.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2019,
+      "page_count": 97,
+      "text_pages": 96,
+      "indexed_pages": 96,
+      "page_coverage": 1.0,
+      "total_chars": 228476,
+      "indexed_chars_with_overlap": 864091,
+      "indexed_char_ratio_with_overlap": 3.782,
+      "section_count": 204,
+      "coverage_sources": {
+        "section_builder": 53,
+        "pdfplumber_table": 15,
+        "metric_key_value": 38,
+        "text_table": 4,
+        "page_fallback": 94
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "1656491111_f46b334fdbaaa976e16ea1d6efa9b655f272d896982aa0e8509b8be361b1a883_87bac92f8b.pdf",
+      "document_type": "financial_report",
+      "year_guess": 2021,
+      "page_count": 109,
+      "text_pages": 109,
+      "indexed_pages": 109,
+      "page_coverage": 1.0,
+      "total_chars": 290305,
+      "indexed_chars_with_overlap": 1098258,
+      "indexed_char_ratio_with_overlap": 3.7831,
+      "section_count": 266,
+      "coverage_sources": {
+        "section_builder": 72,
+        "pdfplumber_table": 31,
+        "metric_key_value": 52,
+        "text_table": 6,
+        "page_fallback": 105
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "1680151957_5e98a010298a8600f15a004509311b5263af565d36d48c9e324dfe0b90ce780a_7f2bdba296.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2015,
+      "page_count": 124,
+      "text_pages": 123,
+      "indexed_pages": 123,
+      "page_coverage": 1.0,
+      "total_chars": 158243,
+      "indexed_chars_with_overlap": 599770,
+      "indexed_char_ratio_with_overlap": 3.7902,
+      "section_count": 220,
+      "coverage_sources": {
+        "section_builder": 46,
+        "pdfplumber_table": 9,
+        "metric_key_value": 47,
+        "text_table": 6,
+        "page_fallback": 112
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "1680152280_e9ef8eb09f1d52a32281ac79c16415aa6de81a80a162bc2b4cd381a80c68650c_d22f2976fd.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2016,
+      "page_count": 73,
+      "text_pages": 73,
+      "indexed_pages": 73,
+      "page_coverage": 1.0,
+      "total_chars": 185932,
+      "indexed_chars_with_overlap": 719991,
+      "indexed_char_ratio_with_overlap": 3.8723,
+      "section_count": 199,
+      "coverage_sources": {
+        "section_builder": 58,
+        "pdfplumber_table": 24,
+        "metric_key_value": 43,
+        "text_table": 5,
+        "page_fallback": 69
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "1680152599_eb86d997113eef1ee2d14ceebcbad8a0d8fd8ed391faabf99f47d72e2802bbf8_9af10bfadb.pdf",
+      "document_type": "sustainability_report",
+      "year_guess": 2017,
+      "page_count": 91,
+      "text_pages": 91,
+      "indexed_pages": 91,
+      "page_coverage": 1.0,
+      "total_chars": 229769,
+      "indexed_chars_with_overlap": 1224755,
+      "indexed_char_ratio_with_overlap": 5.3304,
+      "section_count": 195,
+      "coverage_sources": {
+        "section_builder": 63,
+        "pdfplumber_table": 38,
+        "metric_key_value": 5,
+        "page_fallback": 89
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "1683631993_840733d05a0ce9533cfd4eb963c14816cc15c40cd088faef088c9b32b24bd763_178620acbe.pdf",
+      "document_type": "sustainability_report",
+      "year_guess": 2022,
+      "page_count": 93,
+      "text_pages": 93,
+      "indexed_pages": 93,
+      "page_coverage": 1.0,
+      "total_chars": 214403,
+      "indexed_chars_with_overlap": 783077,
+      "indexed_char_ratio_with_overlap": 3.6524,
+      "section_count": 187,
+      "coverage_sources": {
+        "section_builder": 54,
+        "pdfplumber_table": 22,
+        "metric_key_value": 31,
+        "page_fallback": 80
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "1732544594_f45e5cc953ac6d3f99e632fdff1618d3b748c32715d18718d85d1ba3224cf9e8_8d51d7635a.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2023,
+      "page_count": 120,
+      "text_pages": 120,
+      "indexed_pages": 120,
+      "page_coverage": 1.0,
+      "total_chars": 235216,
+      "indexed_chars_with_overlap": 923944,
+      "indexed_char_ratio_with_overlap": 3.9281,
+      "section_count": 255,
+      "coverage_sources": {
+        "section_builder": 61,
+        "pdfplumber_table": 24,
+        "metric_key_value": 48,
+        "text_table": 6,
+        "page_fallback": 116
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "1747645027_b159f24cc73223e3f20e273456b43ca4c2b8b755b0d77e4d0374f21eaeb3ae66_dbbf411dcb (1).pdf",
+      "document_type": "sustainability_report",
+      "year_guess": 2024,
+      "page_count": 112,
+      "text_pages": 112,
+      "indexed_pages": 112,
+      "page_coverage": 1.0,
+      "total_chars": 236622,
+      "indexed_chars_with_overlap": 879948,
+      "indexed_char_ratio_with_overlap": 3.7188,
+      "section_count": 274,
+      "coverage_sources": {
+        "section_builder": 67,
+        "pdfplumber_table": 20,
+        "metric_key_value": 69,
+        "text_table": 12,
+        "page_fallback": 106
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20181203_20181203---VNM---CBTT--Thay-doi-co-cau-nhan-su--Bo-nhiem-GHDH-KDQT.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2018,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 2595,
+      "indexed_chars_with_overlap": 7426,
+      "indexed_char_ratio_with_overlap": 2.8617,
+      "section_count": 4,
+      "coverage_sources": {
+        "section_builder": 1,
+        "text_table": 1,
+        "metric_key_value": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20181204_20181204---VNM---NQHDQT-ve-viec-tam-ung-co-tuc-dot-2-nam-2018.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2018,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 2052,
+      "indexed_chars_with_overlap": 6150,
+      "indexed_char_ratio_with_overlap": 2.9971,
+      "section_count": 3,
+      "coverage_sources": {
+        "section_builder": 1,
+        "metric_key_value": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20190313_20190312---VNM---CBTT--Nghi-quyet-HDQT--Chao-mua-cong-khai-GTN.pdf",
+      "document_type": "other",
+      "year_guess": 2019,
+      "page_count": 2,
+      "text_pages": 2,
+      "indexed_pages": 2,
+      "page_coverage": 1.0,
+      "total_chars": 1078,
+      "indexed_chars_with_overlap": 3158,
+      "indexed_char_ratio_with_overlap": 2.9295,
+      "section_count": 3,
+      "coverage_sources": {
+        "section_builder": 1,
+        "metric_key_value": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20190422_20190422 - VNM -  Bien Ban DHDCD thuong nien 2019- TViet.pdf",
+      "document_type": "resolution",
+      "year_guess": 2019,
+      "page_count": 10,
+      "text_pages": 10,
+      "indexed_pages": 10,
+      "page_coverage": 1.0,
+      "total_chars": 21910,
+      "indexed_chars_with_overlap": 82998,
+      "indexed_char_ratio_with_overlap": 3.7881,
+      "section_count": 41,
+      "coverage_sources": {
+        "section_builder": 7,
+        "pdfplumber_table": 17,
+        "metric_key_value": 6,
+        "text_table": 2,
+        "page_fallback": 9
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20190422_20190422 - VNM -  Nghi quyet DHDCD thuong nien 2019.pdf",
+      "document_type": "resolution",
+      "year_guess": 2019,
+      "page_count": 3,
+      "text_pages": 3,
+      "indexed_pages": 3,
+      "page_coverage": 1.0,
+      "total_chars": 4253,
+      "indexed_chars_with_overlap": 11293,
+      "indexed_char_ratio_with_overlap": 2.6553,
+      "section_count": 6,
+      "coverage_sources": {
+        "section_builder": 2,
+        "metric_key_value": 3,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20191203_20191202---VNM---CBTT-NQ-HDQT-vv-Chot-DS-Tam-ung-co-tuc-dot-2-2019.pdf",
+      "document_type": "other",
+      "year_guess": 2019,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 71,
+      "indexed_chars_with_overlap": 71,
+      "indexed_char_ratio_with_overlap": 1.0,
+      "section_count": 1,
+      "coverage_sources": {
+        "section_builder": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20191210_20191210---VNM---NQ-HDQ-T.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2019,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 1973,
+      "indexed_chars_with_overlap": 5919,
+      "indexed_char_ratio_with_overlap": 3.0,
+      "section_count": 3,
+      "coverage_sources": {
+        "section_builder": 1,
+        "metric_key_value": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20200629_20200629 - VNM - Bien Ban DHDCD thuong nien 2020- TViet.pdf",
+      "document_type": "resolution",
+      "year_guess": 2020,
+      "page_count": 11,
+      "text_pages": 11,
+      "indexed_pages": 11,
+      "page_coverage": 1.0,
+      "total_chars": 25971,
+      "indexed_chars_with_overlap": 91937,
+      "indexed_char_ratio_with_overlap": 3.54,
+      "section_count": 37,
+      "coverage_sources": {
+        "section_builder": 8,
+        "pdfplumber_table": 10,
+        "metric_key_value": 7,
+        "text_table": 2,
+        "page_fallback": 10
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20210205_20210205---VNM---NQ-HDQT-vv-lap-ViBev--CBTT.pdf",
+      "document_type": "other",
+      "year_guess": 2021,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 179,
+      "indexed_chars_with_overlap": 179,
+      "indexed_char_ratio_with_overlap": 1.0,
+      "section_count": 1,
+      "coverage_sources": {
+        "section_builder": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20210427_20210427 - VNM - Bien Ban DHDCD thuong nien 2021- TViet.pdf",
+      "document_type": "resolution",
+      "year_guess": 2021,
+      "page_count": 12,
+      "text_pages": 12,
+      "indexed_pages": 12,
+      "page_coverage": 1.0,
+      "total_chars": 25413,
+      "indexed_chars_with_overlap": 93229,
+      "indexed_char_ratio_with_overlap": 3.6686,
+      "section_count": 37,
+      "coverage_sources": {
+        "section_builder": 6,
+        "pdfplumber_table": 15,
+        "metric_key_value": 6,
+        "text_table": 2,
+        "page_fallback": 8
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20210427_20210427 - VNM - Nghi quyet - DHDCD 2021- Tieng Viet.pdf",
+      "document_type": "resolution",
+      "year_guess": 2021,
+      "page_count": 3,
+      "text_pages": 3,
+      "indexed_pages": 3,
+      "page_coverage": 1.0,
+      "total_chars": 4801,
+      "indexed_chars_with_overlap": 16653,
+      "indexed_char_ratio_with_overlap": 3.4687,
+      "section_count": 9,
+      "coverage_sources": {
+        "section_builder": 3,
+        "pdfplumber_table": 1,
+        "text_table": 1,
+        "metric_key_value": 1,
+        "page_fallback": 3
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20210520_20210520---VNM--NQ-06-2021-ve-ban-hanh-QCQT-va-QCHDHDQT--CBTT.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2021,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 2213,
+      "indexed_chars_with_overlap": 6639,
+      "indexed_char_ratio_with_overlap": 3.0,
+      "section_count": 3,
+      "coverage_sources": {
+        "section_builder": 1,
+        "metric_key_value": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20211202_20211202---VNM--NQ-10-2021-ve-viec-Tam-ung-co-tuc-va-to-chuc-DHCD-2022.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2022,
+      "page_count": 2,
+      "text_pages": 2,
+      "indexed_pages": 2,
+      "page_coverage": 1.0,
+      "total_chars": 1165,
+      "indexed_chars_with_overlap": 2334,
+      "indexed_char_ratio_with_overlap": 2.0034,
+      "section_count": 2,
+      "coverage_sources": {
+        "section_builder": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20211215_20211215---VNM---NQ-13-2021-ve-viec-GDDH-nghi-huu.pdf",
+      "document_type": "other",
+      "year_guess": 2021,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 312,
+      "indexed_chars_with_overlap": 624,
+      "indexed_char_ratio_with_overlap": 2.0,
+      "section_count": 2,
+      "coverage_sources": {
+        "section_builder": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20211231_20211231--VNM--NQ-14-2021-ve-viec-GDDH-nghi-huu.pdf",
+      "document_type": "other",
+      "year_guess": 2021,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 312,
+      "indexed_chars_with_overlap": 624,
+      "indexed_char_ratio_with_overlap": 2.0,
+      "section_count": 2,
+      "coverage_sources": {
+        "section_builder": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20220426_20220426___vnm___nghi_quyet_hdqt_05_2022.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2022,
+      "page_count": 2,
+      "text_pages": 2,
+      "indexed_pages": 2,
+      "page_coverage": 1.0,
+      "total_chars": 1726,
+      "indexed_chars_with_overlap": 6055,
+      "indexed_char_ratio_with_overlap": 3.5081,
+      "section_count": 5,
+      "coverage_sources": {
+        "section_builder": 2,
+        "metric_key_value": 1,
+        "page_fallback": 2
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20220722_20220722___vnm___nghi_quyet_hdqt_09_2022.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2022,
+      "page_count": 2,
+      "text_pages": 2,
+      "indexed_pages": 2,
+      "page_coverage": 1.0,
+      "total_chars": 883,
+      "indexed_chars_with_overlap": 1770,
+      "indexed_char_ratio_with_overlap": 2.0045,
+      "section_count": 2,
+      "coverage_sources": {
+        "section_builder": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20221201_20221201___vnm___cbtt_nghi_quyet_hdqt_16_2022.pdf",
+      "document_type": "other",
+      "year_guess": 2022,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 310,
+      "indexed_chars_with_overlap": 620,
+      "indexed_char_ratio_with_overlap": 2.0,
+      "section_count": 2,
+      "coverage_sources": {
+        "section_builder": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20221201_20221201___vnm___cbtt_nghi_quyet_hdqt_17_2022.pdf",
+      "document_type": "other",
+      "year_guess": 2022,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 312,
+      "indexed_chars_with_overlap": 624,
+      "indexed_char_ratio_with_overlap": 2.0,
+      "section_count": 2,
+      "coverage_sources": {
+        "section_builder": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20221229_20221228___vnm___nq_18_2022_to_chuc_dhcd_2023__003_.pdf",
+      "document_type": "resolution",
+      "year_guess": 2023,
+      "page_count": 2,
+      "text_pages": 2,
+      "indexed_pages": 2,
+      "page_coverage": 1.0,
+      "total_chars": 2610,
+      "indexed_chars_with_overlap": 7358,
+      "indexed_char_ratio_with_overlap": 2.8192,
+      "section_count": 5,
+      "coverage_sources": {
+        "section_builder": 1,
+        "text_table": 1,
+        "metric_key_value": 2,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20231208_20231208___vnm___cbtt_nghi_quyet_hdqt_23_2023__003_ (1).pdf",
+      "document_type": "policy_document",
+      "year_guess": 2023,
+      "page_count": 2,
+      "text_pages": 2,
+      "indexed_pages": 2,
+      "page_coverage": 1.0,
+      "total_chars": 2889,
+      "indexed_chars_with_overlap": 7542,
+      "indexed_char_ratio_with_overlap": 2.6106,
+      "section_count": 5,
+      "coverage_sources": {
+        "section_builder": 1,
+        "text_table": 2,
+        "page_fallback": 2
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20240131_20240131___vnm___ngay_to_chuc_dcdcd_2024 (1).pdf",
+      "document_type": "resolution",
+      "year_guess": 2024,
+      "page_count": 4,
+      "text_pages": 4,
+      "indexed_pages": 4,
+      "page_coverage": 1.0,
+      "total_chars": 5294,
+      "indexed_chars_with_overlap": 13160,
+      "indexed_char_ratio_with_overlap": 2.4858,
+      "section_count": 7,
+      "coverage_sources": {
+        "section_builder": 2,
+        "metric_key_value": 2,
+        "text_table": 1,
+        "page_fallback": 2
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20241206_20241205___vnm___tam_ung_co_tuc_dot_2_2024__cbtt_ (1).pdf",
+      "document_type": "policy_document",
+      "year_guess": 2024,
+      "page_count": 2,
+      "text_pages": 2,
+      "indexed_pages": 2,
+      "page_coverage": 1.0,
+      "total_chars": 579,
+      "indexed_chars_with_overlap": 1162,
+      "indexed_char_ratio_with_overlap": 2.0069,
+      "section_count": 2,
+      "coverage_sources": {
+        "section_builder": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20241206_20241205___vnm___thong_qua_giao_dich_cac_blq__cbtt___cv_den_ (1).pdf",
+      "document_type": "resolution",
+      "year_guess": 2024,
+      "page_count": 12,
+      "text_pages": 12,
+      "indexed_pages": 12,
+      "page_coverage": 1.0,
+      "total_chars": 16328,
+      "indexed_chars_with_overlap": 66972,
+      "indexed_char_ratio_with_overlap": 4.1017,
+      "section_count": 22,
+      "coverage_sources": {
+        "section_builder": 6,
+        "pdfplumber_table": 1,
+        "metric_key_value": 4,
+        "page_fallback": 11
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "20241227_20241227___vnm___nghi_quyet_hdqt_17_2024.pdf",
+      "document_type": "resolution",
+      "year_guess": 2024,
+      "page_count": 4,
+      "text_pages": 4,
+      "indexed_pages": 4,
+      "page_coverage": 1.0,
+      "total_chars": 5796,
+      "indexed_chars_with_overlap": 14083,
+      "indexed_char_ratio_with_overlap": 2.4298,
+      "section_count": 8,
+      "coverage_sources": {
+        "section_builder": 2,
+        "text_table": 3,
+        "page_fallback": 3
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "2_20_PAS_202060_SVN_QES_Ver_2001_05_04_2024_20_28_E_29_12d6a7e3c2.pdf",
+      "document_type": "other",
+      "year_guess": 2024,
+      "page_count": 35,
+      "text_pages": 35,
+      "indexed_pages": 35,
+      "page_coverage": 1.0,
+      "total_chars": 62507,
+      "indexed_chars_with_overlap": 334659,
+      "indexed_char_ratio_with_overlap": 5.3539,
+      "section_count": 100,
+      "coverage_sources": {
+        "section_builder": 16,
+        "pdfplumber_table": 39,
+        "metric_key_value": 10,
+        "text_table": 1,
+        "page_fallback": 34
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "BCTC HOP NHAT 31.12.2019 - VN.pdf",
+      "document_type": "financial_report",
+      "year_guess": 2019,
+      "page_count": 65,
+      "text_pages": 64,
+      "indexed_pages": 64,
+      "page_coverage": 1.0,
+      "total_chars": 115761,
+      "indexed_chars_with_overlap": 404320,
+      "indexed_char_ratio_with_overlap": 3.4927,
+      "section_count": 151,
+      "coverage_sources": {
+        "section_builder": 41,
+        "text_table": 28,
+        "metric_key_value": 19,
+        "page_fallback": 63
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "BDP_Giay_phep_moi_truong_03_10_2023_bfdd06886d.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2023,
+      "page_count": 14,
+      "text_pages": 14,
+      "indexed_pages": 14,
+      "page_coverage": 1.0,
+      "total_chars": 28935,
+      "indexed_chars_with_overlap": 109645,
+      "indexed_char_ratio_with_overlap": 3.7894,
+      "section_count": 33,
+      "coverage_sources": {
+        "section_builder": 9,
+        "pdfplumber_table": 9,
+        "metric_key_value": 3,
+        "text_table": 1,
+        "page_fallback": 11
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "Biên bản họp Đại hội đồng cổ đông (1).pdf",
+      "document_type": "resolution",
+      "year_guess": 2024,
+      "page_count": 13,
+      "text_pages": 13,
+      "indexed_pages": 13,
+      "page_coverage": 1.0,
+      "total_chars": 27344,
+      "indexed_chars_with_overlap": 112507,
+      "indexed_char_ratio_with_overlap": 4.1145,
+      "section_count": 37,
+      "coverage_sources": {
+        "section_builder": 8,
+        "pdfplumber_table": 10,
+        "text_table": 1,
+        "metric_key_value": 8,
+        "page_fallback": 10
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "Biên bản kiểm phiếu biểu quyết Đại hội cổ đông 2024 (1).pdf",
+      "document_type": "resolution",
+      "year_guess": 2024,
+      "page_count": 3,
+      "text_pages": 3,
+      "indexed_pages": 3,
+      "page_coverage": 1.0,
+      "total_chars": 3388,
+      "indexed_chars_with_overlap": 9856,
+      "indexed_char_ratio_with_overlap": 2.9091,
+      "section_count": 6,
+      "coverage_sources": {
+        "section_builder": 3,
+        "page_fallback": 3
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "CARBON_20_NEUTRALITY_20_DECLARATION_20_SVN_2009_04_2024_cec0582a4f.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2024,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 849,
+      "indexed_chars_with_overlap": 2410,
+      "indexed_char_ratio_with_overlap": 2.8386,
+      "section_count": 3,
+      "coverage_sources": {
+        "section_builder": 1,
+        "metric_key_value": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "CTP_GXN_hoan_thanh_cong_trinh_BVMT_10_02_2020_b0b24c01e2.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2020,
+      "page_count": 4,
+      "text_pages": 3,
+      "indexed_pages": 3,
+      "page_coverage": 1.0,
+      "total_chars": 6448,
+      "indexed_chars_with_overlap": 11782,
+      "indexed_char_ratio_with_overlap": 1.8272,
+      "section_count": 4,
+      "coverage_sources": {
+        "section_builder": 2,
+        "page_fallback": 2
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "Chinh_sach_phuc_loi_dong_vat_1_577b716dd2.pdf",
+      "document_type": "policy_document",
+      "year_guess": null,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 2805,
+      "indexed_chars_with_overlap": 6743,
+      "indexed_char_ratio_with_overlap": 2.4039,
+      "section_count": 3,
+      "coverage_sources": {
+        "section_builder": 1,
+        "metric_key_value": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "Chinh_sach_thu_mua_sua_tuoi_nguyen_lieu_1_288611f658.pdf",
+      "document_type": "policy_document",
+      "year_guess": null,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 2099,
+      "indexed_chars_with_overlap": 4198,
+      "indexed_char_ratio_with_overlap": 2.0,
+      "section_count": 2,
+      "coverage_sources": {
+        "section_builder": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "Chinh_sach_thuc_hanh_san_xuat_nong_nghiep_ben_vung_e0678ecf9a.pdf",
+      "document_type": "policy_document",
+      "year_guess": null,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 4679,
+      "indexed_chars_with_overlap": 10379,
+      "indexed_char_ratio_with_overlap": 2.2182,
+      "section_count": 3,
+      "coverage_sources": {
+        "section_builder": 1,
+        "metric_key_value": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "DLP_GXN_da_thuc_hien_BVMT_2013_a6488f8968.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2013,
+      "page_count": 4,
+      "text_pages": 4,
+      "indexed_pages": 4,
+      "page_coverage": 1.0,
+      "total_chars": 7866,
+      "indexed_chars_with_overlap": 21398,
+      "indexed_char_ratio_with_overlap": 2.7203,
+      "section_count": 8,
+      "coverage_sources": {
+        "section_builder": 3,
+        "metric_key_value": 2,
+        "page_fallback": 3
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "DNP_GXN_hoan_thanh_CTBVMT_14_08_2021_0af11bd4e4.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2021,
+      "page_count": 4,
+      "text_pages": 4,
+      "indexed_pages": 4,
+      "page_coverage": 1.0,
+      "total_chars": 6793,
+      "indexed_chars_with_overlap": 23320,
+      "indexed_char_ratio_with_overlap": 3.4329,
+      "section_count": 8,
+      "coverage_sources": {
+        "section_builder": 2,
+        "pdfplumber_table": 1,
+        "metric_key_value": 1,
+        "page_fallback": 4
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "GIAI_20_THICH_20_DU_20_DIEU_20_KIEN_20_DAT_20_TRUNG_20_HOA_20_CARBON_20_28duyet_29_da08d37d22.pdf",
+      "document_type": "other",
+      "year_guess": 2023,
+      "page_count": 26,
+      "text_pages": 26,
+      "indexed_pages": 26,
+      "page_coverage": 1.0,
+      "total_chars": 50968,
+      "indexed_chars_with_overlap": 210878,
+      "indexed_char_ratio_with_overlap": 4.1375,
+      "section_count": 60,
+      "coverage_sources": {
+        "section_builder": 16,
+        "pdfplumber_table": 9,
+        "text_table": 1,
+        "metric_key_value": 10,
+        "page_fallback": 24
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "GKP_Giay_Phep_MT_03_02_2025_dabb647e71.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2025,
+      "page_count": 15,
+      "text_pages": 15,
+      "indexed_pages": 15,
+      "page_coverage": 1.0,
+      "total_chars": 34721,
+      "indexed_chars_with_overlap": 147078,
+      "indexed_char_ratio_with_overlap": 4.236,
+      "section_count": 30,
+      "coverage_sources": {
+        "section_builder": 11,
+        "pdfplumber_table": 3,
+        "metric_key_value": 3,
+        "text_table": 1,
+        "page_fallback": 12
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "LSP_Giay_phep_moi_truong_24_09_2025_cf65ad4355.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2025,
+      "page_count": 17,
+      "text_pages": 17,
+      "indexed_pages": 17,
+      "page_coverage": 1.0,
+      "total_chars": 34664,
+      "indexed_chars_with_overlap": 153450,
+      "indexed_char_ratio_with_overlap": 4.4268,
+      "section_count": 40,
+      "coverage_sources": {
+        "section_builder": 10,
+        "pdfplumber_table": 6,
+        "text_table": 4,
+        "metric_key_value": 6,
+        "page_fallback": 14
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "NAP_Giay_phep_moi_truong_13_06_2025_b5b8d682d0.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2025,
+      "page_count": 20,
+      "text_pages": 20,
+      "indexed_pages": 20,
+      "page_coverage": 1.0,
+      "total_chars": 32551,
+      "indexed_chars_with_overlap": 77588,
+      "indexed_char_ratio_with_overlap": 2.3836,
+      "section_count": 24,
+      "coverage_sources": {
+        "section_builder": 9,
+        "metric_key_value": 4,
+        "page_fallback": 11
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "NGK_QES_T03_2024_20_V2_779405e731.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2024,
+      "page_count": 24,
+      "text_pages": 24,
+      "indexed_pages": 24,
+      "page_coverage": 1.0,
+      "total_chars": 47256,
+      "indexed_chars_with_overlap": 280906,
+      "indexed_char_ratio_with_overlap": 5.9443,
+      "section_count": 66,
+      "coverage_sources": {
+        "section_builder": 15,
+        "pdfplumber_table": 23,
+        "metric_key_value": 4,
+        "text_table": 1,
+        "page_fallback": 23
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "NM_20_NGK_Tuyen_20bo_20_Cacbon_20_Trung_20t_C3_A_Dnh_202023_aea7be7051.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2014,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 693,
+      "indexed_chars_with_overlap": 2250,
+      "indexed_char_ratio_with_overlap": 3.2468,
+      "section_count": 4,
+      "coverage_sources": {
+        "section_builder": 1,
+        "text_table": 1,
+        "metric_key_value": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "Nghị quyết họp Đại hội đồng cổ đông (1).pdf",
+      "document_type": "resolution",
+      "year_guess": 2024,
+      "page_count": 3,
+      "text_pages": 3,
+      "indexed_pages": 3,
+      "page_coverage": 1.0,
+      "total_chars": 4374,
+      "indexed_chars_with_overlap": 16086,
+      "indexed_char_ratio_with_overlap": 3.6776,
+      "section_count": 9,
+      "coverage_sources": {
+        "section_builder": 2,
+        "pdfplumber_table": 3,
+        "metric_key_value": 1,
+        "page_fallback": 3
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "QES_Nh_C3_A0_m_C3_A1y_N_C6_B0_E1_BB_9_Bc_Gi_E1_BA_A3i_Kh_C3_A1t_Vi_E1_BB_87t_Nam_1f3e825bbd.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2022,
+      "page_count": 22,
+      "text_pages": 22,
+      "indexed_pages": 22,
+      "page_coverage": 1.0,
+      "total_chars": 43851,
+      "indexed_chars_with_overlap": 257062,
+      "indexed_char_ratio_with_overlap": 5.8622,
+      "section_count": 50,
+      "coverage_sources": {
+        "section_builder": 13,
+        "pdfplumber_table": 11,
+        "metric_key_value": 4,
+        "text_table": 1,
+        "page_fallback": 21
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "QES_Nh_C3_A0_m_C3_A1y_S_E1_BB_A_Fa_Ngh_E1_BB_87_An_355f09c893.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2022,
+      "page_count": 20,
+      "text_pages": 20,
+      "indexed_pages": 20,
+      "page_coverage": 1.0,
+      "total_chars": 40315,
+      "indexed_chars_with_overlap": 224615,
+      "indexed_char_ratio_with_overlap": 5.5715,
+      "section_count": 66,
+      "coverage_sources": {
+        "section_builder": 13,
+        "pdfplumber_table": 27,
+        "metric_key_value": 5,
+        "text_table": 2,
+        "page_fallback": 19
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "QES_Trang_tr_E1_BA_A1i_b_C3_B2_s_E1_BB_A_Fa_Ngh_E1_BB_87_An_6799093e99.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2014,
+      "page_count": 43,
+      "text_pages": 43,
+      "indexed_pages": 43,
+      "page_coverage": 1.0,
+      "total_chars": 79070,
+      "indexed_chars_with_overlap": 289849,
+      "indexed_char_ratio_with_overlap": 3.6657,
+      "section_count": 84,
+      "coverage_sources": {
+        "section_builder": 23,
+        "pdfplumber_table": 13,
+        "text_table": 3,
+        "metric_key_value": 7,
+        "page_fallback": 38
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "SBP_GXN_hoan_thanh_CTBVMT_12_01_2015_043999b11a.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2015,
+      "page_count": 3,
+      "text_pages": 3,
+      "indexed_pages": 3,
+      "page_coverage": 1.0,
+      "total_chars": 4969,
+      "indexed_chars_with_overlap": 12131,
+      "indexed_char_ratio_with_overlap": 2.4413,
+      "section_count": 4,
+      "coverage_sources": {
+        "section_builder": 1,
+        "metric_key_value": 1,
+        "page_fallback": 2
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "SGP_Giay_Phep_Moi_Truong_29_22_2022_415deda866.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2022,
+      "page_count": 13,
+      "text_pages": 13,
+      "indexed_pages": 13,
+      "page_coverage": 1.0,
+      "total_chars": 23188,
+      "indexed_chars_with_overlap": 107713,
+      "indexed_char_ratio_with_overlap": 4.6452,
+      "section_count": 29,
+      "coverage_sources": {
+        "section_builder": 8,
+        "pdfplumber_table": 2,
+        "text_table": 4,
+        "metric_key_value": 7,
+        "page_fallback": 8
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "TNP_Giay_phep_moi_truong_02_02_2024_dc1392aa7e.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2024,
+      "page_count": 18,
+      "text_pages": 18,
+      "indexed_pages": 18,
+      "page_coverage": 1.0,
+      "total_chars": 28060,
+      "indexed_chars_with_overlap": 62805,
+      "indexed_char_ratio_with_overlap": 2.2382,
+      "section_count": 20,
+      "coverage_sources": {
+        "section_builder": 8,
+        "metric_key_value": 2,
+        "page_fallback": 10
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "TSP_Giay_phep_moi_truong_23_01_2025_1babfc66e3.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2025,
+      "page_count": 18,
+      "text_pages": 17,
+      "indexed_pages": 17,
+      "page_coverage": 1.0,
+      "total_chars": 28153,
+      "indexed_chars_with_overlap": 71175,
+      "indexed_char_ratio_with_overlap": 2.5281,
+      "section_count": 25,
+      "coverage_sources": {
+        "section_builder": 9,
+        "metric_key_value": 6,
+        "page_fallback": 10
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "TTP_Giay_phep_moi_truong_11_06_2025_f1e6542c68.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2025,
+      "page_count": 22,
+      "text_pages": 22,
+      "indexed_pages": 22,
+      "page_coverage": 1.0,
+      "total_chars": 39224,
+      "indexed_chars_with_overlap": 147543,
+      "indexed_char_ratio_with_overlap": 3.7615,
+      "section_count": 51,
+      "coverage_sources": {
+        "section_builder": 13,
+        "pdfplumber_table": 5,
+        "text_table": 6,
+        "metric_key_value": 9,
+        "page_fallback": 18
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "TUYEN_20_BO_20_CARBON_20_TRUNG_20_TINH_TRANG_20_TRAI_20_NGHE_20_AN_20_28duyet_29_f2a88e9bd5.pdf",
+      "document_type": "other",
+      "year_guess": 2014,
+      "page_count": 3,
+      "text_pages": 3,
+      "indexed_pages": 3,
+      "page_coverage": 1.0,
+      "total_chars": 5840,
+      "indexed_chars_with_overlap": 24203,
+      "indexed_char_ratio_with_overlap": 4.1443,
+      "section_count": 9,
+      "coverage_sources": {
+        "section_builder": 3,
+        "metric_key_value": 2,
+        "text_table": 1,
+        "page_fallback": 3
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "Tài liệu họp Đại hội đồng cổ đông thường niên.pdf",
+      "document_type": "resolution",
+      "year_guess": 2024,
+      "page_count": 5,
+      "text_pages": 5,
+      "indexed_pages": 5,
+      "page_coverage": 1.0,
+      "total_chars": 5771,
+      "indexed_chars_with_overlap": 26029,
+      "indexed_char_ratio_with_overlap": 4.5103,
+      "section_count": 13,
+      "coverage_sources": {
+        "section_builder": 2,
+        "pdfplumber_table": 4,
+        "text_table": 1,
+        "metric_key_value": 1,
+        "page_fallback": 5
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNMSR_Full_VN_2351c45431.pdf",
+      "document_type": "sustainability_report",
+      "year_guess": 2025,
+      "page_count": 152,
+      "text_pages": 152,
+      "indexed_pages": 152,
+      "page_coverage": 1.0,
+      "total_chars": 302698,
+      "indexed_chars_with_overlap": 1160225,
+      "indexed_char_ratio_with_overlap": 3.8329,
+      "section_count": 410,
+      "coverage_sources": {
+        "section_builder": 136,
+        "pdfplumber_table": 48,
+        "metric_key_value": 82,
+        "page_fallback": 144
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaoquantri_2019 (1).pdf",
+      "document_type": "resolution",
+      "year_guess": 2019,
+      "page_count": 15,
+      "text_pages": 15,
+      "indexed_pages": 15,
+      "page_coverage": 1.0,
+      "total_chars": 33873,
+      "indexed_chars_with_overlap": 110225,
+      "indexed_char_ratio_with_overlap": 3.2541,
+      "section_count": 31,
+      "coverage_sources": {
+        "section_builder": 8,
+        "pdfplumber_table": 1,
+        "text_table": 3,
+        "metric_key_value": 6,
+        "page_fallback": 13
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaoquantri_2020.pdf",
+      "document_type": "resolution",
+      "year_guess": 2020,
+      "page_count": 18,
+      "text_pages": 18,
+      "indexed_pages": 18,
+      "page_coverage": 1.0,
+      "total_chars": 63026,
+      "indexed_chars_with_overlap": 242083,
+      "indexed_char_ratio_with_overlap": 3.841,
+      "section_count": 54,
+      "coverage_sources": {
+        "section_builder": 15,
+        "pdfplumber_table": 9,
+        "metric_key_value": 12,
+        "page_fallback": 18
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaoquantri_2021.pdf",
+      "document_type": "resolution",
+      "year_guess": 2021,
+      "page_count": 16,
+      "text_pages": 16,
+      "indexed_pages": 16,
+      "page_coverage": 1.0,
+      "total_chars": 83269,
+      "indexed_chars_with_overlap": 265807,
+      "indexed_char_ratio_with_overlap": 3.1921,
+      "section_count": 56,
+      "coverage_sources": {
+        "section_builder": 19,
+        "pdfplumber_table": 9,
+        "metric_key_value": 10,
+        "text_table": 2,
+        "page_fallback": 16
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaoquantri_2022.pdf",
+      "document_type": "resolution",
+      "year_guess": 2022,
+      "page_count": 17,
+      "text_pages": 17,
+      "indexed_pages": 17,
+      "page_coverage": 1.0,
+      "total_chars": 94773,
+      "indexed_chars_with_overlap": 280678,
+      "indexed_char_ratio_with_overlap": 2.9616,
+      "section_count": 65,
+      "coverage_sources": {
+        "section_builder": 22,
+        "pdfplumber_table": 10,
+        "metric_key_value": 14,
+        "text_table": 3,
+        "page_fallback": 16
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaoquantri_2023.pdf",
+      "document_type": "resolution",
+      "year_guess": 2023,
+      "page_count": 17,
+      "text_pages": 17,
+      "indexed_pages": 17,
+      "page_coverage": 1.0,
+      "total_chars": 87246,
+      "indexed_chars_with_overlap": 284378,
+      "indexed_char_ratio_with_overlap": 3.2595,
+      "section_count": 59,
+      "coverage_sources": {
+        "section_builder": 21,
+        "pdfplumber_table": 9,
+        "metric_key_value": 12,
+        "page_fallback": 17
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaoquantri_2024 (1).pdf",
+      "document_type": "policy_document",
+      "year_guess": 2024,
+      "page_count": 16,
+      "text_pages": 16,
+      "indexed_pages": 16,
+      "page_coverage": 1.0,
+      "total_chars": 90207,
+      "indexed_chars_with_overlap": 279542,
+      "indexed_char_ratio_with_overlap": 3.0989,
+      "section_count": 57,
+      "coverage_sources": {
+        "section_builder": 21,
+        "pdfplumber_table": 8,
+        "metric_key_value": 11,
+        "text_table": 1,
+        "page_fallback": 16
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaoquantri_6T_2019.pdf",
+      "document_type": "resolution",
+      "year_guess": 2019,
+      "page_count": 28,
+      "text_pages": 28,
+      "indexed_pages": 28,
+      "page_coverage": 1.0,
+      "total_chars": 15305,
+      "indexed_chars_with_overlap": 47463,
+      "indexed_char_ratio_with_overlap": 3.1011,
+      "section_count": 54,
+      "coverage_sources": {
+        "section_builder": 22,
+        "text_table": 2,
+        "metric_key_value": 3,
+        "page_fallback": 27
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaoquantri_6T_2020.pdf",
+      "document_type": "resolution",
+      "year_guess": 2020,
+      "page_count": 10,
+      "text_pages": 10,
+      "indexed_pages": 10,
+      "page_coverage": 1.0,
+      "total_chars": 32814,
+      "indexed_chars_with_overlap": 141176,
+      "indexed_char_ratio_with_overlap": 4.3023,
+      "section_count": 36,
+      "coverage_sources": {
+        "section_builder": 9,
+        "pdfplumber_table": 7,
+        "metric_key_value": 7,
+        "text_table": 3,
+        "page_fallback": 10
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaoquantri_6T_2021.pdf",
+      "document_type": "resolution",
+      "year_guess": 2021,
+      "page_count": 17,
+      "text_pages": 17,
+      "indexed_pages": 17,
+      "page_coverage": 1.0,
+      "total_chars": 81158,
+      "indexed_chars_with_overlap": 262586,
+      "indexed_char_ratio_with_overlap": 3.2355,
+      "section_count": 56,
+      "coverage_sources": {
+        "section_builder": 18,
+        "pdfplumber_table": 10,
+        "metric_key_value": 10,
+        "text_table": 1,
+        "page_fallback": 17
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaoquantri_6T_2022.pdf",
+      "document_type": "resolution",
+      "year_guess": 2022,
+      "page_count": 14,
+      "text_pages": 14,
+      "indexed_pages": 14,
+      "page_coverage": 1.0,
+      "total_chars": 82437,
+      "indexed_chars_with_overlap": 240129,
+      "indexed_char_ratio_with_overlap": 2.9129,
+      "section_count": 60,
+      "coverage_sources": {
+        "section_builder": 19,
+        "pdfplumber_table": 11,
+        "metric_key_value": 12,
+        "text_table": 4,
+        "page_fallback": 14
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaoquantri_6T_2023.pdf",
+      "document_type": "resolution",
+      "year_guess": 2023,
+      "page_count": 16,
+      "text_pages": 16,
+      "indexed_pages": 16,
+      "page_coverage": 1.0,
+      "total_chars": 83826,
+      "indexed_chars_with_overlap": 261413,
+      "indexed_char_ratio_with_overlap": 3.1185,
+      "section_count": 58,
+      "coverage_sources": {
+        "section_builder": 19,
+        "pdfplumber_table": 9,
+        "metric_key_value": 13,
+        "text_table": 1,
+        "page_fallback": 16
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaoquantri_6T_2024 (1).pdf",
+      "document_type": "policy_document",
+      "year_guess": 2024,
+      "page_count": 18,
+      "text_pages": 18,
+      "indexed_pages": 18,
+      "page_coverage": 1.0,
+      "total_chars": 89812,
+      "indexed_chars_with_overlap": 281085,
+      "indexed_char_ratio_with_overlap": 3.1297,
+      "section_count": 61,
+      "coverage_sources": {
+        "section_builder": 20,
+        "pdfplumber_table": 9,
+        "metric_key_value": 13,
+        "text_table": 1,
+        "page_fallback": 18
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaotaichinh_2019_Kiemtoan_Congtyme.pdf",
+      "document_type": "financial_report",
+      "year_guess": 2019,
+      "page_count": 57,
+      "text_pages": 56,
+      "indexed_pages": 56,
+      "page_coverage": 1.0,
+      "total_chars": 91862,
+      "indexed_chars_with_overlap": 324171,
+      "indexed_char_ratio_with_overlap": 3.5289,
+      "section_count": 129,
+      "coverage_sources": {
+        "section_builder": 34,
+        "text_table": 24,
+        "metric_key_value": 16,
+        "page_fallback": 55
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaotaichinh_2020_Kiemtoan_Congtyme.pdf",
+      "document_type": "financial_report",
+      "year_guess": 2020,
+      "page_count": 56,
+      "text_pages": 55,
+      "indexed_pages": 55,
+      "page_coverage": 1.0,
+      "total_chars": 93011,
+      "indexed_chars_with_overlap": 344330,
+      "indexed_char_ratio_with_overlap": 3.702,
+      "section_count": 129,
+      "coverage_sources": {
+        "section_builder": 31,
+        "text_table": 23,
+        "metric_key_value": 21,
+        "page_fallback": 54
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaotaichinh_2020_Kiemtoan_Hopnhat.pdf",
+      "document_type": "financial_report",
+      "year_guess": 2020,
+      "page_count": 66,
+      "text_pages": 65,
+      "indexed_pages": 65,
+      "page_coverage": 1.0,
+      "total_chars": 116698,
+      "indexed_chars_with_overlap": 421190,
+      "indexed_char_ratio_with_overlap": 3.6092,
+      "section_count": 160,
+      "coverage_sources": {
+        "section_builder": 40,
+        "text_table": 35,
+        "metric_key_value": 21,
+        "page_fallback": 64
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaotaichinh_2021_Kiemtoan_Congtyme.pdf",
+      "document_type": "financial_report",
+      "year_guess": 2021,
+      "page_count": 54,
+      "text_pages": 54,
+      "indexed_pages": 54,
+      "page_coverage": 1.0,
+      "total_chars": 94919,
+      "indexed_chars_with_overlap": 339626,
+      "indexed_char_ratio_with_overlap": 3.5781,
+      "section_count": 130,
+      "coverage_sources": {
+        "section_builder": 33,
+        "text_table": 25,
+        "metric_key_value": 19,
+        "page_fallback": 53
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaotaichinh_2021_Kiemtoan_Hopnhat.pdf",
+      "document_type": "financial_report",
+      "year_guess": 2021,
+      "page_count": 65,
+      "text_pages": 65,
+      "indexed_pages": 65,
+      "page_coverage": 1.0,
+      "total_chars": 119917,
+      "indexed_chars_with_overlap": 425767,
+      "indexed_char_ratio_with_overlap": 3.5505,
+      "section_count": 154,
+      "coverage_sources": {
+        "section_builder": 42,
+        "text_table": 26,
+        "metric_key_value": 22,
+        "page_fallback": 64
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaotaichinh_2022_Kiemtoan_Congtyme.pdf",
+      "document_type": "financial_report",
+      "year_guess": 2022,
+      "page_count": 56,
+      "text_pages": 56,
+      "indexed_pages": 56,
+      "page_coverage": 1.0,
+      "total_chars": 95366,
+      "indexed_chars_with_overlap": 347158,
+      "indexed_char_ratio_with_overlap": 3.6403,
+      "section_count": 142,
+      "coverage_sources": {
+        "section_builder": 36,
+        "text_table": 29,
+        "metric_key_value": 22,
+        "page_fallback": 55
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaotaichinh_2022_Kiemtoan_Hopnhat.pdf",
+      "document_type": "financial_report",
+      "year_guess": 2022,
+      "page_count": 64,
+      "text_pages": 64,
+      "indexed_pages": 64,
+      "page_coverage": 1.0,
+      "total_chars": 118413,
+      "indexed_chars_with_overlap": 420901,
+      "indexed_char_ratio_with_overlap": 3.5545,
+      "section_count": 162,
+      "coverage_sources": {
+        "section_builder": 45,
+        "text_table": 31,
+        "metric_key_value": 23,
+        "page_fallback": 63
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaotaichinh_2023_Kiemtoan_Congtyme.pdf",
+      "document_type": "financial_report",
+      "year_guess": 2023,
+      "page_count": 56,
+      "text_pages": 56,
+      "indexed_pages": 56,
+      "page_coverage": 1.0,
+      "total_chars": 94490,
+      "indexed_chars_with_overlap": 335921,
+      "indexed_char_ratio_with_overlap": 3.5551,
+      "section_count": 133,
+      "coverage_sources": {
+        "section_builder": 37,
+        "text_table": 23,
+        "metric_key_value": 18,
+        "page_fallback": 55
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaotaichinh_2023_Kiemtoan_Hopnhat.pdf",
+      "document_type": "financial_report",
+      "year_guess": 2023,
+      "page_count": 64,
+      "text_pages": 64,
+      "indexed_pages": 64,
+      "page_coverage": 1.0,
+      "total_chars": 117595,
+      "indexed_chars_with_overlap": 408672,
+      "indexed_char_ratio_with_overlap": 3.4752,
+      "section_count": 158,
+      "coverage_sources": {
+        "section_builder": 45,
+        "text_table": 31,
+        "metric_key_value": 19,
+        "page_fallback": 63
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaotaichinh_2024_Kiemtoan_Congtyme (1).pdf",
+      "document_type": "financial_report",
+      "year_guess": 2024,
+      "page_count": 54,
+      "text_pages": 54,
+      "indexed_pages": 54,
+      "page_coverage": 1.0,
+      "total_chars": 91766,
+      "indexed_chars_with_overlap": 333980,
+      "indexed_char_ratio_with_overlap": 3.6395,
+      "section_count": 139,
+      "coverage_sources": {
+        "section_builder": 33,
+        "text_table": 31,
+        "metric_key_value": 22,
+        "page_fallback": 53
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaotaichinh_2024_Kiemtoan_Hopnhat (1).pdf",
+      "document_type": "financial_report",
+      "year_guess": 2024,
+      "page_count": 63,
+      "text_pages": 63,
+      "indexed_pages": 63,
+      "page_coverage": 1.0,
+      "total_chars": 116103,
+      "indexed_chars_with_overlap": 411395,
+      "indexed_char_ratio_with_overlap": 3.5434,
+      "section_count": 147,
+      "coverage_sources": {
+        "section_builder": 39,
+        "text_table": 26,
+        "metric_key_value": 20,
+        "page_fallback": 62
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaothuongnien_2020.pdf",
+      "document_type": "annual_report",
+      "year_guess": 2020,
+      "page_count": 100,
+      "text_pages": 100,
+      "indexed_pages": 100,
+      "page_coverage": 1.0,
+      "total_chars": 322540,
+      "indexed_chars_with_overlap": 1075763,
+      "indexed_char_ratio_with_overlap": 3.3353,
+      "section_count": 289,
+      "coverage_sources": {
+        "section_builder": 79,
+        "pdfplumber_table": 37,
+        "metric_key_value": 50,
+        "text_table": 28,
+        "page_fallback": 95
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaothuongnien_2021.pdf",
+      "document_type": "annual_report",
+      "year_guess": 2021,
+      "page_count": 119,
+      "text_pages": 119,
+      "indexed_pages": 119,
+      "page_coverage": 1.0,
+      "total_chars": 351550,
+      "indexed_chars_with_overlap": 1330547,
+      "indexed_char_ratio_with_overlap": 3.7848,
+      "section_count": 369,
+      "coverage_sources": {
+        "section_builder": 91,
+        "pdfplumber_table": 82,
+        "metric_key_value": 62,
+        "text_table": 20,
+        "page_fallback": 114
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaothuongnien_2022.pdf",
+      "document_type": "annual_report",
+      "year_guess": 2022,
+      "page_count": 172,
+      "text_pages": 172,
+      "indexed_pages": 172,
+      "page_coverage": 1.0,
+      "total_chars": 331947,
+      "indexed_chars_with_overlap": 1172327,
+      "indexed_char_ratio_with_overlap": 3.5317,
+      "section_count": 380,
+      "coverage_sources": {
+        "section_builder": 83,
+        "pdfplumber_table": 30,
+        "metric_key_value": 76,
+        "text_table": 24,
+        "page_fallback": 167
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Baocaothuongnien_2024.pdf",
+      "document_type": "annual_report",
+      "year_guess": 2024,
+      "page_count": 95,
+      "text_pages": 95,
+      "indexed_pages": 95,
+      "page_coverage": 1.0,
+      "total_chars": 382109,
+      "indexed_chars_with_overlap": 1193766,
+      "indexed_char_ratio_with_overlap": 3.1242,
+      "section_count": 253,
+      "coverage_sources": {
+        "section_builder": 94,
+        "metric_key_value": 52,
+        "text_table": 13,
+        "page_fallback": 94
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Giaitrinh_KQKD_6T_2024 (1).pdf",
+      "document_type": "other",
+      "year_guess": 2024,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 117,
+      "indexed_chars_with_overlap": 117,
+      "indexed_char_ratio_with_overlap": 1.0,
+      "section_count": 1,
+      "coverage_sources": {
+        "section_builder": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Giaitrinh_KQKD_Q1_2022_Soatxet_Hopnhat.pdf",
+      "document_type": "other",
+      "year_guess": 2022,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 312,
+      "indexed_chars_with_overlap": 624,
+      "indexed_char_ratio_with_overlap": 2.0,
+      "section_count": 2,
+      "coverage_sources": {
+        "section_builder": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Giaitrinh_KQKD_Q2_2024 (1).pdf",
+      "document_type": "other",
+      "year_guess": 2024,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 117,
+      "indexed_chars_with_overlap": 117,
+      "indexed_char_ratio_with_overlap": 1.0,
+      "section_count": 1,
+      "coverage_sources": {
+        "section_builder": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Giaitrinh_KQKD_Q3_2022.pdf",
+      "document_type": "other",
+      "year_guess": 2022,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 312,
+      "indexed_chars_with_overlap": 624,
+      "indexed_char_ratio_with_overlap": 2.0,
+      "section_count": 2,
+      "coverage_sources": {
+        "section_builder": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Giaitrinh_KQKD_Q4_2018_Hopnhat.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2018,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 1443,
+      "indexed_chars_with_overlap": 4303,
+      "indexed_char_ratio_with_overlap": 2.982,
+      "section_count": 3,
+      "coverage_sources": {
+        "section_builder": 1,
+        "metric_key_value": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Giaitrinh_KQKD_Q4_2023.pdf",
+      "document_type": "other",
+      "year_guess": 2023,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 312,
+      "indexed_chars_with_overlap": 624,
+      "indexed_char_ratio_with_overlap": 2.0,
+      "section_count": 2,
+      "coverage_sources": {
+        "section_builder": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Nghiquyet_DHCD thuong nien_2020.pdf",
+      "document_type": "resolution",
+      "year_guess": 2020,
+      "page_count": 6,
+      "text_pages": 6,
+      "indexed_pages": 6,
+      "page_coverage": 1.0,
+      "total_chars": 10850,
+      "indexed_chars_with_overlap": 27052,
+      "indexed_char_ratio_with_overlap": 2.4933,
+      "section_count": 11,
+      "coverage_sources": {
+        "section_builder": 3,
+        "metric_key_value": 4,
+        "text_table": 2,
+        "page_fallback": 2
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNM_Nghiquyet_DHCD thuong nien_2022.pdf",
+      "document_type": "resolution",
+      "year_guess": 2022,
+      "page_count": 29,
+      "text_pages": 29,
+      "indexed_pages": 29,
+      "page_coverage": 1.0,
+      "total_chars": 61942,
+      "indexed_chars_with_overlap": 382624,
+      "indexed_char_ratio_with_overlap": 6.1771,
+      "section_count": 92,
+      "coverage_sources": {
+        "section_builder": 14,
+        "pdfplumber_table": 38,
+        "metric_key_value": 9,
+        "text_table": 6,
+        "page_fallback": 25
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "VNP_Giay_xac_nhan_hoan_thanh_cong_trinh_BVMT_16_11_2020_c7c999b79b.pdf",
+      "document_type": "policy_document",
+      "year_guess": 2020,
+      "page_count": 6,
+      "text_pages": 6,
+      "indexed_pages": 6,
+      "page_coverage": 1.0,
+      "total_chars": 9769,
+      "indexed_chars_with_overlap": 26532,
+      "indexed_char_ratio_with_overlap": 2.7159,
+      "section_count": 8,
+      "coverage_sources": {
+        "section_builder": 3,
+        "metric_key_value": 1,
+        "page_fallback": 4
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "dự thảo nghị quyết.pdf",
+      "document_type": "resolution",
+      "year_guess": 2024,
+      "page_count": 2,
+      "text_pages": 2,
+      "indexed_pages": 2,
+      "page_coverage": 1.0,
+      "total_chars": 3909,
+      "indexed_chars_with_overlap": 13912,
+      "indexed_char_ratio_with_overlap": 3.559,
+      "section_count": 8,
+      "coverage_sources": {
+        "section_builder": 2,
+        "pdfplumber_table": 3,
+        "metric_key_value": 1,
+        "page_fallback": 2
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "vnm.pdf",
+      "document_type": "financial_report",
+      "year_guess": 2023,
+      "page_count": 181,
+      "text_pages": 181,
+      "indexed_pages": 181,
+      "page_coverage": 1.0,
+      "total_chars": 354889,
+      "indexed_chars_with_overlap": 1291185,
+      "indexed_char_ratio_with_overlap": 3.6383,
+      "section_count": 399,
+      "coverage_sources": {
+        "section_builder": 90,
+        "pdfplumber_table": 28,
+        "metric_key_value": 85,
+        "text_table": 20,
+        "page_fallback": 176
+      },
+      "low_coverage": false
+    },
+    {
+      "source_file": "z7776784507923_780f2f86fa43c8a3db72127b09c1e4b4.jpg",
+      "document_type": "other",
+      "year_guess": null,
+      "page_count": 1,
+      "text_pages": 1,
+      "indexed_pages": 1,
+      "page_coverage": 1.0,
+      "total_chars": 525,
+      "indexed_chars_with_overlap": 1050,
+      "indexed_char_ratio_with_overlap": 2.0,
+      "section_count": 2,
+      "coverage_sources": {
+        "section_builder": 1,
+        "page_fallback": 1
+      },
+      "low_coverage": false
+    }
+  ]
+}
